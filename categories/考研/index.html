@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>归档: 2021 |  01-seven</title>
+      <title>考研 |  01-seven</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -57,14 +57,14 @@
   <ul class="ads">
     
         <li>
-            <a target="_blank" rel="noopener" href="https://curl.qcloud.com/kvO7hb43">
-                <img src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/ten_1.jpg" width="300" alt="云服务器限时秒杀">
+            <a href="">
+                <img src="" width="" alt="">
             </a>
         </li>
     
         <li>
-            <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8630075">
-                <img src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/vultr.png" width="300" alt="vultr优惠vps">
+            <a href="">
+                <img src="" width="" alt="">
             </a>
         </li>
     
@@ -74,7 +74,7 @@
   <article class="articles">
     
     
-    <h1 class="page-type-title">2021</h1>
+    <h1 class="page-type-title">考研</h1>
     
     
   
@@ -85,24 +85,30 @@
   
   <div class="archives-wrap">
     <div class="archive-year-wrap">
-      <a href="/archives/2021" class="archive-year">2021</a>
+      <a href="/archives/2022" class="archive-year">2022</a>
     </div>
     <div class="archives">
       
       <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
     <header class="archive-article-header">
-      <a href="/2021/12/31/hello-world/" class="archive-article-date">
-  <time datetime="2021-12-31T08:37:55.977Z" itemprop="datePublished">12/31</time>
+      <a href="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/" class="archive-article-date">
+  <time datetime="2022-01-01T00:23:49.000Z" itemprop="datePublished">01/01</time>
 </a>
        
 <h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/31/hello-world/"
-    >Hello World</a> 
+  <a class="archive-article-title" href="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/"
+    >微积分上复习</a> 
 </h2>
  
 
     </header>
+    
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a>
+  </div>
+
     
     
   </div>
@@ -217,10 +223,6 @@
         <i class="ri-search-line"></i>
       </a>
       
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
       
     </li>
   </ul>
@@ -377,6 +379,29 @@
     viewer_init()
 </script> 
 <!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
 
 <!-- Katex -->
 
@@ -463,6 +488,42 @@
 
     
     
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
 
   </div>
 </body>
