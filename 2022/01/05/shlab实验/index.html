@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>shlab实验 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-shlab实验"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  shlab实验
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/" class="article-date">
+  <time datetime="2022-01-05T12:30:00.000Z" itemprop="datePublished">2022-01-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">计算机系统原理</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.5k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">16 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="计算机系统原理shlab实验"><a href="#计算机系统原理shlab实验" class="headerlink" title="计算机系统原理shlab实验"></a>计算机系统原理shlab实验</h1><h2 id="一、实验内容"><a href="#一、实验内容" class="headerlink" title="一、实验内容"></a><strong>一、实验内容</strong></h2><p>\1. 实验目的：通过编写完善一个支持作业控制的简单 Unix 外壳 Shell 程序（tsh）,掌握 shell</p>
+<p>的基本功能原理和实现方法;掌握 Unix 进程控制、特别是信号的应用，包括信号产生和信</p>
+<p>号接收（捕获处理）、及并发冲突及解决方法，熟悉相关系统函数的应用。深入理解计算</p>
+<p>机系统中进程、并发、异常控制流，逻辑空间与物理空间等应用的基本原理。</p>
+<p>\2. 试验任务及内容：按提供的 tsh 框架,利用相关系统调用库函数,完成编写并测试一个带作业</p>
+<p>控制的 Unix 外壳程序,分步实现的功能包括 quit、bg、fg、 jobs 内部命令及其他外部作业</p>
+<p>控制,实现 sigchild、sigint 、 sigtstp 信号处理。</p>
+<h2 id="二、实验原理及方案"><a href="#二、实验原理及方案" class="headerlink" title="二、实验原理及方案"></a>二、实验原理及方案</h2><h3 id="说明编程实现shell的功能及方法"><a href="#说明编程实现shell的功能及方法" class="headerlink" title="说明编程实现shell的功能及方法"></a><strong>说明编程实现shell的功能及方法</strong></h3><h4 id="1、基本框架程序及功能"><a href="#1、基本框架程序及功能" class="headerlink" title="1、基本框架程序及功能"></a>1、基本框架程序及功能</h4><p>Shell作为操作系统外壳是一个交互型的应用程序,代表用户运行其他程序;shell本身是一个命令解释器,介于操作系统的内核（kernel）态和用户态之间 ,可以执行系统调用及系统命令等,让用户通过shell来对计算机进行操作和交互</p>
+<p>提示字符串为“tsh&gt;”：用户键入的命令行应由名称和0个或多个参数组成，参数由1个</p>
+<p>或多个空格分隔；</p>
+<p>•如果命令名称是内置命令，应该立即处理，并等待下一个命令行；</p>
+<p>•否则，TSH应该假定命令名称是可执行文件，应创建子进程，并将此进程添加到作业</p>
+<p>job中，在子进程的上下文中加载和运行；每个作业都可以由进程ID（PID）或作业ID</p>
+<p>（JID）标识（jid应在命令行上用前缀“%”表示）。</p>
+<p>•如果命令行以&amp;号结尾，则应在后台运行作业，否则，应在前台运行作业。</p>
+<p>•TSH应支持以下内置命令：</p>
+<p>quit：终止shell。</p>
+<p>jobs：列出所有后台作业。</p>
+<p>bg<job>：通过向其发送SIGCont信号重新启动<job>，然后在后台运行。<job>参数可以是pid或jid。</job></job></job></p>
+<p>fg<job>：通过向其发送SIGCont信号重新启动<job>，然后在前台运行。<job>参数可以是pid或jid。</job></job></job></p>
+<p>•键入ctrl-c（ctrl-z）应使sigint（sigtsp）信号发送到当前前台作业以及该作业的任何子</p>
+<p>进程。</p>
+<p>•TSH应该回收所有终止进程，将jobs内的子进程删除。</p>
+<h4 id="2、变量定义，函数定义，函数功能及接口"><a href="#2、变量定义，函数定义，函数功能及接口" class="headerlink" title="2、变量定义，函数定义，函数功能及接口"></a>2、变量定义，函数定义，函数功能及接口</h4><h5 id="信号量的使用原因："><a href="#信号量的使用原因：" class="headerlink" title="信号量的使用原因："></a>信号量的使用原因：</h5><p>比如在fork()新进程前要阻塞SIGCHLD信号,需要防止出现同步错误,如果不阻塞，会出现子进程先结束，从jobs中删除作deletejob，然后再执行到主进程增加作业addjob的竞争问题,保证先addjob,后deletejob.这时需要通过系统调用sigprocmask实现信号阻塞或解除信号阻塞:</p>
+<p>相关参数类型：</p>
+<p>SIG_BLOCK ：加入信号到进程屏蔽（blocked）；        </p>
+<p>SIG_UNBLOCK ：从进程屏蔽里将信号删除；      </p>
+<p>SIG_SETMASK ：将set的值设定为新的进程屏蔽；</p>
+<p>set：指向信号集的指针,专指新设的信号集,如果仅想读取现在的屏蔽值,可将其置为NULL；</p>
+<p>sigemptyset:清空信号集;</p>
+<p>sigfillset:信号集填充全部信号;</p>
+<p>sigaddset:信号集增加信号;</p>
+<p>sigdelset:信号集中删除信号;</p>
+<p>sigismember:判断信号集是否包含某信号;</p>
+<p>oldset：也是指向信号集的指针，在此存放原来的信号集</p>
+<h5 id="进程组设置使用原因："><a href="#进程组设置使用原因：" class="headerlink" title="进程组设置使用原因："></a>进程组设置使用原因：</h5><p>tsh调用fork()创建的子进程与父进程同属于一个进程组,所以所有的子进程与当前的tsh shell进程为同一个进程组,发送信号到tsh shell进程组时,前后台的子进程均会收到，假如我们键入了ctrl+c，这时会让所有子进程全被杀死(包括后台进程)；所以在fork()子进程之后需要通过setpgid(0,0)设置子进程为新的进程组,与tsh shell进程组分开,这样当我们输入ctrl+c,内核会发送一个SIGINT信号到前台进程组的每个进程，然后让前台进程tsh shell捕获sigint,再将其转发到 setpgid新设置的前台作业进程组,这样就可以只杀死所有的前台进程了</p>
+<p>相关系统函数：</p>
+<p>函数：int setpgid(pid_t pid,pid_t pgid) — 将进程pid 的进程组改为pgid；</p>
+<p>如果参数pid为0，那么使用当前进程的pid；</p>
+<p>如果参数pgid为0，那么就用pid指定的进程的pid作为进程组id；</p>
+<p>例如，如果进程15213是调用进程，那么setpgid(0,0)会创建一个新的进程组，其进程组id是15213，并且把进程15213加入到这个新的进程组中。</p>
+<p>函数：int setpgrp(void)：</p>
+<p>将目前进程所属的组ID设为目前进程的进程ID,相当于调用setpgid(0,0)。</p>
+<h5 id="execve（执行文件）"><a href="#execve（执行文件）" class="headerlink" title="execve（执行文件）"></a>execve（执行文件）</h5><p>功能：在父进程中fork一个子进程，在子进程中调用exec函数启动新的程序。 </p>
+<p>函数定义:int execve(const char <em>filename,char </em>const argv[],char *const envp[]);</p>
+<p>返回值:函数执行成功时没有返回值，执行失败时的返回值为-1.</p>
+<p>函数说明:</p>
+<p>execve()用来执行参数filename字符串所代表的文件路径，第二个参数是利用数组指针来传递给执行文件，并且需要以空指针(NULL)结束，最后一个参数则为传递给执行文件的新环境变量数组。</p>
+<p>linux fork()和execve()的区别:fork是分身，execve是变身;</p>
+<p>exec系列的系统调用是把当前程序替换成要执行的程序，而fork用来产生一个和当前进程一样的进程（虽然通常执行不同的代码流）。通常运行另一个程序，而同时保留原程序运行的方法是，fork + exec。</p>
+<h4 id="3、主函数，命令求值函数"><a href="#3、主函数，命令求值函数" class="headerlink" title="3、主函数，命令求值函数"></a>3、主函数，命令求值函数</h4><h5 id="主函数："><a href="#主函数：" class="headerlink" title="主函数："></a>主函数：</h5><p>void eval(char *cmdline)函数</p>
+<p>函数功能：对用户输入的命令参数进行解析计算并求值运行</p>
+<p>参 数：char *cmdline 传入的是从命令行标准缓冲区读入的命令行</p>
+<p>处理流程：</p>
+<p>l首先调用parseline函数将cmdline解析生成参数数组argv[]（parseline返回值整型bg,为1（0）代表后（前）台作业。如果argv[0]==NULL,直接返回;</p>
+<p>l调用build_in函数,如果用户输入的是内置命令行（quit、bg、fg、jobs）那么立即执行返回1,否则返回0;</p>
+<p>l如果build_in返回0,fork一个新的子进程,并且利用execve函数加载该任务,在子进程的上下文中运行;</p>
+<p>如果该任务是前台任务,那么需要等到他运行终止并回收才返回;</p>
+<p>l通过addjob将创建的子进程添加到jobs,子进程终止,通过deletejob将jobs内的子进程删除;</p>
+<p>l子进程的停止终止回收可通过信号及信号处理函数实现。由于父进程与子进程并发且信号随时可能发生,为了保证执行前后顺序可屏蔽信号;</p>
+<p>l调用sigpromask函数可将屏蔽信号,也可解除信号屏蔽;</p>
+<p>l信号以进程组收发的，键入ctrl-c（ctrl-z）向前台进程组发SIGINT,SIGTSTP信号;子进程应设置相应进程组。</p>
+<p>l在该函数中调用其他函数,需要设置调用失败的情况（程序中用unix_error封装函数提示错误）</p>
+<h5 id="命令求值函数："><a href="#命令求值函数：" class="headerlink" title="命令求值函数："></a>命令求值函数：</h5><p>函数功能：判断用户是否键入一个内置命令（quit,bg,fg,jobs),若是立刻执行:返回1;</p>
+<p>若不是内部命令:返回0</p>
+<p>参 数：char **argv , parseline函数已解析好的命令</p>
+<p>处理流程：根据参数通过分支结构执行操作：</p>
+<p>l 如果argv[0]==NULL 命令为空,立刻返回1;</p>
+<p>l 如果argv[0]==“quit” 终止 tsh,用exit（0）函数退出程序;</p>
+<p>l 如果argv[0]==“jobs” 调用listjobs(struct job_t *jobs)列出正在运行和已停止的后台作业jobs目录,返回1;</p>
+<p>l 如果argv[0]==“bg||fg”调用前后台切换do_bgfg(char **argv)函数,返回1;</p>
+<p>l 都不对,返回0,去执行外部命令。</p>
+<h4 id="4、四个信号处理函数"><a href="#4、四个信号处理函数" class="headerlink" title="4、四个信号处理函数"></a>4、四个信号处理函数</h4><h5 id="void-sigchld-handler-int-sig-函数"><a href="#void-sigchld-handler-int-sig-函数" class="headerlink" title="void sigchld_handler(int sig) 函数"></a>void sigchld_handler(int sig) 函数</h5><p>函数功能：sigchild信号处理函数,调用waitpid函,通过&amp;status参数,判断返回的进程是由于什么原因终止或暂停的;删除终止进程作业,修改停止进程作业运行状态</p>
+<p>参 数：int sig（信号的编号）</p>
+<p>处理流程：</p>
+<p>l 调用waitpid（optioins:WNOHANG|WUNTRACED,立即返回0、或终止及停止进程pid,收回终止进程）,通过&amp;status参数,判断返回pid的进程是由于什么原因停止或暂停的:</p>
+<p>l如果子进程正常终止（WIFEXITED）,调deletejob删除对应PID的作业;</p>
+<p>l如果子进程是因一个信号终止（WIFSIGNALED）,信号未被捕获,则打印信息,删除对应PID的作业;</p>
+<p>l如果子进程停止WIFSTOPPED,则打印信息。</p>
+<p>l注意errno保存恢复,操作作业结构时注意阻塞信号</p>
+<h5 id="void-sigint-handler-int-sig-函数"><a href="#void-sigint-handler-int-sig-函数" class="headerlink" title="void sigint_handler(int sig) 函数"></a>void sigint_handler(int sig) 函数</h5><p>函数功能：<strong><em>\</em>发送 SIGINT 信号给前台进程组**</strong></p>
+<p>参 数：int sig（信号的编号）</p>
+<p>处理流程：</p>
+<p>l 判断当前是否有前台进程,获取前台进程pid;</p>
+<p>l 如果没有返回, 有使用 kill 函数,发送 SIGINT 信号给前台进程组。</p>
+<p>注意：</p>
+<p>注意errno保存恢复,操作作业结构时注意阻塞信号</p>
+<p>用户在键盘上键入 ctrl-c,内核都会向 shell 发送一个 SIGINT 信号,shell应该捕获他</p>
+<h5 id="void-sigtstp-handle-int-sig-函数"><a href="#void-sigtstp-handle-int-sig-函数" class="headerlink" title="void sigtstp_handle(int sig) 函数"></a>void sigtstp_handle(int sig) 函数</h5><p>函数功能：<strong><em>\</em>发送 SIGTSTP信号给前台进程组**</strong></p>
+<p>参 数：int sig（信号的编号）</p>
+<p>处理流程：</p>
+<p>l 判断当前是否有前台进程,获取前台进程pid;</p>
+<p>l 如果没有返回, 有使用 kill 函数,发送 SIGTSTP 信号给前台进程组。</p>
+<p>注意：</p>
+<p>l 注意errno保存恢复,操作作业结构时注意阻塞信号</p>
+<p>l 用户在键盘上键入 ctrl-z,内核都会向 shell 发送一个 SIGTSTP信号,shell应该捕获他</p>
+<p>l 确保使用kill函数的参数中的“-pid”而不是“pid”将SIGINT和SIGTSTP信号发送到整个前台进程组（使用killpg函数）</p>
+<h3 id="测试方案"><a href="#测试方案" class="headerlink" title="测试方案"></a><strong>测试方案</strong></h3><p>相关测试文件：</p>
+<p>sdriver.pl （shell测试驱动文件）</p>
+<p>测试方法有两种：</p>
+<p>输入命令./tsh（tshref）运行tsh（tshref）后,直接输入测试 命令,观测结果及输出</p>
+<p>运用shell驱动程序sdriver.pl 自动测试</p>
+<p>tracexx.txt （可供sdriver 用的） 跟踪文件：tsh与tshref的输出相同则判为正确,如不同则给出原因分析</p>
+<p>l 每个文件根据不同测验功能的需要被设计成包含对应的注释行、驱动程序命令、shell命令,如：trace03.txt,trace04.txt</p>
+<p>注：进程号可不同，不同跟踪文件中的/bin/ps命令可不同，但进程状态应该相同。</p>
+<h2 id="三、-实验步骤"><a href="#三、-实验步骤" class="headerlink" title="三、 实验步骤"></a>三、 实验步骤</h2><h4 id="实验准备，实验资料"><a href="#实验准备，实验资料" class="headerlink" title="实验准备，实验资料"></a>实验准备，实验资料</h4><p>准备32位Ubantu环境，将文件压缩包导入虚拟机中解压。</p>
+<p>先进行编译tsh.c等生成tsh等执行文件</p>
+<p>执行指令方式：</p>
+<p>本实验中，trace为跟踪测试文件，用于检验某一功能是否完整；tshref为标准执行结果，用于和自己实现的功能进行比对，可以通过查看test文件分析相关内容和功能。</p>
+<p>初步运行结果如下：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps271C.tmp.jpg" alt="img"> </p>
+<h4 id="第一次实验总结及步骤"><a href="#第一次实验总结及步骤" class="headerlink" title="第一次实验总结及步骤"></a>第一次实验总结及步骤</h4><p>主要任务：实现内置命令quit和外部命令作业加载执行，利用sdrive和trace文件测试原理。</p>
+<p>编写前后对比：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps271D.tmp.jpg" alt="img"></p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps271E.tmp.png" alt="img"></p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps271F.tmp.png" alt="img" style="zoom:;"></p>
+<p>trace01.txt跟踪文件是执行close和wait命令行语句，最终的结果表示可以正确读出跟踪文件中的数据，然后在读取close的时候，关闭文件，并等待（在执行的时候并没有出现太长时间的停顿），表示正确。</p>
+<p>trace02.txt跟踪文件是执行quit和wait命令行语句</p>
+<p>trace03.txt跟踪文件执行成功后打印语句：“run a foreground job”</p>
+<h4 id="第二次实验总结及步骤"><a href="#第二次实验总结及步骤" class="headerlink" title="第二次实验总结及步骤"></a>第二次实验总结及步骤</h4><p>主要任务：实现内置命令jobs列表打印作业进程,键入Ctrl-c终止并删除前台作业,键入Ctrl-z停止前台作业</p>
+<p>3.1编写前测试结果：</p>
+<p>使用test04文件，功能为首先打印三行字符串，然后在后台运行myspin函数，验证结果如下</p>
+<p> <img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps272F.tmp.jpg" alt="img"></p>
+<p>3.2使用test5验证jobs内建命令</p>
+<p>编写前如下。</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2730.tmp.jpg" alt="img"> </p>
+<p>分析test05功能：首先打印三行字符串，然后在后台运行myspin函数，计算机沉睡两秒，然后后台运行myspin函数，计算机沉睡三秒，然后展示所有的后台作业</p>
+<p>编写完成后测试如下：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2731.tmp.jpg" alt="img"> </p>
+<p>3.2使用test06文件测试完善信号函数</p>
+<p>完善前会发现test06对比rtest06少一条指令，分析trace06文件发现最后少处理一条分支，补全后测试结果相同。</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2732.tmp.jpg" alt="img"> </p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2733.tmp.jpg" alt="img"> </p>
+<p>分析trace06跟踪文件功能：是先调用myspin函数睡眠4秒，然后再调用SLEEP内置指令睡眠2秒，最后调用INT指令，应该输出job [1] terminated by signal 2</p>
+<p>3.3通过sdrive.pl测试比较tsh（对比tshref）完善前后的运行输出结果</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2734.tmp.jpg" alt="img"> </p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2745.tmp.jpg" alt="img"> </p>
+<p>测试test07文件（前后对比）：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2746.tmp.jpg" alt="img"> </p>
+<p>trace07跟踪文件是先在后台调用myspin函数睡眠4秒，再调用myspin函数睡眠5秒，再调用SLEEP内置指令睡眠2秒，再调用INT指令，应该输出job [2] terminated by signal 2，再调用job指令输出所有的后台作业，最终得到的结果如下：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2747.tmp.jpg" alt="img"> </p>
+<p>测试test08文件：分析trace文件及区别，可以看到有一个新的TSTP指令没有执行，直接跳过，导致程序出错。思考结果是在程序中没有对TSTP指令进行捕捉，所以无法进入可以处理TSTP指令的分支，由此将代码进行修改，修改前后代码如下：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2748.tmp.jpg" alt="img"> </p>
+<p>分析功能得：</p>
+<p>trace08跟踪文件是先在后台调用myspin函数睡眠4秒，再调用myspin函数睡眠5秒，再调用SLEEP内置指令睡眠2秒，再调用TSTP指令，应该输出job [2] stopped by signal 2，再调用job指令输出所有的后台作业，</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2749.tmp.jpg" alt="img"> </p>
+<h4 id="第三次实验总结与步骤"><a href="#第三次实验总结与步骤" class="headerlink" title="第三次实验总结与步骤"></a>第三次实验总结与步骤</h4><p>实现内置作业控制命令fg、bg:bg命令发SIGCONT信号重新启动作业并在后台运行,fg命令送SIGCONT信号重新启动作业并在前台运行:</p>
+<p>编写前测试结果：</p>
+<p>首先运行测试文件trace09和trace10</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps275A.tmp.jpg" alt="img"><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps275B.tmp.jpg" alt="img"> </p>
+<p>如图 缺少对bg和fg命令的处理，查看trace09和trace10的功能：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps275C.tmp.jpg" alt="img"><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps275D.tmp.jpg" alt="img"> </p>
+<p>分析得：</p>
+<p>Trace09:先在后台运行myspin 4，然后在前台运行myspin 5，接着休眠2s，发出TSTP信号使得前台进程挂起并成为后台进程，并且增加指令：bg%2, 即将作业号为2的作业调到后台运行。</p>
+<p>Trace10:</p>
+<p>先在后台运行myspin 4，然后休眠1s，指令：fg %1在前台运行作业1，再休眠1s，发出TSTP信号，前台作业被挂起，放到了后台。jobs输出。</p>
+<p>完成后：</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps275E.tmp.jpg" alt="img"><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps276E.tmp.jpg" alt="img"> </p>
+<p>如图所示：作业号为2的进程被调到后台运行</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps276F.tmp.jpg" alt="img"><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2770.tmp.jpg" alt="img"> </p>
+<p>如图所示，作业号为1的进程在前台被挂起，后台无运行。</p>
+<p>\5. 验证trace11-trace16并解释与记录,参照测试跟踪文件内容含义, 分析说明使用测试功能;</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2771.tmp.jpg" alt="img"> </p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2772.tmp.jpg" alt="img"> </p>
+<p>trace11:</p>
+<p>先调用mysplit 4睡眠四秒，然后SLEEP 2睡眠2秒，接下来INT信号终止前台进程，再调用/bin/ps a显示当前进程的状态</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2783.tmp.jpg" alt="img"> </p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2784.tmp.jpg" alt="img"> </p>
+<p>trace12 </p>
+<p>先调用mysplit 4睡眠4秒，然后SLEEP 2睡眠2秒，接着发送信号TSTP停止前台进程，然后jobs显示后台进程，最后/bin/ps a显示进程的行程</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2785.tmp.jpg" alt="img"> </p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2786.tmp.jpg" alt="img"> </p>
+<p>trace13:</p>
+<p>首先调用mysplit 4睡眠4秒，然后SLEEP 2睡眠2秒，接着发送TSTP信号停止前台进程，jobs显示后台进程，/bin/ps a显示进程的行程，fg %1将jid=1的作业调到前台运行，最后/bin/ps a显示进程的行程</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2787.tmp.jpg" alt="img"><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2797.tmp.jpg" alt="img"> </p>
+<p>trace14:</p>
+<p>前三行打印文字，然后调用./bogus指令，然后在后台调用mysplit函数睡眠4秒，再调用fg命令，再调用bg命令</p>
+<p>再调用fg a命令，再调用bg a命令，然后调用fg999999命令，然后调用bg999999命令，再调用fg%2命令，将当前在后台的作业二移动到前台，再调用fg%1命令，将当前在后台的作业一移动到前台</p>
+<p>然后调用sleep命令睡眠2秒，然后调用TSTP指令打印，再调用bg%2命令，将当前在后台的作业二运行</p>
+<p>再调用bg %1命令，将当前在后台的作业一运行，最后调用jobs指令打印当前在后台的作业</p>
+<p> <img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2798.tmp.jpg" alt="img"><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps2799.tmp.jpg" alt="img"></p>
+<p>trace15:</p>
+<p>前三行打印文字，然后调用myspin函数睡眠10秒，再调用sleep命令睡眠2秒，再调用INT指令打印</p>
+<p>然后在后台调用myspin函数睡眠3秒,再在后台调用myspin函数睡眠4秒，然后调用jobs指令打印当前在后台的作业</p>
+<p>然后调用指令fg%1命令，将当前在后台的作业一移动到前台，再调用sleep指令睡眠2秒，然后调用TSTP指令打印</p>
+<p>然后调用jobs指令打印当前在后台的作业，再调用bg%3命令，将当前在后台的作业三运行，再调用bg%1命令，将当前在后台的作业一运行</p>
+<p>然后调用jobs指令打印当前在后台的作业，然后调用指令fg%1命令,将当前在后台的作业一移动到前台，最后调用quit指令退出</p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps279A.tmp.jpg" alt="img"> </p>
+<p><img src="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/wps279B.tmp.jpg" alt="img"> </p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">微积分上复习</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+ 
+<script src="/js/clickLove.js"></script>
+ 
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>
