@@ -146,11 +146,11 @@
 <p>oldset：也是指向信号集的指针，在此存放原来的信号集</p>
 <h5 id="进程组设置使用原因："><a href="#进程组设置使用原因：" class="headerlink" title="进程组设置使用原因："></a>进程组设置使用原因：</h5><p>tsh调用fork()创建的子进程与父进程同属于一个进程组,所以所有的子进程与当前的tsh shell进程为同一个进程组,发送信号到tsh shell进程组时,前后台的子进程均会收到，假如我们键入了ctrl+c，这时会让所有子进程全被杀死(包括后台进程)；所以在fork()子进程之后需要通过setpgid(0,0)设置子进程为新的进程组,与tsh shell进程组分开,这样当我们输入ctrl+c,内核会发送一个SIGINT信号到前台进程组的每个进程，然后让前台进程tsh shell捕获sigint,再将其转发到 setpgid新设置的前台作业进程组,这样就可以只杀死所有的前台进程了</p>
 <p>相关系统函数：</p>
-<p>函数：int setpgid(pid_t pid,pid_t pgid) — 将进程pid 的进程组改为pgid；</p>
+<p>函数：<strong>int setpgid(pid_t pid,pid_t pgid) — 将进程pid 的进程组改为pgid；</strong></p>
 <p>如果参数pid为0，那么使用当前进程的pid；</p>
 <p>如果参数pgid为0，那么就用pid指定的进程的pid作为进程组id；</p>
 <p>例如，如果进程15213是调用进程，那么setpgid(0,0)会创建一个新的进程组，其进程组id是15213，并且把进程15213加入到这个新的进程组中。</p>
-<p>函数：int setpgrp(void)：</p>
+<p>函数：<strong>int setpgrp(void)：</strong></p>
 <p>将目前进程所属的组ID设为目前进程的进程ID,相当于调用setpgid(0,0)。</p>
 <h5 id="execve（执行文件）"><a href="#execve（执行文件）" class="headerlink" title="execve（执行文件）"></a>execve（执行文件）</h5><p>功能：在父进程中fork一个子进程，在子进程中调用exec函数启动新的程序。 </p>
 <p>函数定义:int execve(const char <em>filename,char </em>const argv[],char *const envp[]);</p>
@@ -508,22 +508,6 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/categories">分类</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/friends">友链</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2019/about">关于我</a>
     </li>
     
   </ul>

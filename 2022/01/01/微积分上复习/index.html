@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">3.4k</span>
+            <span class="post-count">7.7k</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">14 分钟</span>
+            <span class="post-count">30 分钟</span>
         </span>
     </span>
 </div>
@@ -325,7 +325,291 @@ a\sin\alpha+b\cos\alpha=\sqrt{a^2+b^2}\sin(\alpha+\phi)(ab\neq0),其中\phi满�
 <script type="math/tex; mode=display">
 f(b)-f(a)=f'(\xi)(b-a)</script><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220102161100032.png" alt="image-20220102161100032" style="zoom:67%;"></p>
 <p>柯西中值定理：</p>
-<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220102161429546.png" alt="image-20220102161429546" style="zoom:67%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220102161429546.png" alt="image-20220102161429546" style="zoom: 67%;"></p>
+<h5 id="洛必达法则："><a href="#洛必达法则：" class="headerlink" title="洛必达法则："></a>洛必达法则：</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106222201804.png" alt="image-20220106222201804" style="zoom: 80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106222741729.png" alt="image-20220106222741729" style="zoom:80%;"></p>
+<p>洛必达求极限：将式子化简为以上两种形式</p>
+<p>$1^\infty$型：</p>
+<p>用对数恒等变形,再用洛必达法则</p>
+<p>利用重要极限:$\lim\limits_{x\rightarrow \infty} (1+\frac{1}{x})^x=e,    $$\lim\limits_{x\rightarrow 0} (1+x )^\frac{1}{x}=e$.</p>
+<h5 id="泰勒公式"><a href="#泰勒公式" class="headerlink" title="泰勒公式"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F/7681487?fr=aladdin">泰勒公式</a></h5><p>对于一些复杂函数$f(x)$在某点处具有N阶导数，可以通过n次多项式来近似表达$f(x)$，</p>
+<p><strong>公式构建的思路</strong>：如果要在某一点构建出近似f(x)的n阶多项式$P_n(x)$，那么为了保证精密性，会确保f(x)和$P_n(x)$在该点的函数值直至n阶导数值全部相等，仅留下一个比$(x-x_0)^n$更高阶的无穷小余项留有误差，以此为依据即可求出$P_n(x)$的各项系数。</p>
+<p>带有佩亚诺余项的N阶泰勒公式：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106224504921.png" alt="image-20220106224504921" style="zoom:80%;"></p>
+<p>可以通过<strong>洛必达法则</strong>证明<strong>佩亚诺余项</strong>是比$(x-x_0)^n$更高阶的无穷小</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106225048282.png" alt="image-20220106225048282" style="zoom:80%;"></p>
+<p>其中佩亚诺余项是用n次泰勒多项式来近似表达$f(x)$所产生的误差，这一误差是当x趋近于$x_0$时比$(x-x_0)^n$高阶的无穷小，但不能由他具体估算出误差的大小，故产生了带有拉格朗日余项的泰勒中值定理</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106224819176.png" alt="image-20220106224819176" style="zoom:80%;"></p>
+<p>可以通过<strong>柯西中值定理</strong>证明<strong>拉格朗日余项</strong>是比$(x-x_0)^n$更高阶的无穷小</p>
+<p><strong>当n=0</strong>时，带拉格朗日余项的泰勒公式变为拉格朗日中值公式，因此<strong>泰勒公式是拉格朗日中值定理的推广</strong>。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106225150179.png" alt="image-20220106225150179" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106225231308.png" alt="image-20220106225231308" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106225259951.png" alt="image-20220106225259951" style="zoom:80%;"></p>
+<h5 id="函数的单调性和曲线的凹凸性"><a href="#函数的单调性和曲线的凹凸性" class="headerlink" title="函数的单调性和曲线的凹凸性"></a>函数的单调性和曲线的凹凸性</h5><h6 id="单调性"><a href="#单调性" class="headerlink" title="单调性"></a>单调性</h6><p>利用导数的正负来判断函数的每个点处的切线，及走势，从而判断出函数的单调性</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106225811503.png" alt="image-20220106225811503" style="zoom:80%;"></p>
+<h6 id="凹凸性"><a href="#凹凸性" class="headerlink" title="凹凸性"></a>凹凸性</h6><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106230000297.png" alt="image-20220106230000297" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106230029130.png" alt="image-20220106230029130" style="zoom:80%;"></p>
+<p>判定定理：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106230100694.png" alt="image-20220106230100694" style="zoom:80%;"></p>
+<p><strong>拐点</strong>：曲线凹凸性发生改变的点</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106230221897.png" alt="image-20220106230221897" style="zoom:80%;"></p>
+<h5 id="函数的极值与最大最小值"><a href="#函数的极值与最大最小值" class="headerlink" title="函数的极值与最大最小值"></a>函数的极值与最大最小值</h5><h6 id="极大极小值"><a href="#极大极小值" class="headerlink" title="极大极小值"></a>极大极小值</h6><p>概念是<strong>局部性</strong>的：在局部范围内，是最值</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220106232157367.png" alt="image-20220106232157367" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220107000005959.png" alt="image-20220107000005959" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220107000031311.png" alt="image-20220107000031311" style="zoom:80%;"></p>
+<p>判定极值的充分条件：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220107000102536.png" alt="image-20220107000102536" style="zoom:80%;"></p>
+<p>求$f(x)$在该区间内的极值点和相应的极值</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220107000342989.png" alt="image-20220107000342989" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220107000359464.png" alt="image-20220107000359464" style="zoom:80%;"></p>
+<h6 id="最大值和最小值"><a href="#最大值和最小值" class="headerlink" title="最大值和最小值"></a>最大值和最小值</h6><p>求$f(x)$在$[a,b]$上的最大值和最小值</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220107000531498.png" alt="image-20220107000531498" style="zoom:80%;"></p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/2272189074530685188.html">可微、可导、连续、偏导存在、极限存在之间的关系是什么？</a></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220107001437047.png" alt="image-20220107001437047" style="zoom:80%;"></p>
+<p>连续一定有界（前提是闭区间）</p>
+<h3 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/6082893">不定积分</a></h3><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108000534905.png" alt="image-20220108000534905" style="zoom:80%;"></p>
+<p><strong>积分表：</strong><br><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108000632642.png" alt="image-20220108000632642" style="zoom:80%;"></p>
+<p>不定积分的性质：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108002648772.png" alt="image-20220108002648772" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108002702747.png" alt="image-20220108002702747" style="zoom:80%;"></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33047747">72道不定积分题目</a></p>
+<h4 id="换元积分法"><a href="#换元积分法" class="headerlink" title="换元积分法"></a>换元积分法</h4><p>将复合函数的微分法反过来，利用中间变量积分。</p>
+<p><strong>第一类换元法</strong>：<br><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108095446016.png" alt="image-20220108095446016" style="zoom:80%;"></p>
+<p>第一类换元法的实质就是<strong>凑微分</strong>，变换被积函数值，提取出必要的部分与dx组合凑成</p>
+<p>第一类换元法又可以理解为“<strong>积两步</strong>”，即连续进行两次积分，第一步是构造u，即首先计算$du=\int \phi’(x)dx=d(\phi(x))$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108100208655.png" alt="image-20220108100208655" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108100253290.png" alt="image-20220108100253290" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108100320728.png" alt="image-20220108100320728" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108100336500.png" alt="image-20220108100336500" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108100350854.png" alt="image-20220108100350854" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108100414573.png" alt="image-20220108100414573" style="zoom:80%;"></p>
+<p><strong>第二类换元法</strong>：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108102511552.png" alt="image-20220108102511552" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108102617776.png" alt="image-20220108102617776" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108102645574.png" alt="image-20220108102645574" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108102709622.png" alt="image-20220108102709622" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108102759066.png" alt="image-20220108102759066" style="zoom:80%;"></p>
+<p>倒代换：消去被积函数的分母中的变量因子X</p>
+<h4 id="分部积分法"><a href="#分部积分法" class="headerlink" title="分部积分法"></a>分部积分法</h4><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108103125965.png" alt="image-20220108103125965" style="zoom:80%;"></p>
+<p>上述公式为分部积分法，其中$\int{u’ \cdot v dx}$是比较容易求得的</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108103402982.png" alt="image-20220108103402982" style="zoom:80%;"></p>
+<blockquote>
+<p><strong>牢记</strong>：第一类换元法要凑u的微分，但是分部积分法一开始是要凑v的微分。</p>
+<p><strong>要区分u和v‘：应用分部积分时，首先将所及函数f(x)分为两部分u和v‘</strong>，其中</p>
+<p><strong>v’</strong>:是导数，要对它进行积分，所以必须容易<strong>积分</strong></p>
+<p><strong>u</strong>:我们要对它进行求导，不需要对它进行积分，所以它必须<strong>难积</strong>（如果它好积的话，为什么还要分部呢？直接求不就好了）</p>
+<p><strong>vu‘</strong>:是v’的原函数和u的导函数的积。它必须容易<strong>积分</strong>！！</p>
+<p><strong>总而言之</strong>（傻瓜做法，错分u，v没关系）：</p>
+<p>（0）如果一开始有<strong>负号</strong>，<strong>先画一个大括号，把它隔离开来，最后记得处理</strong>（！防止积分求导时出来负号进行干扰）</p>
+<p>（1）<strong>分析！！</strong>先将f(x)分成<strong>两部分</strong>，<strong>一部分好积，给它积分</strong>；另一部分<strong>难积，先不管</strong>。</p>
+<p>（2）积出来的那部分和难积的那部分做<strong>乘积</strong>,画一个<strong>减号</strong>（不要管外面的符号，积出来是负的也做减号）。</p>
+<p>（3）把<strong>难积的求导</strong>，把<strong>积出来的那部分（带着符号）和导函数相乘</strong>，给它们<strong>对x积分</strong>。</p>
+<p>（4）把结果写到减号后面，把大括号外面的符号加进来，化简。</p>
+<p>思路：分部积分公式，特别是<strong>第二种形式</strong>，和<strong>第一类换元法（积两步凑积分</strong>）的公式是非常相似的。<strong>区别是，凑积分法凑出微分$du$之后，所积函数还剩余包含$u$的容易积分形式。但是分部积分法凑出$dv$之后，剩下的部分却不容易积，所以必须分成两部。</strong></p>
+<p><strong>遇到不会的</strong>：先试一下凑积分（第一类换元法），如果发现凑出来不好积，再试分部积分，最后是第二类换元法</p>
+</blockquote>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108103646551.png" alt="image-20220108103646551" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108103657920.png" alt="image-20220108103657920" style="zoom:80%;"></p>
+<p>如果被积函数是幂函数和正余弦函数或幂函数和指数函数的乘积，我们设<strong>幂函数为u,</strong>这样用一次分部积分法就可以使幂函数的次级降低一次。</p>
+<p>v必须是更容易求积分的，所以优选：</p>
+<p><strong>指数函数</strong>$a^{bx}$&gt;正余弦函数<strong>$a\sin bx或者a\cos bx$</strong>&gt;<strong>幂函数$ax^n$</strong></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108104345170.png" alt="image-20220108104345170" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108104358979.png" alt="image-20220108104358979" style="zoom:80%;"></p>
+<p>由于对数函数或反三角函数很难积分，所以对他们求导，设为u ， 对应选v优先级：</p>
+<p>指数函数$a^{bx}$&gt;正余弦函数$a\sin bx或者a\cos bx$&gt;幂函数$ax^n$&gt;对数函数和反三角函数</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108104614384.png" alt="image-20220108104614384" style="zoom:80%;"></p>
+<h4 id="有理函数的积分"><a href="#有理函数的积分" class="headerlink" title="有理函数的积分"></a>有理函数的积分</h4><h5 id="有理函数的积分-1"><a href="#有理函数的积分-1" class="headerlink" title="有理函数的积分"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/336256557">有理函数的积分</a></h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108105824531.png" alt="image-20220108105824531" style="zoom:80%;"></p>
+<p>将真分式拆解为两个子真分式之和后，如何设定<strong>分子的待定系数形式</strong>？</p>
+<p>（1）确保两个<strong>子真分式</strong>分子分母<strong>交错相乘得到的两个多项式的次数相同</strong>。</p>
+<p>（2）在确保（1）的情况下，根据<strong>原真分式分子的次数</strong>确定，尽量为两个子真分式分子选择<strong>次数较小</strong>的待定系数形式</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108110250643.png" alt="image-20220108110250643" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108110301696.png" alt="image-20220108110301696" style="zoom:80%;"></p>
+<p>任何一个有理真分式$P(x)/Q(x)$都可以分为以下四种部分分式之和的形式：</p>
+<p>$\frac{A}{x-a},\frac{A}{(x-a)^n},\frac{Ax+B}{x^2+px+q},\frac{Ax+B}{(x^2+px+q)^n}$</p>
+<h5 id="可化为有理函数的积分举例"><a href="#可化为有理函数的积分举例" class="headerlink" title="可化为有理函数的积分举例"></a>可化为有理函数的积分举例</h5><ol>
+<li><p>三角函数$sin x,cos x$都可化为$tan \frac{x}{2}$</p>
+</li>
+<li><p>尽量使分母简单，可使用公式$1+cos x=2cos^2 \frac{x}{2}$,</p>
+</li>
+<li><p>尽量将幂次降低，为此常使用倍角公式或积化和差等</p>
+</li>
+<li><p>巧妙使用$sin^2x+cos^2=1$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108111339572.png" alt="image-20220108111339572" style="zoom:80%;"></p>
+</li>
+<li><p>对于带根号的，将整个项设为U</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108111456420.png" alt="image-20220108111456420" style="zoom:80%;"></p>
+</li>
+</ol>
+<h3 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%9A%E7%A7%AF%E5%88%86/7128801">定积分</a></h3><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108112907570.png" alt="image-20220108112907570" style="zoom:80%;"></p>
+<p>与不定积分的区别在于有积分区间</p>
+<p>定积分仅与被积函数与积分区间有关</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108114459886.png" alt="image-20220108114459886" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108114510820.png" alt="image-20220108114510820" style="zoom:80%;"></p>
+<p>简而言之：泰勒公式用多项式逼近函数值，定积分用n个细长方形条来逼近函数与x轴所夹面积。</p>
+<p><strong>可积的充分条件</strong>：</p>
+<p>定理1：设f(x)在区间[a,b]上<strong>连续</strong>，则f(x)在[a,b]上<strong>可积</strong>。</p>
+<p>定理2：设f(x)在区间[a,b]上<strong>有界</strong>，且只有<strong>有限个间断点</strong>，则f(x)在[a,b]上<strong>可积</strong>。</p>
+<p>若函数在区间[a,b]上<strong>单调有界</strong>，则可积.</p>
+<p>可积的<strong>必要条件</strong>：</p>
+<p>函数在区间上<strong>可积，则必有界</strong>。</p>
+<p><em>狄利克雷函数有界，但是有无限个间断点，也很明显不可积</em></p>
+<p><strong>性质：</strong></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108114940015.png" alt="image-20220108114940015" style="zoom:80%;"></p>
+<blockquote>
+<p>简而言之  没必要看证明</p>
+<p>性质1：多项式的定积分可以拆分</p>
+<p>性质2：相同被积函数在两个相连区间的定积分和可以合并</p>
+<p>性质3：如果被积函数恒为1，那么积分结果是区间长度</p>
+<p>性质4：非负函数的定积分非负</p>
+<p>性质4推论1：在相同区间，相对值恒小的函数定积分小，相对值恒大的函数定积分大。</p>
+<p>性质4推论2：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108121852353.png" alt="image-20220108121852353" style="zoom:80%;"></p>
+<p>微积分的绝对值小于等于绝对值的微积分</p>
+<p>性质5：定积分大于等于被积函数最小值×区间长度，小于等于被积函数最大值×区间长度</p>
+<p>性质6：定积分中值定理</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108115055785.png" alt="image-20220108115055785" style="zoom:80%;"></p>
+<p>如果被积函数连续，理应在积分区间找到一个点，该点对应函数值，与区间长度形成的矩形面积等价于该定积分划出的面积。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108121630526.png" alt="image-20220108121630526" style="zoom:80%;"></p>
+</blockquote>
+<p>相关证明：<br><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108122317690.png" alt="image-20220108122317690" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108122333574.png" alt="image-20220108122333574" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108122347478.png" alt="image-20220108122347478" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108122425751.png" alt="image-20220108122425751" style="zoom:80%;"></p>
+<p>性质6：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108122442007.png" alt="image-20220108122442007" style="zoom:80%;"></p>
+<h4 id="微积分基本公式"><a href="#微积分基本公式" class="headerlink" title="微积分基本公式"></a>微积分基本公式</h4><h5 id="积分上限函数"><a href="#积分上限函数" class="headerlink" title="积分上限函数"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A7%AF%E5%88%86%E4%B8%8A%E9%99%90%E5%87%BD%E6%95%B0">积分上限函数</a></h5><p>定理 1 如果函数f(x)在区间[a,b]上连续，那么积分上限的函数$\phi(x)=\int_a^xf(t)dt $在[a,b]上可导，并且它的导数$\phi’(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x),(a\leqslant x\leqslant b).$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220108122813532.png" alt="image-20220108122813532" style="zoom:80%;"></p>
+<p>积分上限函数$\phi(x)=\int_a^xf(t)dt $的本质是函数f(x)和x轴，定轴x=a和变轴x=x四条线围成的面积。其导数$\phi’(x)$的意义即在x处<strong>面积的变化率</strong>。而在$\Delta x \rightarrow 0$的情况下，面积变化率只跟函数值f(x)有关，因此$\phi’(x)=f(x)$</p>
+<p>定理1结论：<strong>连续函数f(x)取变上限x的定积分然后求导，其结果还原为f(x)本身</strong>。因此，$\phi(x)$就是f(x)的一个原函数</p>
+<p>定理2：如果函数f(x)在区间[a,b]上连续，那么函数$\phi(x)=\int_a^xf(t)dt$就是f(x)在[a,b]上的一个原函数。</p>
+<p>重要意义：肯定了连续函数的原函数是存在的（就是<strong>连续可积分</strong>），初步解释了积分学中的定积分与原函数之间的联系，因此可以通过原函数来计算定积分，引出下面的牛顿-莱布尼兹公式。</p>
+<h5 id="牛顿-莱布尼兹公式："><a href="#牛顿-莱布尼兹公式：" class="headerlink" title="牛顿-莱布尼兹公式："></a>牛顿-莱布尼兹公式：</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109135041739.png" alt="image-20220109135041739" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109135254501.png" alt="image-20220109135254501" style="zoom:80%;"></p>
+<h4 id="换元法和分部积分法："><a href="#换元法和分部积分法：" class="headerlink" title="换元法和分部积分法："></a>换元法和分部积分法：</h4><h5 id="换元法："><a href="#换元法：" class="headerlink" title="换元法："></a><strong>换元法</strong>：</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109135643540.png" alt="image-20220109135643540" style="zoom:80%;"></p>
+<p>注意：</p>
+<p>用$x=\varphi(x)$把原来的变量x代换成t时，注意<strong>积分区间</strong>也要对应替换</p>
+<p>求出替换后的式子的一个原函数$\Phi(t)$后，不必像不定积分那样再把$\Phi(t)$变换为原来的变量x的函数，只要把新变量t的上下限分别代入$\Phi(t)$中相减就行了。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109151112261.png" alt="image-20220109151112261" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109151127795.png" alt="image-20220109151127795" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109151317592.png" alt="image-20220109151317592" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109151329168.png" alt="image-20220109151329168" style="zoom:80%;"></p>
+<h5 id="分部积分法："><a href="#分部积分法：" class="headerlink" title="分部积分法："></a><strong>分部积分法</strong>：</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109155557759.png" alt="image-20220109155557759" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109155931462.png" alt="image-20220109155931462" style="zoom:80%;"></p>
+<h4 id="反常积分："><a href="#反常积分：" class="headerlink" title="反常积分："></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86/5688755">反常积分：</a></h4><p>起源：一些在无限区间上定义的函数或有限区间上的无界函数，对它们也需要考虑类似于定积分的问题。称为反常积分或广义积分。</p>
+<h5 id="无穷限的反常积分："><a href="#无穷限的反常积分：" class="headerlink" title="无穷限的反常积分："></a>无穷限的反常积分：</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109160435774.png" alt="image-20220109160435774" style="zoom:80%;"></p>
+<p>定义：</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109160535278.png" alt="image-20220109160535278" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109160621908.png" alt="image-20220109160621908" style="zoom:80%;"></p>
+<h5 id="无界函数的反常积分："><a href="#无界函数的反常积分：" class="headerlink" title="无界函数的反常积分："></a>无界函数的反常积分：</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109160746206.png" alt="image-20220109160746206" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109160807520.png" alt="image-20220109160807520" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109160925756.png" alt="image-20220109160925756" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109160950137.png" alt="image-20220109160950137" style="zoom:80%;"></p>
+<h5 id="反常积分的审敛法："><a href="#反常积分的审敛法：" class="headerlink" title="反常积分的审敛法："></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/353396396">反常积分的审敛法：</a></h5><p>略：</p>
+<h4 id="定积分的应用"><a href="#定积分的应用" class="headerlink" title="定积分的应用"></a>定积分的应用</h4><h5 id="元素法："><a href="#元素法：" class="headerlink" title="元素法："></a>元素法：</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109162849313.png" alt="image-20220109162849313" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109162901917.png" alt="image-20220109162901917" style="zoom:80%;"></p>
+<h5 id="求面积："><a href="#求面积：" class="headerlink" title="求面积："></a>求面积：</h5><p>直角坐标f(x)与x轴形成面积：$A=\int_a^bf(x)dx$</p>
+<p>极坐标：$A=\int_{\alpha}^{\beta}\frac{1}{2}[\rho(\theta)^2]d\theta$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109163122367.png" alt="image-20220109163122367" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109163134354.png" alt="image-20220109163134354" style="zoom:80%;"></p>
+<h5 id="求体积："><a href="#求体积：" class="headerlink" title="求体积："></a>求体积：</h5><p>旋转体就是由一个平面图形绕这平面内一条直线旋转一周而成的立体。这条直线叫做旋转轴。</p>
+<p>连续曲线y=f(x)和x轴、x=a、x=b所围图形绕x轴旋转一周的体积：</p>
+<p>$V=\pi \int_a^b[f(x)]^2dx$</p>
+<blockquote>
+<p>策略：先积面，再积高。</p>
+<p><strong>高</strong>指的是沿旋转轴方向的。面指的是垂直旋转轴的方向。</p>
+<p>f(x)其实决定了旋转体旋出的薄片的半径，于是<strong>先表示出面的微元，再沿高的方向积分得到整个立体的体积</strong></p>
+</blockquote>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109163334153.png" alt="image-20220109163334153" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109163357065.png" alt="image-20220109163357065" style="zoom:80%;"></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%91%86%E7%BA%BF/5893005">摆线</a>：在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/数学/107037">数学</a>中，<strong>摆线</strong>（Cycloid）被定义为，一个圆沿一条直线运动时，圆边界上一定点所形成的轨迹。它是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/一般旋轮线/18878448">一般旋轮线</a>的一种。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109163501219.png" alt="image-20220109163501219" style="zoom:80%;"></p>
+<p>平行截面面积为已知的立体体积</p>
+<p>底面积为$A(x)$,高为$dx$的扁柱体体积，体积元素为：$dV=A(x)dx$,变化区间为$[a,b]$，则立体体积为</p>
+<p>$V= \int_a^b A(x)dx$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109163904678.png" alt="image-20220109163904678" style="zoom:80%;"></p>
+<h5 id="平面曲线的弧长："><a href="#平面曲线的弧长：" class="headerlink" title="平面曲线的弧长："></a>平面曲线的弧长：</h5><p>光滑曲线弧是<strong>可求弧长的</strong>。</p>
+<p>直角坐标：$s=\int_a^b\sqrt{1+[f’(x)]^2}dx$</p>
+<p>参数方程($x=\phi(t),y=\psi(t),\alpha\leq x\leq \beta$)：$s=\int_{\alpha}^{\beta}\sqrt{\phi’^2(t)+\psi’^2(t)}dt$</p>
+<p>极坐标($r=r(\theta),\alpha\leq \theta\leq \beta$)：$s=\int_{\alpha}^{\beta}\sqrt{r’^2(\theta)+r’^2(\theta)}d\theta$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109181544902.png" alt="image-20220109181544902" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109181600504.png" alt="image-20220109181600504" style="zoom:80%;"></p>
+<h5 id="定积分在物理学的应用"><a href="#定积分在物理学的应用" class="headerlink" title="定积分在物理学的应用"></a>定积分在物理学的应用</h5><p><strong>变力做功：</strong>$W=\int_a^bF(x)dx.$</p>
+<p>水压力：$P=p \cdot A$</p>
+<p>引力：$F=G \frac{m_1m_2}{r^2}$</p>
+<h3 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99271908">微分方程</a></h3><p>根据问题所提供的情况，可以列出含有要找的<strong>函数及其导数的关系式</strong>，这样的关系式就是微分方程。<strong>找出</strong>未知函数的过程就是解微分方程。</p>
+<p>微分方程中所出现的<strong>未知函数的最高阶导数的阶数</strong>，就做<strong>微分方程的阶</strong>。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109233125399.png" alt="image-20220109233125399" style="zoom:80%;"></p>
+<p>把函数代入微分方程能使方程变成恒等式，这种函数叫做<strong>微分方程的解</strong>。</p>
+<p>如果微分方程的解中含有<strong>任意常数</strong>，且任意常数的个数与微分方程的阶数相同，这样的解叫做<strong>微分方程的通解</strong>。</p>
+<p>用以求出任意常数的条件叫<strong>初值条件</strong>，确定每一个任意常数之后，就得到了<strong>微分方程的特解</strong>。求特解的这样一个问题叫<strong>初值问题</strong>。</p>
+<p>微分方程的解的图形是一条曲线，叫做<strong>微分方程的积分曲线</strong>。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109233007262.png" alt="image-20220109233007262" style="zoom:80%;"></p>
+<h4 id="可分离变量的微分方程"><a href="#可分离变量的微分方程" class="headerlink" title="可分离变量的微分方程"></a>可分离变量的微分方程</h4><p>一阶微分方程：$y’=f(x,y)//P(x,y)dx+Q(x,y)dy=0$</p>
+<p><strong>可分离变量的微分方程</strong>：$g(y)dy=f(x)dx$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109234102366.png" alt="image-20220109234102366" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109234135904.png" alt="image-20220109234135904" style="zoom:80%;"></p>
+<h4 id="齐次方程"><a href="#齐次方程" class="headerlink" title="齐次方程"></a>齐次方程</h4><p>关于齐次的定义：<strong>“关于函数y及其导数y’，y”，……次数相等，方程中无自由项（即那些不含y，y’，y’’的项，如x、1、x平方）”</strong></p>
+<p>如果一阶微分方程可以写成$\frac{dy}{dx}=\varphi(\frac{y}{x})$的形式，那么就称这方程为齐次方程。</p>
+<p>对于<strong>标准形式</strong>的齐次方程，通常令$u=\frac{y}{x}，y=ux$，然后化为可分离变量方程求解。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109234613277.png" alt="image-20220109234613277" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220109234645071.png" alt="image-20220109234645071" style="zoom:80%;"></p>
+<h4 id="非标准齐次方程"><a href="#非标准齐次方程" class="headerlink" title="非标准齐次方程"></a>非标准齐次方程</h4><p>对于<strong>非标准形式</strong>、但可以化为齐次方程的一次微分方程$\frac{dy}{dx}=f(\frac{ax+by+c}{a_1x+b_1x+c_1})$，要<strong>先将其化为齐次方程，再化简为分离变量方程。</strong></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112110731098.png" alt="image-20220112110731098" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112110743828.png" alt="image-20220112110743828" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112110829254.png" alt="image-20220112110829254" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112110846526.png" alt="image-20220112110846526" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112110856946.png" alt="image-20220112110856946" style="zoom:80%;"></p>
+<h4 id="一阶线性微分方程"><a href="#一阶线性微分方程" class="headerlink" title="一阶线性微分方程"></a>一阶线性微分方程</h4><h5 id="线性方程"><a href="#线性方程" class="headerlink" title="线性方程"></a>线性方程</h5><p>$\frac{dy}{dx}+P(x)y=Q(x)$叫做一阶线性微分方程。</p>
+<p>如果$Q(x)\equiv0$，那么被称为是齐次的，否则是非齐次的。</p>
+<p>对于齐次一阶线性微分方程$\frac{dy}{dx}+P(x)y=0$，可以分离变量，进而得到$\frac{dy}{y}=-P(x)dx$，进一步求出通解：$y=Ce^{-\int P(x)dx},(C=\pm e^{C_1})$.</p>
+<p>对于非齐次线性方程的通解，可用常数变易法来得到，用x的函数$u(x)$来替换齐次线性方程通解中的C.</p>
+<p>得到$y=ue^{-\int P(x)dx}$,$\frac{dy}{dx}=u’e^{-\int P(x)dx}-uP(x)e^{-\int P(x)dx}.$</p>
+<p>带回$\frac{dy}{dx}+P(x)y=Q(x)$,得到$u=\int Q(x)e^{\int P(x)dx}dx+c$.</p>
+<p>可知非齐次线性方程的通解是$y=e^{-\int P(xdx)}(\int Q(x)e^{\int P(x)dx}dx+C)$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111239712.png" alt="image-20220112111239712" style="zoom:80%;"></p>
+<h5 id="伯努利方程"><a href="#伯努利方程" class="headerlink" title="伯努利方程"></a>伯努利方程</h5><p>$\frac{dy}{dx}+P(x)y=Q(x)y^n$叫做伯努利方程，当n=0或n=1时，是线性微分方程，当$n\neq 0,1$时，它不是线性的，通过变量的代换，就可以把它化为线性的</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111358547.png" alt="image-20220112111358547" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111413368.png" alt="image-20220112111413368" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111423578.png" alt="image-20220112111423578" style="zoom:80%;"></p>
+<h4 id="可降阶的高解微分方程"><a href="#可降阶的高解微分方程" class="headerlink" title="可降阶的高解微分方程"></a>可降阶的高解微分方程</h4><p>本质在于用各种方式降阶</p>
+<h5 id="y-n-f-x-型的微分方程"><a href="#y-n-f-x-型的微分方程" class="headerlink" title="$y^{(n)}=f(x)$型的微分方程"></a>$y^{(n)}=f(x)$型的微分方程</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111631835.png" alt="image-20220112111631835" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111647040.png" alt="image-20220112111647040" style="zoom:80%;"></p>
+<h5 id="y’’-f-x-y’-型的微分方程"><a href="#y’’-f-x-y’-型的微分方程" class="headerlink" title="$y’’=f(x,y’)$型的微分方程"></a>$y’’=f(x,y’)$型的微分方程</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111759695.png" alt="image-20220112111759695" style="zoom:80%;"></p>
+<h5 id="y’’-f-y-y’-型的微分方程"><a href="#y’’-f-y-y’-型的微分方程" class="headerlink" title="$y’’=f(y,y’)$型的微分方程"></a>$y’’=f(y,y’)$型的微分方程</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111932160.png" alt="image-20220112111932160" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112111942576.png" alt="image-20220112111942576" style="zoom:80%;"></p>
+<h4 id="高阶线性微分方程"><a href="#高阶线性微分方程" class="headerlink" title="高阶线性微分方程"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxintdrh/article/details/104736240">高阶线性微分方程</a></h4><p>二阶线性微分方程：$\frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=f(x).$</p>
+<p>当方程右端$f(x)=0$时，方程叫做齐次的，当其不等于0时，方程叫做非齐次的。</p>
+<h5 id="线性微分方程的解的结构"><a href="#线性微分方程的解的结构" class="headerlink" title="线性微分方程的解的结构"></a>线性微分方程的解的结构</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112112352496.png" alt="image-20220112112352496" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112112438712.png" alt="image-20220112112438712" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112112501627.png" alt="image-20220112112501627" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112112558229.png" alt="image-20220112112558229" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112112619899.png" alt="image-20220112112619899" style="zoom:80%;"></p>
+<h5 id="常数变易法"><a href="#常数变易法" class="headerlink" title="常数变易法"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/387631989">常数变易法</a></h5><h4 id="常系数齐次线性微分方程"><a href="#常系数齐次线性微分方程" class="headerlink" title="常系数齐次线性微分方程"></a>常系数齐次线性微分方程</h4><h5 id="二阶"><a href="#二阶" class="headerlink" title="二阶"></a>二阶</h5><p>对于二阶齐次线性微分方程：$y’’+P(x)y’+Q(x)y$=0</p>
+<p>如果$y’,y$的系数P(x),Q(x)均为常数，那么称其为二阶常系数齐次线性微分方程，如果p,q不全为常数，则称其为二阶变系数齐次线性微分方程。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112113551949.png" alt="image-20220112113551949" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112113611811.png" alt="image-20220112113611811" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112113631461.png" alt="image-20220112113631461" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112113655724.png" alt="image-20220112113655724" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112113712710.png" alt="image-20220112113712710" style="zoom:80%;"></p>
+<h5 id="n阶"><a href="#n阶" class="headerlink" title="n阶"></a>n阶</h5><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112114327456.png" alt="image-20220112114327456" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112114344956.png" alt="image-20220112114344956" style="zoom:80%;"></p>
+<p>n次代数方程有n个根，而特征方程的每一个根都对应着通解中的一项，且每项中各含一个任意常数，这样就得到n阶常系数齐次线性微分方程的通解</p>
+<p>$y=C_1y_1+C_2y_2+……+C_ny_n$</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112114635498.png" alt="image-20220112114635498" style="zoom:80%;"></p>
+<h4 id="常系数非齐次线性微分方程"><a href="#常系数非齐次线性微分方程" class="headerlink" title="常系数非齐次线性微分方程"></a>常系数非齐次线性微分方程</h4><h5 id="二阶：-y’’-py’-qy-f-x"><a href="#二阶：-y’’-py’-qy-f-x" class="headerlink" title="二阶：$y’’+py’+qy=f(x)$"></a>二阶：$y’’+py’+qy=f(x)$</h5><p>在此只讨论求二阶常系数非齐次线性微分方程的一个<strong>特解</strong>$y*$的方法</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115058772.png" alt="image-20220112115058772" style="zoom:80%;"></p>
+<h6 id="f-x-e-lambda-x-P-m-x-型"><a href="#f-x-e-lambda-x-P-m-x-型" class="headerlink" title="$f(x)=e^{\lambda x}P_m(x)型$"></a>$f(x)=e^{\lambda x}P_m(x)型$</h6><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115227632.png" alt="image-20220112115227632" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115256310.png" alt="image-20220112115256310" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115315025.png" alt="image-20220112115315025" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115328370.png" alt="image-20220112115328370" style="zoom:80%;"></p>
+<h6 id="f-x-e-lambda-x-P-l-x-cos-omega-x-Q-n-x-sin-omega-x-型"><a href="#f-x-e-lambda-x-P-l-x-cos-omega-x-Q-n-x-sin-omega-x-型" class="headerlink" title="$f(x)=e^{\lambda x}[P_l(x)cos \omega x+Q_n(x)sin \omega x]型$"></a>$f(x)=e^{\lambda x}[P_l(x)cos \omega x+Q_n(x)sin \omega x]型$</h6><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115417050.png" alt="image-20220112115417050" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115434339.png" alt="image-20220112115434339" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115448613.png" alt="image-20220112115448613" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115506325.png" alt="image-20220112115506325" style="zoom:80%;"></p>
+<h5 id="欧拉方程"><a href="#欧拉方程" class="headerlink" title="欧拉方程"></a>欧拉方程</h5><p>一类特殊的<strong>变系数线性微分方程</strong>，可以通过变量代换化为<strong>常</strong>系数线性微分方程。</p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115643961.png" alt="image-20220112115643961" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115658185.png" alt="image-20220112115658185" style="zoom:80%;"></p>
+<p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8A%E5%A4%8D%E4%B9%A0/image-20220112115713278.png" alt="image-20220112115713278" style="zoom:80%;"></p>
  
       <!-- reward -->
       
@@ -545,22 +829,6 @@ f(b)-f(a)=f'(\xi)(b-a)</script><p><img src="/2022/01/01/%E5%BE%AE%E7%A7%AF%E5%88
     
     <li class="nav-item">
       <a class="nav-item-link" href="/categories">分类</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/friends">友链</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2019/about">关于我</a>
     </li>
     
   </ul>
