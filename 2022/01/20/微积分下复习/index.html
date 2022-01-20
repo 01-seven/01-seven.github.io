@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>微积分下复习 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-微积分下复习"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  微积分下复习
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/" class="article-date">
+  <time datetime="2022-01-20T01:00:49.000Z" itemprop="datePublished">2022-01-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">982</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">4 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="微积分下复习"><a href="#微积分下复习" class="headerlink" title="微积分下复习"></a>微积分下复习</h1><h2 id="高中复习："><a href="#高中复习：" class="headerlink" title="高中复习："></a>高中复习：</h2><h3 id="解三角形："><a href="#解三角形：" class="headerlink" title="解三角形："></a>解三角形：</h3><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/正弦定理/2657575?qq-pf-to=pcqq.c2c">正弦定理_百度百科 (baidu.com)</a></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120104849131.png" alt="image-20220120104849131" style="zoom:80%;"></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BD%99%E5%BC%A6%E5%AE%9A%E7%90%86#:~:text=%E4%BD%99%E5%BC%A6%E5%AE%9A%E7%90%86%EF%BC%8C%E6%AC%A7%E6%B0%8F%E5%B9%B3,%E5%BD%A2%E6%83%85%E5%BD%A2%E4%B8%8B%E7%9A%84%E6%8E%A8%E5%B9%BF%EF%BC%8C">余弦定理：</a></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120105100130.png" alt="image-20220120105100130" style="zoom:80%;"></p>
+<p> <img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120105255310.png" alt="image-20220120105255310" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120105401107.png" alt="image-20220120105401107" style="zoom:80%;"></p>
+<p>三角形面积：</p>
+<p>$S=\sqrt{p(p-a)(p-b)(p-c)}(p=\frac{a+b+c}{2})$</p>
+<p>$S=\frac{1}{2}r(a+b+c)r(r为内切圆半径)$</p>
+<h3 id="立体几何："><a href="#立体几何：" class="headerlink" title="立体几何："></a>立体几何：</h3><p>1.空间几何体的侧面积公式：</p>
+<p>​    $S_{正棱柱侧}=Ch$        $S_{正棱锥侧}=\frac{1}{2}Ch’$</p>
+<p>​    $S_{圆柱侧}=2\pi rl$         $S_{圆锥侧}=\pi r l$</p>
+<p>​    $ S_{圆台侧}=\pi(r+r’)l$</p>
+<ol>
+<li>空间几何体的表面积：</li>
+</ol>
+<p>​    $S_{圆台}=\pi(r’^2+r^2+r’l+rl)$</p>
+<p>​    $S_{球}=4\pi R^2$</p>
+<ol>
+<li><p>空间几何体的体积：</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120105819242.png" alt="image-20220120105819242" style="zoom:80%;"></p>
+</li>
+<li><p>空间中两直线平行</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120110151471.png" alt="image-20220120110151471" style="zoom:80%;"></p>
+</li>
+</ol>
+<h3 id="直线与圆"><a href="#直线与圆" class="headerlink" title="直线与圆"></a>直线与圆</h3><p>直线公式：</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120113209074.png" alt="image-20220120113209074" style="zoom:80%;"></p>
+<p>距离公式</p>
+<p> <img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120113347686.png" alt="image-20220120113347686" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120113405501.png" alt="image-20220120113405501" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120113943552-16426852223561.png" alt="image-20220120113943552" style="zoom:80%;"></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/358591112">圆锥曲线</a></p>
+<h2 id="向量代数与空间解析几何"><a href="#向量代数与空间解析几何" class="headerlink" title="向量代数与空间解析几何"></a>向量代数与空间解析几何</h2><h3 id="向量及其线性运算"><a href="#向量及其线性运算" class="headerlink" title="向量及其线性运算"></a>向量及其线性运算</h3><p><strong>向量：</strong>一类既有大小，又有方向的量。</p>
+<p><strong>自由向量：</strong>与起点无关的向量，只考虑大小和方向</p>
+<p>向量相等：大小方向都相等</p>
+<p>向量的模：向量大小记为$|a|$(模为1，单位向量；模为0，零向量)</p>
+<p>向量共线：两向量的起点放在同一点时，终点和公共起点在一条直线上</p>
+<p><strong>线性运算:</strong></p>
+<ol>
+<li><p>加减法：三角形法则或平行四边形法则</p>
+<p>交换律：a+b=b+a</p>
+<p>结合律：(a+b)+c=a+(b+c)</p>
+<p>$AB=AO+OB=OB-OA$</p>
+<p>$|a+b|\leq|a|+|b|及|a-b|\leq|a|+|b|(a,b同向或反向时等号成立)$</p>
+</li>
+<li><p>向量数乘：$|\lambda a|=|\lambda||a|$,</p>
+<p>结合律：$\lambda(\mu a)=\mu (\lambda a)=(\lambda \mu)a$</p>
+<p>分配率：$(\lambda+\mu)a=\lambda a+\mu a$</p>
+</li>
+</ol>
+<p>定理：对于非零向量，两向量平行的充要条件是存在唯一实数使$b=\lambda a$</p>
+<p><strong>空间直角坐标系：</strong></p>
+<p> $Oxyz$坐标系</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120142447667.png" alt="image-20220120142447667" style="zoom:80%;"></p>
+<p>向量的坐标分解式：$r=\vec{OM}=xi+yj+zk$</p>
+<p>向量$r=\vec{OM}$称为点M关于原点O的向径</p>
+<p>卦限：</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120142642524.png" alt="image-20220120142642524" style="zoom:80%;"></p>
+<p><strong>利用坐标做向量的线性运算</strong></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120144946288.png" alt="image-20220120144946288" style="zoom:80%;"></p>
+<p><strong>向量的模，方向角，投影</strong></p>
+<p>$|r|=\sqrt{x^2+y^2+z^2}$</p>
+<p>两点距离：$|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$</p>
+<p>方向角：</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120145641722.png" alt="image-20220120145641722" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120145652316.png" alt="image-20220120145652316" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120145701045.png" alt="image-20220120145701045" style="zoom:80%;"></p>
+<p>投影：向量a在直角坐标系$Oxyz$中的坐标$a_x,a_y,a_z$就是a在三条坐标轴上的投影记为$a_x=Prj_xa$…</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120150441043.png" alt="image-20220120150441043" style="zoom:80%;"></p>
+<h3 id="数量积-向量积"><a href="#数量积-向量积" class="headerlink" title="数量积 向量积"></a>数量积 向量积</h3><p><strong>数量积：</strong>$a\cdot b=|a||b|cos\theta$. $a\cdot b=|a|Prj_ab$.</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120161725861.png" alt="image-20220120161725861" style="zoom:80%;"></p>
+<p>交换律：$a \cdot b=b \cdot a$</p>
+<p>分配律：$(a+b)\cdot c=a \cdot c+b \cdot c$</p>
+<p>结合律：$(\lambda a)\cdot b=\lambda(a \cdot b)$</p>
+<ol>
+<li><p>$a\cdot a=|a|^2$</p>
+</li>
+<li><p>对于两个非零向量，如果数量积为0，那么两向量互相垂直</p>
+</li>
+</ol>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120162802863.png" alt="image-20220120162802863" style="zoom:80%;"></p>
+<p><strong>向量积：</strong>由两个向量a,b来确定另一个向量c，其中$|c|=|a||b|sin\theta$,  c的方向垂直与a,b所决定的平面</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120163344974.png" alt="image-20220120163344974" style="zoom:80%;"></p>
+<p>运算律：$b \times a=-a \times b$</p>
+<p>分配律：$(a+b)\times c=a \times c+b \times c$</p>
+<p>$(\lambda a)\times b=a \times (\lambda b)=\lambda(a \times b)$</p>
+<ol>
+<li><p>$a\times a=0$</p>
+</li>
+<li><p>对于两个非零向量a,b，如果向量积为0，那么两向量平行。</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120164307373-16426854113412.png" alt="image-20220120164307373" style="zoom:80%;"></p>
+</li>
+</ol>
+<p><strong>混合积：</strong></p>
+<p>先叉乘再点乘，$(a \times b)\cdot c=[a b c]$</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120164539723-16426854156543.png" alt="image-20220120164539723" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120165011408-16426854183254.png" alt="image-20220120165011408" style="zoom:80%;"></p>
+<p>几何意义：混合积的绝对值表示以向量a,b,c为棱的平行六面体的体积。（如果组成右手系，那么混合积的符号是正的）</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120164950354-16426854204195.png" alt="image-20220120164950354" style="zoom:80%;"></p>
+<p>$V=Sh=|a \times b||c||cos \alpha|=|[abc]|$</p>
+<p>三向量共面的充要条件是它们的混合积为0</p>
+<h3 id="平面及其方程"><a href="#平面及其方程" class="headerlink" title="平面及其方程"></a>平面及其方程</h3><p><strong>曲面方程：</strong>曲面S上任一点都满足方程$F(x,y,z)=0$,不在曲面S上的点的坐标都不满足方程，称方程$F(x,y,z)=0$为曲面S的方程</p>
+<p><strong><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120165958606-16426854237996.png" alt="image-20220120165958606" style="zoom:80%;"></strong></p>
+<p><strong>空间曲线</strong>：两个曲面的交线，交线上的任何点都满足这两个曲面的方程</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120165909617-16426854292518.png" alt="image-20220120165909617" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120165936017-16426854274147.png" alt="image-20220120165936017" style="zoom:80%;"></p>
+<p><strong>平面的点法式方程</strong></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120170418680-16426854330219.png" alt="image-20220120170418680" style="zoom:80%;"></p>
+<p>法线向量：$n=(A,B,C)$,平面上的直线$\vec{M_0M}$</p>
+<p> <strong>平面的一般方程：</strong>$Ax+By+Cz+D=0$</p>
+<p>其中x，y，z的系数就是该平面的一个法线向量的坐标</p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120170738189-164268543798010.png" alt="image-20220120170738189" style="zoom:80%;"></p>
+<p><strong>两平面夹角</strong>：两平面的法线向量的夹角</p>
+<p><strong><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120171203049-164268545728714.png" alt="image-20220120171203049" style="zoom:80%;"></strong></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120171219725-164268544165411.png" alt="image-20220120171219725" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120171252322.png" alt="image-20220120171252322" style="zoom: 67%;"></p>
+<p><img src="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/image-20220120171313382-164268544832813.png" alt="image-20220120171313382" style="zoom:80%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/01/20/%E5%A4%96%E5%88%8A/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            外刊
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">线代复习</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>

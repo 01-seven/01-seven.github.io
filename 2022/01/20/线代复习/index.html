@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>线代复习 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-线代复习"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  线代复习
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/" class="article-date">
+  <time datetime="2022-01-20T00:23:49.000Z" itemprop="datePublished">2022-01-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">6.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">25 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="线代复习"><a href="#线代复习" class="headerlink" title="线代复习"></a>线代复习</h1><h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%A1%8C%E5%88%97%E5%BC%8F/2010180">行列式</a></h2><h3 id="二阶行列式"><a href="#二阶行列式" class="headerlink" title="二阶行列式"></a>二阶行列式</h3><p>对于二元线性方程组</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113121744781.png" alt="image-20220113121744781" style="zoom:80%;"></p>
+<p>消去未知数求得方程的解为</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113121911656.png" alt="image-20220113121911656" style="zoom:80%;"></p>
+<p>将方程组的四个系数，排成二行二列的数表</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113122018682.png" alt="image-20220113122018682" style="zoom:80%;"></p>
+<p>表达式$a_11a_22-a_12a_21$称为数表多确定的二阶行列式，记作</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113122240865.png" alt="image-20220113122240865" style="zoom:80%;"></p>
+<p>每个数称为元素或元，每个元素的第一个下标称为行标，第二个下标称为列标。</p>
+<p><strong>克莱姆法则：</strong></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113122444878.png" alt="image-20220113122444878" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113122457921.png" alt="image-20220113122457921" style="zoom:80%;"></p>
+<h3 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h3><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113131428705.png" alt="image-20220113131428705" style="zoom:80%;"></p>
+<p>注意计算方式：对角线法则</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113131556587.png" alt="image-20220113131556587" style="zoom:80%;"></p>
+<h3 id="全排列和对换"><a href="#全排列和对换" class="headerlink" title="全排列和对换"></a>全排列和对换</h3><h4 id="全排列：把N个不同的元素排成一列。"><a href="#全排列：把N个不同的元素排成一列。" class="headerlink" title="全排列：把N个不同的元素排成一列。"></a>全排列：把N个不同的元素排成一列。</h4><p>排列组合数为：$P_n=n \cdot (n-1) \cdot… \cdot 1=n!$</p>
+<p>对于n个不同的元素，先规定各元素之间有一个<strong>标准次序</strong>，于是在这n个元素的任一排列中，当<strong>某一对</strong>元素的先后次序与标准次序不同时，就说它构成<strong>一个逆序</strong>，一个排列中所有<strong>逆序的总数</strong>叫做这个<strong>排列的逆序数</strong></p>
+<p>逆序数为奇数的排列叫做奇排列，逆序数为偶数的排列叫做偶排列</p>
+<p>不妨设 n 个元素为 1 至 n 这 n 个自然数，并规定由小到大为标准次序.设 p1，p2…pn 为这 n 个自然数的一个排列，考虑元素 pi （i= 1，2，…，n）， </p>
+<p>如果<strong>比pi 大的且排在 pi 前面的元素有 ti 个</strong>，就说 pi 这个元素的逆序数是 ti. 全体元素的逆序数之总和即是这个排列的逆序数</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113132738956.png" alt="image-20220113132738956" style="zoom:80%;"></p>
+<h4 id="对换：将任意两个元素对调"><a href="#对换：将任意两个元素对调" class="headerlink" title="对换：将任意两个元素对调"></a>对换：将任意两个元素对调</h4><p>定理 1： 一个排列中的任意两个元素对换，<strong>排列改变奇偶性.</strong> </p>
+<p>推论： 奇排列对换成标准排列的对换次数为奇数，偶排列对换成标准排列的对换次数为偶数. </p>
+<h3 id="N阶行列式"><a href="#N阶行列式" class="headerlink" title="N阶行列式"></a>N阶行列式</h3><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113133634120.png" alt="image-20220113133634120" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113133654780.png" alt="image-20220113133654780" style="zoom:80%;"></p>
+<p>主对角线以下（上）的元素都为 0 的行列式叫做上（下）三角形行列式；特别，主对角线以下和以上的元素都为 0 的行列式叫做对角行列式.</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113133837986.png" alt="image-20220113133837986" style="zoom:80%;"></p>
+<h3 id="行列式的性质"><a href="#行列式的性质" class="headerlink" title="行列式的性质"></a>行列式的性质</h3><p>转置行列式：将行变为列，记为$D^T$</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34685081">八大类型行列式及其解法 - 知乎 (zhihu.com)</a></p>
+<h4 id="主要性质："><a href="#主要性质：" class="headerlink" title="主要性质："></a>主要性质：</h4><blockquote>
+<p><strong>性质1:  行列式与它的转置行列式相等。</strong></p>
+<p><strong>性质2：对换行列式的两行（列），行列式变号.</strong></p>
+<p>证明原理：对换改变奇偶性</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113134442514.png" alt="image-20220113134442514" style="zoom:80%;"></p>
+<p>推论：<strong>如果行列式有两行（列）完全相同，则此行列式等于零.</strong> </p>
+<p>证：这两行对换有D=-D，D=0。</p>
+<p><strong>性质 3 :   行列式的某一行（列）中所有的元素都乘同一数 k，等于用数 k 乘此行列式</strong>.</p>
+<p>推论 :   行列式中<strong>某一行（列）的所有元素的公因子</strong>可以提到行列式记号的外面. </p>
+<p><strong>性质 4 :  行列式中如果有两行（列）元素成比例，则此行列式等于零.</strong> </p>
+<p>性质 5 :   若行列式的某一行（列）的元素都是两数之和，例如第 i行的元素都是两数之和：</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113135201705.png" alt="image-20220113135201705" style="zoom:80%;"></p>
+<p>则 D 等于下列两个行列式之和： </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113135222373.png" alt="image-20220113135222373" style="zoom:80%;"></p>
+<p>性质6 :  <strong>把行列式的某一行（列）的各元素乘同一数然后加到另一行（列）对应的元素上去，行列式不变.</strong> </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113135317275.png" alt="image-20220113135317275" style="zoom:80%;"></p>
+</blockquote>
+<p>在计算过程中，要巧用以上性质，特别是性质6，尽可能的将行列式化为上三角行列式的形式。</p>
+<h4 id="重要例题："><a href="#重要例题：" class="headerlink" title="重要例题："></a>重要例题：</h4><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113135530084.png" alt="image-20220113135530084" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113135552105.png" alt="image-20220113135552105" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113140240864.png" alt="image-20220113140240864" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113140532800.png" alt="image-20220113140532800" style="zoom:80%;"></p>
+<p>注意运算次序不能颠倒，注意运算$r_i+r_J$与$r_j+r_i$的区别，不能套用加法的交换律。</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113141101853.png" alt="image-20220113141101853" style="zoom:80%;"></p>
+<p>将$D_1,D_2$做下三角转换。</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113141217187.png" alt="image-20220113141217187" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113141228028.png" alt="image-20220113141228028" style="zoom:80%;"></p>
+<h3 id="行列式按行展开"><a href="#行列式按行展开" class="headerlink" title="行列式按行展开"></a>行列式按行展开</h3><h4 id="余子式和代数余子式"><a href="#余子式和代数余子式" class="headerlink" title="余子式和代数余子式"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/144062643">余子式和代数余子式</a></h4><p>余子式：在 n 阶行列式中，<strong>把（i，j）元 $a_{ij}$所在的第</strong> <strong>i行和第j列划去后，</strong>留下来的n-1 阶行列式<strong>叫做（i，j）元$a_{ij}$的余子式</strong>，记作$M_{ij}$；记</p>
+<p>$A_{ij}=(-1)^{i+j}M_{ij}$</p>
+<p>$A_{ij}$叫做（i,j）元$a_{ij}$的代数余子式</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113143941689.png" alt="image-20220113143941689" style="zoom:80%;"></p>
+<p><strong>主要用于降阶，优先选0多的行展开</strong>，</p>
+<h4 id="行列式按行展开法则："><a href="#行列式按行展开法则：" class="headerlink" title="行列式按行展开法则："></a>行列式按行展开法则：</h4><p>引理 ：一个 n 阶行列式，如果其中第i行所有元素除（i，j）元 $a_{ij}$外都为零，那么这行列式等于 $a_{ij}$与它的代数余子式的乘积，即 </p>
+<p>$D=a_{ij}A{ij}$,</p>
+<p><strong>定理 2</strong> : 行列式等于它的任一行（列）的各元素与其对应的代数余子式乘积之和<strong>，</strong>即 </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113144258772.png" alt="image-20220113144258772" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113144644940.png" alt="image-20220113144644940" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113145721603.png" alt="image-20220113145721603" style="zoom:80%;"></p>
+<h5 id="异乘变零定理："><a href="#异乘变零定理：" class="headerlink" title="异乘变零定理："></a><strong>异乘变零定理：</strong></h5><p>行列式某一行（列）的元素与另一行（列）的对应元素的代数余子式乘积之和等于零.即</p>
+<p>证明原理：行列式两行相同，则为0 </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113201034631.png" alt="image-20220113201034631" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113201234428.png" alt="image-20220113201234428" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113201244024.png" alt="image-20220113201244024" style="zoom:80%;"></p>
+<h5 id="拉普拉斯定理："><a href="#拉普拉斯定理：" class="headerlink" title="拉普拉斯定理："></a>拉普拉斯定理：</h5><p>取定k行，由k行元素组成的所有k阶子式与代数余子式乘积之和=D</p>
+<p>K阶子式：k行k列相交得k阶子式</p>
+<p>剩下的行列式为余子式</p>
+<p>代数余子式相似</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113223518446.png" alt="image-20220113223518446" style="zoom:80%;"></p>
+<h5 id="行列式相乘："><a href="#行列式相乘：" class="headerlink" title="行列式相乘："></a>行列式相乘：</h5><p><strong>同阶相乘</strong>：行列依次相乘再相加。</p>
+<p>不同阶：看看能不能直接算出来hhh。 </p>
+<h4 id="范德蒙德行列式"><a href="#范德蒙德行列式" class="headerlink" title="范德蒙德行列式"></a>范德蒙德行列式</h4><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113151235039.png" alt="image-20220113151235039" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220113151308663.png" alt="image-20220113151308663" style="zoom:80%;"></p>
+<p>计算 n 阶行列式，常要使用数学归纳法，不过在比较简单的情形（如例 11），可省略归纳法的叙述格式，但归纳法的主要步骤是不可能省略的.这主要步骤是：导出递推公式（例 11 中导出 $D_{2n}$ =（ad-bc）$D_{2(n-1)}$及检验 n = 1 时结论成立 </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>上三角，按行展开</p>
+<p>优先将简易的行交换到第一行，尽量避免分数</p>
+<p>巧用<strong>代数余子式</strong>（注意相关符号的变换）</p>
+<p>对于特殊行列式，制造行和</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114104229743.png" alt="image-20220114104229743" style="zoom:80%;"></p>
+<p>先将每一列都加到第一列，提出公因子，再将第一列乘以-a加到后面的每一列，消去a ,构成下三角行列式</p>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="矩阵的定义"><a href="#矩阵的定义" class="headerlink" title="矩阵的定义"></a><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22047061">矩阵的定义</a></h3><p>由 m×n 个数 $a_{ij}$（i= 1，2，…，m；j= 1，2，…，n）排成的 m 行 n 列的数表，称为m 行 n 列矩阵，简称m×n 矩阵</p>
+<p>注意矩阵和行列式的区别 ：矩阵是一个用于表示线性方程组的形式，它本质是个方程式；行列式的本质是一个数值，在某些情况下，可以用于表示 线性方程组的系数，使用克莱姆法则求解。</p>
+<p>  <img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114110657959.png" alt="image-20220114110657959" style="zoom:80%;"></p>
+<blockquote>
+<p>行列相等都为n的矩阵，称为方阵$A_n$</p>
+<p>只有一行的矩阵称为行矩阵，也称为行向量</p>
+<p>只有一列的矩阵称为列矩阵，也称列向量</p>
+<p>两个矩阵<strong>行列数</strong>相等，称为同型矩阵</p>
+<p>若在同型矩阵的基础上，它们的<strong>对应元素</strong>也相等，则称这两个矩阵相等 A=B</p>
+<p>元素都为0的矩阵为零矩阵，$O$</p>
+<p>从左上角到右下角的直线（叫做对角线）以外的元素都是 0.这种方阵称为对角矩阵，简称对角阵</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114112834875.png" alt="image-20220114112834875" style="zoom:80%;"></p>
+<p>$\Lambda=diag(\lambda_1,\lambda_2,…\lambda_n)$;</p>
+<p>当对角线元素都为1时，叫做n阶单位矩阵$E$</p>
+</blockquote>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114111952030.png" alt="image-20220114111952030" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114112003552.png" alt="image-20220114112003552" style="zoom:80%;"></p>
+<p>线性变换和矩阵之间存在着一一对应的关系. </p>
+<p>矩阵也可用于向量计算：比如图形的几何变换</p>
+<h3 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h3><h4 id="加减"><a href="#加减" class="headerlink" title="加减"></a>加减</h4><p><strong>同型矩阵</strong>才能加减</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114114722641.png" alt="image-20220114114722641" style="zoom:80%;"></p>
+<p>$-A$称为$A$的负矩阵，故规定矩阵减法为</p>
+<p>$A-B=A+(-B)$.</p>
+<h4 id="数乘"><a href="#数乘" class="headerlink" title="数乘"></a>数乘</h4><p>可交换</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114114922528.png" alt="image-20220114114922528" style="zoom:80%;"></p>
+<h4 id="相乘"><a href="#相乘" class="headerlink" title="相乘"></a>相乘</h4><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114115402109.png" alt="image-20220114115402109" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114115700377.png" alt="image-20220114115700377" style="zoom:80%;"></p>
+<p><strong>必须注意</strong>：</p>
+<p>只有当第一个矩阵（左矩阵）的列数等于第二个矩阵（右矩阵）的行数时，两个矩阵才能相乘. </p>
+<p>矩阵的乘法<strong>不满足交换律</strong>，即在一般情形下，AB≠BA ,一定要注意相乘顺序，注意“无意义”的情况。</p>
+<p>对于两个 n 阶方阵 A、B，<strong>若 A B = BA</strong>，则称方阵 A 与 B 是<strong>可交换</strong>的.</p>
+<p>矩阵 A≠$O$，B≠$O$，但却有 BA = $O$ </p>
+<p><strong>若有两个矩阵 A、B 满足 A B = $O$，不能得出 A = $O$ 或 B = $O$ 的结论</strong>；若 A ≠ $O$ 而 A（X - Y）= $O$，也不能得出 X = Y 的结论</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114120127792.png" alt="image-20220114120127792" style="zoom:80%;"></p>
+<p>对于单位矩阵有：</p>
+<p>$EA=AE=A$</p>
+<p>纯量阵：与矩阵A的乘积等于数$\lambda$与A的乘积，<br><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114120506206.png" alt="image-20220114120506206" style="zoom:80%;"></p>
+<p>当A为n阶方针时，有$(\lambda E _n)A_n=\lambda A_n=A_n(\lambda E_n)$</p>
+<h5 id="矩阵的幂："><a href="#矩阵的幂：" class="headerlink" title="矩阵的幂："></a>矩阵的幂：</h5><p>设 A 是 n 阶方阵，定义 </p>
+<p> $A^1=A,A^2=A^1 A^1,…,A^{k+1}=A^kA^1$</p>
+<p>其中 k 为正整数，这就是说，$A^k$ 就是 <strong>k 个 A 连乘</strong>.显然只有方阵的幂才有意义.</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114121344636.png" alt="image-20220114121344636" style="zoom:80%;"></p>
+<p><strong>只有A与B可交换时，才满足$(AB)^k=A^kB^k$。</strong></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114121523397.png" alt="image-20220114121523397" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114121539788.png" alt="image-20220114121539788" style="zoom:80%;"></p>
+<h4 id="矩阵转置"><a href="#矩阵转置" class="headerlink" title="矩阵转置"></a>矩阵转置</h4><p>满足以下运算规律</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114172949313.png" alt="image-20220114172949313" style="zoom:80%;"></p>
+<p>设A为n阶方阵，如果满足$A^T=A$,即$a_{ij}=a{ji}$,那么称A为<strong>对称矩阵</strong>：元素以对角线为对称轴对应相等</p>
+<h4 id="方阵的行列式"><a href="#方阵的行列式" class="headerlink" title="方阵的行列式"></a>方阵的行列式</h4><p>由 n 阶方阵 A 的元素所构成的行列式（各元素的位置不变），称为方阵A 的行列式，记作det A 或|A|. </p>
+<p>满足以下规律（<strong>AB皆为方阵</strong>）</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114173450148.png" alt="image-20220114173450148" style="zoom:80%;"></p>
+<p> 对于 n 阶矩阵 A、B，一般来说 AB≠BA，但总有 |AB|=|BA|</p>
+<p><strong>伴随矩阵</strong>：行列式|A|的各个元素的代数余子式$A_{ij}$所构成的矩阵</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114174056427.png" alt="image-20220114174056427" style="zoom:80%;"></p>
+<p>. $AA^<em>=A^</em>A=|A|E$</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114174142422.png" alt="image-20220114174142422" style="zoom:80%;"></p>
+<h3 id="逆矩阵"><a href="#逆矩阵" class="headerlink" title="逆矩阵"></a>逆矩阵</h3><h4 id="逆矩阵的定义，性质和求法"><a href="#逆矩阵的定义，性质和求法" class="headerlink" title="逆矩阵的定义，性质和求法"></a>逆矩阵的定义，性质和求法</h4><p>对于 n 阶矩阵 A，如果有一个 <strong>n 阶矩阵</strong> B，使 </p>
+<p>A B = B A = E， </p>
+<p>则说矩阵 A 是可逆的，并把矩阵 B 称为 A 的逆矩阵，简称逆阵.</p>
+<p>A 的逆矩阵记作 $A^{-1}$.即若 A B = BA = E，则$B=A^{-1}$</p>
+<blockquote>
+<p>定理1: 若矩阵A 可逆，则|A|≠0. </p>
+<p><strong>定理2</strong> : 若|A|≠0，则矩阵A 可逆，且$A^{-1}=\frac{1}{|A|}A^*$</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114174956329.png" alt="image-20220114174956329" style="zoom:80%;"></p>
+</blockquote>
+<p>当|A|=0时，A 称为奇异矩阵，否则称非奇异矩阵.</p>
+<p>由上面两定理可知：<strong>A 是可逆矩阵的充分必要条件是|A|≠0，即可逆矩阵就是非奇异矩阵</strong>.</p>
+<p>推论 ：若 A B = E （或 BA = E），则 $B=A^{-1}$. </p>
+<p>运算定理：</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114175226098.png" alt="image-20220114175226098" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114175313232.png" alt="image-20220114175313232" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114175324168.png" alt="image-20220114175324168" style="zoom:80%;"></p>
+<h4 id="逆矩阵的初步应用"><a href="#逆矩阵的初步应用" class="headerlink" title="逆矩阵的初步应用"></a>逆矩阵的初步应用</h4><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114175457056.png" alt="image-20220114175457056" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114175737248.png" alt="image-20220114175737248" style="zoom:80%;"></p>
+<p> <img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114180006667.png" alt="image-20220114180006667" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114180028083.png" alt="image-20220114180028083" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114180039231.png" alt="image-20220114180039231" style="zoom:80%;"></p>
+<h3 id="克莱默法则"><a href="#克莱默法则" class="headerlink" title="克莱默法则"></a>克莱默法则</h3><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114190749849.png" alt="image-20220114190749849" style="zoom:80%;"></p>
+<p> <img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114190831481.png" alt="image-20220114190831481" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114190844137.png" alt="image-20220114190844137" style="zoom:80%;"></p>
+<p>克拉默法则可视为行列式的一个应用，而所给出的证明又可看作逆矩阵的 一个应用</p>
+<h3 id="矩阵分块法"><a href="#矩阵分块法" class="headerlink" title="矩阵分块法"></a>矩阵分块法</h3><p>将行列数较高的矩阵分为小子块。</p>
+<p>运算规则</p>
+<blockquote>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114192101410.png" alt="image-20220114192101410" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114192119399.png" alt="image-20220114192119399" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114192131128.png" alt="image-20220114192131128" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114192154601.png" alt="image-20220114192154601" style="zoom:80%;"></p>
+</blockquote>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114192352609.png" alt="image-20220114192352609" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220114192408033.png" alt="image-20220114192408033" style="zoom:80%;"></p>
+<h2 id="矩阵的初等变换与线性方程组"><a href="#矩阵的初等变换与线性方程组" class="headerlink" title="矩阵的初等变换与线性方程组"></a>矩阵的初等变换与线性方程组</h2><p>本质：着眼于整个方程组变成另一个方程组，用于线性方程组消元。</p>
+<h3 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>1.对换两行（对换 i，j两行，记作 ri ↔ rj）； </p>
+<p>2.以数 k≠0 乘某一行中的所有元（第i行乘 k，记作 $r_i \cdot k $）</p>
+<p>3.把某一行所有元的 k 倍加到另一行对应的元上去（第j 行的 k 倍加到 第i行上，记作 $r_i+kr_j$）</p>
+<p>把定义中的“行”换成“列”，即得矩阵的初等列变换的定义（所用记号是把 “r”换成“c”）. 矩阵的初等行变换与初等列变换，统称初等变换. </p>
+<p>以上三种初等变换都是<strong>可逆</strong>的，且其逆变换是同以类型的初等变换。</p>
+<p>如果矩阵A经有限次初等变换变为矩阵B，就称矩阵A与B<strong>等价</strong>，记为A~B 且行列都等价，具有以下性质</p>
+<blockquote>
+<p>反身性 A ～A； </p>
+<p>对称性 若 A～B，则 B～A； </p>
+<p>传递性 若 A ～B，B～C，则 A ～C.</p>
+</blockquote>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116134917307.png" alt="image-20220116134917307" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116134930367.png" alt="image-20220116134930367" style="zoom:80%;"></p>
+<p>令$x_3=c$</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116135028237.png" alt="image-20220116135028237" style="zoom:80%;"></p>
+<h4 id="行阶梯型矩阵"><a href="#行阶梯型矩阵" class="headerlink" title="行阶梯型矩阵"></a>行阶梯型矩阵</h4><p>非零矩阵若满足</p>
+<p> （i）非零行在零行的上面；</p>
+<p> （ii）非零行的首非 零元所在列在上一行（如果存在的话）的首非零元所在列的右面，则称此矩阵为 行阶梯形矩阵；</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116135510869.png" alt="image-20220116135510869" style="zoom:80%;"></p>
+<p>进一步，若 A 是行阶梯形矩阵，并且还满足：</p>
+<p>（i）非零行的<strong>首非零元为 1；</strong></p>
+<p>（ii）<strong>首非零元所在的列的其他元均为 0</strong>，则称 A 为行最简形矩阵. </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116135523984.png" alt="image-20220116135523984" style="zoom:80%;"></p>
+<p>一个矩阵的行最简形矩阵是唯一确定的，对其再进行变换可得到 <strong>标准形矩阵</strong>（左上角是一个单位阵，其余元素全为0）</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116135739693.png" alt="image-20220116135739693" style="zoom:80%;"></p>
+<h4 id="初等变换性质"><a href="#初等变换性质" class="headerlink" title="初等变换性质"></a>初等变换性质</h4><p>初等矩阵：单位矩阵经过一次初等变换得到的矩阵</p>
+<p>性质 1 设 A 是一个 <strong>m×n</strong> 矩阵，对 A 施行一次初等行变换，相当于在 A 的 <strong>左边乘相应的 m 阶</strong>初等矩阵；对 A 施行一次初等列变换，相当于在 A 的<strong>右边乘相应的 n 阶</strong>初等矩阵. </p>
+<p>性质 2 方阵 A <strong>可逆的充分必要</strong>条件是存在有限个初等矩阵 $p_1.p_2.…,P_l$，使 A =$p_1.p_2.…,P_l$. </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116135950969.png" alt="image-20220116135950969" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116140924913.png" alt="image-20220116140924913" style="zoom:80%;"></p>
+<p> 推论：方阵A可逆的充要条件为A与E行等价。</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116141228827.png" alt="image-20220116141228827" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116141258785.png" alt="image-20220116141258785" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116141324885.png" alt="image-20220116141324885" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116141347178.png" alt="image-20220116141347178" style="zoom:80%;"></p>
+<h3 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h3><h4 id="矩阵子式："><a href="#矩阵子式：" class="headerlink" title="矩阵子式："></a>矩阵子式：</h4><p><strong>在 m×n 矩阵 A</strong> 中，任取 k 行与 k 列（k ≤ m，k ≤ n），位于这些行列交叉处的 $k^2$ 个元素，不改变它们在 A 中所处的位置次序而得的 <strong>k 阶行列式</strong>，称为 矩阵 A 的 <strong>k 阶子式</strong>. </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116142343636.png" alt="image-20220116142343636" style="zoom:80%;"></p>
+<h4 id="矩阵的秩："><a href="#矩阵的秩：" class="headerlink" title="矩阵的秩："></a>矩阵的秩：</h4><p>设在矩阵 A 中有一个<strong>不等于 0</strong> 的 <strong>r 阶子式</strong> D，且所有 r+1 阶子式 （如果存在的话）全等于 0，那么 D 称为矩阵 A 的<strong>最高阶非零子式</strong>，<strong>数r称为矩阵 A 的秩</strong>，记作 R（A）.</p>
+<p>规定零矩阵的秩等于 0. </p>
+<ol>
+<li>若矩阵 A 中有某个s 阶子式 不为 0，则 R（A）≥ s；若 A 中所有t阶子式全为 0，则 R（A）＜t，即</li>
+</ol>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116142929536.png" alt="image-20220116142929536" style="zoom:67%;"></p>
+<ol>
+<li><p>行列式与转置行列式相等，故$R(A)=R(A^T)$</p>
+</li>
+<li><p>对于 n 阶矩阵 A，由于 A 的 n 阶子式只有一个|A|</p>
+<p>故当|A|≠0 时 R（A）= n</p>
+<p>当|A|= 0 时 R（A）＜n.</p>
+<p>可见<strong>可逆矩阵的秩等于矩阵的阶数</strong>，<strong>不可逆矩阵的秩小于矩阵的阶数</strong></p>
+</li>
+</ol>
+<p>可逆矩阵又称满秩矩阵，不可逆矩阵又称降秩矩阵</p>
+<p>由于初等变换不改变矩阵的秩</p>
+<ol>
+<li><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116143729052.png" alt="image-20220116143729052" style="zoom:80%;"></li>
+</ol>
+<p>推论：若可逆矩阵 P、Q 使 <strong>PA Q = B</strong>，则 <strong>R（A）= R（B）.</strong> </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116144315396.png" alt="image-20220116144315396" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116144341079.png" alt="image-20220116144341079" style="zoom:80%;"></p>
+<h5 id="性质归纳："><a href="#性质归纳：" class="headerlink" title="性质归纳："></a>性质归纳：</h5><ol>
+<li><p>$0 \leq R(A_{mn})\leq min (m,n)$</p>
+</li>
+<li><p>$R(A^T)=R(A)$</p>
+</li>
+<li><p>若A~B,则$R(A)=R(B)$</p>
+</li>
+<li><p>若P,Q可逆，则$R(PAQ)=R(A)$</p>
+</li>
+<li><p>$max(R(A),R(B))\leq R(A,B) \leq R(A)+R(B)$</p>
+</li>
+<li><p>当5中的B=b为非零列向量时，有$R(A)\leq R(A,b)\leq R(A)+1$</p>
+</li>
+<li><p>$R(A+B)\leq R(A)+R(B)$</p>
+</li>
+<li><p>$R(AB)\leq min(R(A),R(B))$</p>
+</li>
+<li><p>若$A_{mn}B_{nl}=O$,则$R(A)+R(B)\leq n$</p>
+</li>
+</ol>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116150605397.png" alt="image-20220116150605397" style="zoom:80%;"></p>
+<p>在例9中，当C=0时，设AB=O，若A为列满秩矩阵，则B=O（称为矩阵乘法消去律）</p>
+<h3 id="线性方程组的解"><a href="#线性方程组的解" class="headerlink" title="线性方程组的解"></a>线性方程组的解</h3><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116151100047.png" alt="image-20220116151100047" style="zoom:80%;"></p>
+<p>如果有解，称为相容的；无解则称为不相容</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116151206287.png" alt="image-20220116151206287" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116151335893.png" alt="image-20220116151335893" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116151354984.png" alt="image-20220116151354984" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116151405639.png" alt="image-20220116151405639" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116151454122.png" alt="image-20220116151454122" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220116192515271.png" alt="image-20220116192515271" style="zoom:67%;"></p>
+<h2 id="向量组的线性相关性"><a href="#向量组的线性相关性" class="headerlink" title="向量组的线性相关性"></a>向量组的线性相关性</h2><h3 id="向量组及其线性组合"><a href="#向量组及其线性组合" class="headerlink" title="向量组及其线性组合"></a>向量组及其线性组合</h3><h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><p><strong>n维向量:</strong> n 个有次序的数 $a_1,a_2,,,,a_n$ 所组成的数组</p>
+<p><strong>空间</strong>：点的集合，在点空间取定坐标系后，空间中的点P(x,y,z)与3维向量$r=(x,y,z)^T$之间有一一对应的关系。</p>
+<p><strong>向量组</strong>：若干个<strong>同维数</strong>的列向量（或同维数的行向量）所组成的<strong>集合</strong>。</p>
+<p>一个含有有限个向量的向量组可以构成一个矩阵</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117125942278.png" alt="image-20220117125942278" style="zoom:80%;"></p>
+<p><strong>线性组合</strong>：给定向量组A：$a_1,a_2,…,a_m$,对于任何一组实数$k_1,k_2,…，k_m$，表达式$k_1a_1+k_2a_2+…+k_ma_m$称为<strong>向量组A的一个线性组合</strong>，实数k称为这个线性组合的系数。</p>
+<p>如果存在向量b,能用向量组A的某个线性组合表示，则向量b是向量组A的线性组合。（废话</p>
+<p>如果向量组B中的<strong>每一个向量</strong>都能由<strong>向量组A线性表示</strong>，则称向量组B能由向量组A线性表示，存在矩阵$K _{ml}$,使得</p>
+<p>$(b_1,b_2…b_l)=(a_1,…,a_m)K$</p>
+<p>即矩阵方程AX=B有解。</p>
+<p><strong>向量组等价：</strong>若向量组 A 与向量组 B <strong>能相互线性表示</strong>，</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117133607274.png" alt="image-20220117133607274" style="zoom:80%;"> </p>
+<h4 id="定理："><a href="#定理：" class="headerlink" title="定理："></a>定理：</h4><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117130759558.png" alt="image-20220117130759558" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117134235827.png" alt="image-20220117134235827" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117135125115.png" alt="image-20220117135125115" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117134756328.png" alt="image-20220117134756328" style="zoom:80%;"></p>
+<h3 id="向量组的线性相关性-1"><a href="#向量组的线性相关性-1" class="headerlink" title="向量组的线性相关性"></a><a target="_blank" rel="noopener" href="http://www2.edu-edu.com.cn/lesson_crs78/self/j_4184/soft/ch0302.html">向量组的线性相关性</a></h3><p><strong>线性相关：</strong>存在<strong>不全为0</strong>的数$k_1,k_2,…,k_m$，使</p>
+<p>$k_1a_1+k_2a_2+…+k_ma_m=0$，</p>
+<p>对于齐次线性方程组：若向量组A线性相关</p>
+<p>$x_1a_1+x_2a_2+…+x_ma_m=0$，</p>
+<blockquote>
+<p>若m=2; 线性相关的充要条件是分量对应成比例，几何意义为两向量共线，</p>
+<p>m=3; 线性相关的几何意义为三向量共面。</p>
+</blockquote>
+<p>若向量组A 线性相关，也就是在向量组 A 中<strong>至少有一个</strong> </p>
+<p><strong>向量能由其余 m -1 个向量线性表示</strong>，则有</p>
+<p>$\lambda _1a_1+…+\lambda_{m-1}a_{m-1}+(-1)a_m=0$</p>
+<p>方程组 Ax = b 线性相关的充分必要条件是矩阵 </p>
+<p>B =（A，b）的行向量组线性相关。</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117140650292.png" alt="image-20220117140650292" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117140925675.png" alt="image-20220117140925675" style="zoom:80%;"></p>
+<p>向量组线性相关：<strong>方程组</strong>$x_1a_1+x_2a_2+…+x_ma_m=0$有非零解，且任意一个非零解就是一组相关系数。</p>
+<p>向量组线性无关：<strong>齐次方程组</strong>$x_1a_1+x_2a_2+…+x_ma_m=0$仅有零解</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117140751814.png" alt="image-20220117140751814" style="zoom:80%;"></p>
+<h3 id="向量组的秩"><a href="#向量组的秩" class="headerlink" title="向量组的秩"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9/11070598">向量组的秩</a></h3><p>设有向量组 A，如果在 A 中能选出 r 个 向量 </p>
+<p>$a_1,a_2,…,a_r$ 满足 </p>
+<p>向量组  $A_0:a_1,a_2,…,a_r$ <strong>线性无关；</strong> </p>
+<p>向量组 A 中任意<strong>r+1 个</strong>向量（如果 A 中有r+1 个向量的话）都<strong>线性相关</strong>， </p>
+<p>那么称向量组$A_0$是向量组A的一个<strong>最大线性无关向量组</strong>（简称量大无关组）， </p>
+<p><strong>最大无关组</strong>所含<strong>向量个数r</strong>称为<strong>向量组 A 的秩</strong>，记作 $R_A$ </p>
+<blockquote>
+<p>只含零向量的向量组没有最大无关组，规定它的秩为 0.</p>
+<p>若向量组 A 线性无关，则 A 自身就是它的最大无关组，而其秩就等于它所含向量的个数. </p>
+<p>向量组A和它自己的最大无关组$A_0$是等价的</p>
+</blockquote>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142126502.png" alt="image-20220117142126502" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142459131.png" alt="image-20220117142459131" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142751771.png" alt="image-20220117142751771" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142813543.png" alt="image-20220117142813543" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142357813.png" alt="image-20220117142357813" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142642922.png" alt="image-20220117142642922" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142656958.png" alt="image-20220117142656958" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142708509.png" alt="image-20220117142708509" style="zoom:80%;"></p>
+<h3 id="线性方程组的解的结构"><a href="#线性方程组的解的结构" class="headerlink" title="线性方程组的解的结构"></a>线性方程组的解的结构</h3><h4 id="齐次线性方程组"><a href="#齐次线性方程组" class="headerlink" title="齐次线性方程组"></a>齐次线性方程组</h4><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117142948886.png" alt="image-20220117142948886" style="zoom:80%;"></p>
+<p>性质：</p>
+<p>向量方程的解相加也是解：$x=A_1,x=A_2,x=A_1+A_2$</p>
+<p>向量方程的解乘实数也是解$x=A_1,x=kA_1,(k为实数)$</p>
+<p><strong>基础解系：</strong>齐次线性方程组的解集的最大无关组，在此基础上求出通解。</p>
+<p>可以先求基础解系再求通解，也可先求后者再求前者。取决于对自由未知数的取值</p>
+<p>1.先求通解：令未知数依次等于c…</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117143745325.png" alt="image-20220117143745325" style="zoom:80%;"></p>
+<ol>
+<li><p>先求基础解系：令未知数依次取下列n-r组数</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117144003490.png" alt="image-20220117144003490" style="zoom: 67%;"></p>
+</li>
+</ol>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117144031085.png" alt="image-20220117144031085" style="zoom: 67%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117144240532.png" alt="image-20220117144240532" style="zoom:80%;"></p>
+<p>当矩阵 A 与 B 的<strong>列数相等</strong>时，要证 R（A）= R（</p>
+<p>B），只需证明齐次方程 Ax = 0 与 Bx = 0同解</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117144914961.png" alt="image-20220117144914961" style="zoom: 80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117144935342.png" alt="image-20220117144935342" style="zoom:80%;"></p>
+<h4 id="非齐次线性方程组"><a href="#非齐次线性方程组" class="headerlink" title="非齐次线性方程组"></a>非齐次线性方程组</h4><p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117145349133.png" alt="image-20220117145349133" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117145413109.png" alt="image-20220117145413109" style="zoom:80%;"></p>
+<p><strong>非齐次方程的通解=对应的齐次方程的通解+非齐次方程的一个特解</strong></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117145558791.png" alt="image-20220117145558791" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117145634508.png" alt="image-20220117145634508" style="zoom:80%;"></p>
+<h3 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h3><p><strong>向量空间</strong> ：设 V 为 <strong>n 维向量的集合</strong>，如果集合 V非空，且集合 V 对于向量的<strong>加法及数乘</strong>两种运算封闭， 则称V为向量空间</p>
+<p><strong>封闭</strong>，是指在集合 V 中可以进行向量的加法及数乘两种运算.若 a∈V，b∈V，则 a+b∈V；若 a∈V，λ∈R，则λa∈V. </p>
+<p>当n=3时，向量空间可形象地看作以坐标原点为起 </p>
+<p>点的有向线段的全体.也可看做取定坐标原点的点空间。</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117150144166.png" alt="image-20220117150144166" style="zoom:80%;"></p>
+<p> <strong>子空间：</strong>设有向量空间 $V_1$及 $V_2$，若 $V_1 \subseteq V_2 $就称 $V_1$ 是 $V_2$ 的子空间</p>
+<p>设 V 为向量空间，如果 r个向量$a_1,a_2,…,a_r$  ∈V，</p>
+<p>且满足 $a_1,a_2,…,a_r$ <strong>线性无关</strong>； V中<strong>任一向量</strong>都可由  $a_1,a_2,…,a_r$ <strong>线性表示</strong>， </p>
+<p><strong>向量空间的一个基：</strong>$a_1,a_2,…,a_r$</p>
+<p><strong>维数</strong>：r</p>
+<p><strong>r维向量空间</strong>：V</p>
+<p> 如果向量空间 V 没有基，那么 V 的维数为 0. 0 维向量空间只含一个零向 量 0.</p>
+<p><strong>若把向量空间 V看作向量组，则由最大无关组的等价定义可知，V 的基就是 向量组的最大无关组，V 的维数就是向量组的秩</strong></p>
+<p> 如果在向量空间 V 中取定一个基  $a_1,a_2,…,a_r$，那么 V 中任一向量 x 可惟一地表示为$\lambda _1a_1+…+\lambda_{r}a_{r}=x$</p>
+<p> 数组$\lambda $，称为<strong>向量x在基a…中的坐标</strong></p>
+<p>单位坐标向量组e…称为<strong>自然基</strong></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117151831333.png" alt="image-20220117151831333" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117151958635.png" alt="image-20220117151958635" style="zoom:80%;"></p>
+<hr>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117152038179.png" alt="image-20220117152038179" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220117152101694.png" alt="image-20220117152101694" style="zoom:80%;"></p>
+<h2 id="相似矩阵及二次型"><a href="#相似矩阵及二次型" class="headerlink" title="相似矩阵及二次型"></a>相似矩阵及二次型</h2><h3 id="向量的内积，长度及正交性"><a href="#向量的内积，长度及正交性" class="headerlink" title="向量的内积，长度及正交性"></a>向量的内积，长度及正交性</h3><h4 id="内积长度"><a href="#内积长度" class="headerlink" title="内积长度"></a>内积长度</h4><p><strong>内积：</strong>两个向量之间的一种运算，其结果是一个实数，记为$[x,y]$=$x_1y_1+x_2y_+…+x_ny_n$,是数量积的一种推广。</p>
+<p>[x，y] =[y，x]； </p>
+<p>[λx，y] =λ[x，y]； </p>
+<p>[x+y，z] =[x，z]+[y，z]； </p>
+<p>当 x =0 时，[x，x] =0；当 x≠0时，[x，x]＞0. </p>
+<p>$[x,y]^2\leq[x,x][y,y]$（施瓦茨不等式）</p>
+<p>当x和y都是列向量时，$[x,y]=x^Ty$</p>
+<p><strong>向量的长度（范数）：</strong>$||x||=\sqrt {[x,x]}=\sqrt{x_1^2+x_2^2+…+x_n^2}$</p>
+<p>非负性：当x!=0,向量的长度&gt;0,当x=0时，向量的长度=0</p>
+<p>齐次性：$||ax||=|a|\cdot||x||$</p>
+<p>当向量长度为1时，x为单位向量</p>
+<p>当x和y都不等于0时，n维向量x与y的夹角为</p>
+<p>$\theta =arccos \frac{[x,y]}{||x||||y||}$</p>
+<h4 id="正交性"><a href="#正交性" class="headerlink" title="正交性"></a>正交性</h4><p><strong>当[x,y]=0时，称向量x与向量y正交。</strong></p>
+<p><strong>正交向量组</strong>：一组两两正交的非零向量</p>
+<p>定理1：若n维向量是一组两两正交的非零向量，则n维向量<strong>线性无关</strong>。（向量组的秩等于向量个数）</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118120653470.png" alt="image-20220118120653470" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118120702368.png" alt="image-20220118120702368" style="zoom:80%;"></p>
+<p><strong>标准正交基：</strong>设n维向量$e_1,e_2…e_r$是向量空间V的一个基，如果其两两正交，且都是单位向量， 则称e…是V的一个标准正交基。</p>
+<p>V中的任一向量a都能用标准正交基表示</p>
+<p>$\lambda _1a_1+…+\lambda_{r}a_{r}=a$</p>
+<p>$\lambda _i=e_i^Ta=[a,e_i]$</p>
+<p><strong>标准正交化：</strong>设 $a_1,a_2,…,a_r$ 是向量空间V的一个基，要找一组两两正交的单位向量 $e_1,e_2…e_r$，使 $e_1,e_2…e_r$与 $a_1,a_2,…,a_r$ 等价.</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118130426010.png" alt="image-20220118130426010" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118130506612.png" alt="image-20220118130506612" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118130518166.png" alt="image-20220118130518166" style="zoom:80%;"></p>
+<p><strong>正交矩阵：</strong>N阶矩阵A满足$A^TA=E(A^{-1}=A^T)$</p>
+<p>充要条件：A的列向量都是单位向量，且两两正交</p>
+<p>n 阶正交矩阵 A 的 n 个列（行）向量构成向量空间的一个标准正交基. </p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118130840612.png" alt="image-20220118130840612" style="zoom:80%;"></p>
+<h3 id="方阵的特征值与特征向量"><a href="#方阵的特征值与特征向量" class="headerlink" title="方阵的特征值与特征向量"></a>方阵的特征值与特征向量</h3><p>设A是N阶矩阵，如果数$\lambda$和<strong>n维非零列向量x</strong>使关系式$Ax=\lambda x$成立，那么<strong>数$\lambda$​</strong>称为矩阵A的<strong>特征值</strong>，<strong>非零向量x称为A的对应于特征值λ的特征向量.</strong></p>
+<p>上述关系式也可写成$(A-\lambda E)x=0$</p>
+<p>有非零解的充要条件是系数行列式=0</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118131920154.png" alt="image-20220118131920154" style="zoom:80%;"></p>
+<p><strong>特征方程</strong>：是以λ为未知数的一元 n 次方程，称为矩阵 A 的特征方程</p>
+<p><strong>特征多项式</strong>：左端的|A -λE|是λ的 n 次多项式，记作f（λ），称为矩阵 A 的特征多项式</p>
+<p>特征值就是特征方程的解，n阶矩阵A在复数范围内有n个特征值（废话</p>
+<h4 id="特征值性质"><a href="#特征值性质" class="headerlink" title="特征值性质"></a>特征值性质</h4><p>设 n 阶矩阵 A =（$a_{ij}$）的<strong>特征值</strong>为$\lambda_1…\lambda_n$</p>
+<ol>
+<li><p>$\lambda_1+\lambda_2+…+\lambda_n=a_{11}+a_{22}+…a_{nn}$</p>
+</li>
+<li><p>$\lambda_1\lambda_2…\lambda_n=|A|$</p>
+</li>
+<li><p>A 是<strong>可逆矩阵的充要条件</strong>为它的N个特征值不全为0(|A|!=0)</p>
+</li>
+<li><p>若λ是 A 的特征值，则$\lambda^k$ 是 $A^k$ 的特征值；</p>
+<p>φ（λ）是 φ（A）的特征值（其中φ（λ）= 是λ的多项式，φ（A）= 是矩阵 A 的多项式）.</p>
+</li>
+</ol>
+<p>   <img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118132828545.png" alt="image-20220118132828545" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118132841052.png" alt="image-20220118132841052" style="zoom:80%;"></p>
+<h4 id="特征向量性质"><a href="#特征向量性质" class="headerlink" title="特征向量性质"></a>特征向量性质</h4><ol>
+<li><p>设$\lambda_1…\lambda_m$是方阵A的m个特征值，$p_1…p_m$依次是与之对应的特征向量，<strong>如果特征值$\lambda$各不相同，则特征向量P线性无关</strong></p>
+</li>
+<li><p>方阵A的两不同特征值，分别对应的线性无关的特征向量线性无关。</p>
+</li>
+</ol>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118134727166.png" alt="image-20220118134727166" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118134736180.png" alt="image-20220118134736180" style="zoom:80%;"></p>
+<h3 id="相似矩阵"><a href="#相似矩阵" class="headerlink" title="相似矩阵"></a>相似矩阵</h3><p><strong>相似矩阵</strong>：A，B都是n阶矩阵，若有可逆矩阵P，使$P^{-1}AP=B$,则<strong>B为A的相似矩阵</strong>，运算$P^{-1}AP$称为对A进行相似变换。</p>
+<p>定理1：若n阶矩阵A与B<strong>相似</strong>，则A与B的<strong>特征多项式相同，A与B的特征值也相同</strong></p>
+<p>推论：若N阶矩阵A与对角矩阵相似，则$\lambda_1…$是A的n个特征值</p>
+<p><strong>对角化</strong></p>
+<p>对 n 阶矩阵 A，寻求相似变换矩阵 P，使 $P^{-1}AP$ =Λ 为<strong>对角矩阵</strong>，这就称为把<strong>矩阵 A 对角化</strong></p>
+<p><strong><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118142453522.png" alt="image-20220118142453522"></strong></p>
+<p>定理：n 阶矩阵 A 与对角矩阵相似（即 A 能对角化）的充分必要条件是 <strong>A 有 n 个线性无关</strong>的特征向量 </p>
+<p>推论：如果n阶矩阵A的n个特征值<strong>互不相等</strong>，则A与对角矩阵相似</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118153114526.png" alt="image-20220118153114526" style="zoom:80%;"></p>
+<h3 id="对称矩阵的对角化"><a href="#对称矩阵的对角化" class="headerlink" title="对称矩阵的对角化"></a>对称矩阵的对角化</h3><p>对称矩阵的特征值和特征向量的性质</p>
+<ol>
+<li><p>对称矩阵的<strong>特征值为实数</strong>.</p>
+</li>
+<li><p>若对称矩阵的<strong>两个特征值不同</strong>，其对应的<strong>特征向量正交</strong></p>
+</li>
+</ol>
+<p><strong>定理：</strong></p>
+<p>设 A 为 n 阶对称矩阵, 则必有<strong>正交矩阵 P</strong>，使 $P^{-1}AP=P^TAP$=Λ，其中Λ 是以 A 的 <strong>n 个特征值为对角元的对角矩阵</strong></p>
+<p>推论：设 A 为 n 阶对称矩阵，λ是 A 的特征方程的 k 重根，则矩阵 A -λE 的 秩 R（A -λE）= n-k，从而对应特征值λ恰有 k 个线性无关的特征向量. （看不明白</p>
+<p>将对称矩阵A对角化的步骤：</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118153819596.png" alt="image-20220118153819596" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118153835484.png" alt="image-20220118153835484" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118153851115.png" alt="image-20220118153851115" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118153902331.png" alt="image-20220118153902331" style="zoom: 67%;"></p>
+<h3 id="二次型及其标准形"><a href="#二次型及其标准形" class="headerlink" title="二次型及其标准形"></a>二次型及其标准形</h3><p>为了研究二次曲线的几何性质，可通过变量的线性变换化简一个二次齐次多项式，使它只含有平分项，将其化为标准形</p>
+<p>$ax^2+bxy+cy^2=1—&gt;mx’^2+ny’^2=1$</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220118155128485.png" alt="image-20220118155128485" style="zoom:80%;"></p>
+<p><strong>规范型：</strong>标准形的系数只在1，-1,0中取值，并化为$f=y_1^2+…+y_p^2-y_{p+1}^2-…-y_r^2$</p>
+<p>二次型用矩阵可记作：$f=x^TAx$,   A 为对称矩阵</p>
+<p>我们把对称矩阵A叫做<strong>二次型f的矩阵</strong>，也把f叫做对称矩阵<strong>A的二次 型</strong>.对称矩阵A的秩就叫做<strong>二次型f的秩</strong></p>
+<p>若将7式视作x=Cy,则有$f=x^TAx=(Cy)^TACy=y^T(C^TAC)y$</p>
+<p><strong>合同：</strong>设A，B为n阶矩阵，若有可逆矩阵C，使$B=C^TAC$，则A，B合同</p>
+<p>矩阵变为合同矩阵，二次型的秩不变</p>
+<p>定理：<img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119093914312.png" alt="image-20220119093914312" style="zoom:80%;"></p>
+<p>推论：任给n元二次型$f(x)=x^TAx$，总有可逆变换$x=Cz$,使$f(Cz)$为规范型</p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119094236430.png" alt="image-20220119094236430" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119094254531.png" alt="image-20220119094254531" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119094334087.png" alt="image-20220119094334087" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119094353143.png" alt="image-20220119094353143" style="zoom:80%;"></p>
+<h3 id="用配方法化二次型成标准形"><a href="#用配方法化二次型成标准形" class="headerlink" title="用配方法化二次型成标准形"></a>用配方法化二次型成标准形</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/69056644">拉格朗日配方法</a></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119101855667.png" alt="image-20220119101855667" style="zoom:80%;"></p>
+<h3 id="正定二次型"><a href="#正定二次型" class="headerlink" title="正定二次型"></a>正定二次型</h3><p>二次型的标准形显然不是惟一的，只是标准形中所含项数是确定的（即是二次型的秩</p>
+<p><strong>惯性定理：</strong>设二次型$f=x^TAx$的秩为r，且有两个可逆变换$x=Cy 及x=Pz$使对应多项式的系数中<strong>正数的个数相等</strong>。</p>
+<p>正惯性指数：二次型的标准形中<strong>正系数的个数</strong></p>
+<p>设二次 型$f(x)=x^TAx$，如果对任何 x≠0，都有 f（x）＞0 显然 f（0）= 0），则称f为<strong>正定二次型，</strong>并称对称矩阵 <strong>A 是正定的；</strong></p>
+<p>如果对任何 x≠0都有f（x）＜0，则称f为<strong>负定二次型，</strong>并称对称矩阵 A 是<strong>负定</strong>的. </p>
+<p>定理：</p>
+<ol>
+<li><p>n元二次型为正定的充要条件为：它的<strong>标准形的n个系数全为正</strong>，即它的<strong>规范形的 n 个系数全为</strong> 1，亦即它的<strong>正惯性指数等于 n</strong></p>
+</li>
+<li><p>对称矩阵 A 为正定的充分必要条件是：A 的特征值全为正. </p>
+</li>
+<li>对称矩阵 A 为正定的充分必要条件是：A 的<strong>各阶主子式都为正</strong></li>
+</ol>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119103120384.png" alt="image-20220119103120384" style="zoom:80%;"></p>
+<ol>
+<li>对称矩阵 A 为负定的充分必要条件是：<strong>奇数阶</strong>主子式为<strong>负</strong>，而<strong>偶数阶</strong>主子式为<strong>正</strong>，即</li>
+</ol>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119103224919.png" alt="image-20220119103224919" style="zoom: 80%;"></p>
+<p><img src="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/image-20220119103247845.png" alt="image-20220119103247845" style="zoom:80%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            微积分下复习
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/01/05/shlab%E5%AE%9E%E9%AA%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">shlab实验</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>
