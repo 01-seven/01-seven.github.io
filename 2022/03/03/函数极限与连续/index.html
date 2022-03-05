@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>函数极限与连续 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-函数极限与连续"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  函数极限与连续
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" class="article-date">
+  <time datetime="2022-03-03T00:23:49.000Z" itemprop="datePublished">2022-03-03</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">3.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">15 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="函数极限与连续"><a href="#函数极限与连续" class="headerlink" title="函数极限与连续"></a>函数极限与连续</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32871279">必读网站</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tonglin12138/article/details/103159771">必读网站</a></p>
+<h2 id="辅助知识："><a href="#辅助知识：" class="headerlink" title="辅助知识："></a>辅助知识：</h2><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125104753973.png" alt="image-20220125104753973" style="zoom:80%;"></p>
+<h3 id="因式化简"><a href="#因式化简" class="headerlink" title="因式化简"></a>因式化简</h3><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125154348017.png" alt="image-20220125154348017" style="zoom:80%;"></p>
+<h4 id="常用不等式："><a href="#常用不等式：" class="headerlink" title="常用不等式："></a>常用不等式：</h4><p>对于证明有界问题，常使用不等式，来证明函数、数列收敛于某一值</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125154902133.png" alt="image-20220125154902133" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126110433362.png" alt="image-20220126110433362" style="zoom:80%;"></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9F%AF%E8%A5%BF%E4%B8%8D%E7%AD%89%E5%BC%8F/212423">柯西不等式</a></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125164318014.png" alt="image-20220125164318014" style="zoom:80%;"></p>
+<h4 id="阶乘："><a href="#阶乘：" class="headerlink" title="阶乘："></a>阶乘：</h4><p>$n!=1\cdot 2\cdot …\cdot n,0!=1$</p>
+<p>阶乘的阶乘：$(n!)!$</p>
+<p><strong>双阶乘：</strong>正整数的双阶乘表示不超过这个正整数且与它有<strong>相同奇偶性的所有正整数</strong>乘积</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125164702122.png" alt="image-20220125164702122" style="zoom:80%;"></p>
+<p>$(2n)!!=2 \cdot 4 \cdot…(2n)=2^n \cdot n!$</p>
+<p>$(2n-1)!!=1 \cdot 3 \cdot…(2n-1) $</p>
+<h3 id="映射与集合"><a href="#映射与集合" class="headerlink" title="映射与集合"></a>映射与集合</h3><p>集合运算的基本法则：交换律，结合律，分配律  ，幂等律，吸收律</p>
+<p>满射：对于A到B的映射，若f(A)=B,则称f为A到B的满射。</p>
+<p>单射：若$\forall x_1,x_2 \in A$且$x_1$!=$x_2$，$f(x_1)!=f(x_2)$,则称$f$为A到B的单射</p>
+<p><strong>只有单射才存在逆映射</strong></p>
+<p>一一映射：若映射$f$既是单射又是满射，则为一一映射</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数的基本性质：单调性，有界性，奇偶性，周期性</p>
+<h3 id="狄利克雷-Dirichlet-函数"><a href="#狄利克雷-Dirichlet-函数" class="headerlink" title="狄利克雷(Dirichlet)函数"></a>狄利克雷(Dirichlet)函数</h3><p><em>并非每个周期函数都有最小正周期</em>。狄利克雷函数就属于这种情形。</p>
+<p>$D(x)=\begin{cases}1,x \in Q, \ 0 , x\in Q^c. \end{cases}$</p>
+<p>很容易验证这是个周期函数，任何<strong>正有理数r</strong>都是它的周期，因为<strong>不存在最小的正有理数</strong>，因此它<strong>没有最小正周期</strong>。</p>
+<h3 id="构成复合函数的条件"><a href="#构成复合函数的条件" class="headerlink" title="构成复合函数的条件"></a>构成复合函数的条件</h3><p>与复合映射一样，g和f能构成复合映射f·g的条件是：<strong>函数g的值域$R_g$必须包含于函数f的定义域$D_f$</strong></p>
+<h3 id="任何函数都可以写成奇函数-偶函数的形式吗？"><a href="#任何函数都可以写成奇函数-偶函数的形式吗？" class="headerlink" title="任何函数都可以写成奇函数+偶函数的形式吗？"></a>任何函数都可以写成奇函数+偶函数的形式吗？</h3><p><strong>答：不一定，前提是定义域关于原点对称</strong></p>
+<p>若f(x)的定义域为(-l,l)，可证明出必存在(-l,l)上的偶函数g(x)和奇函数h(x)，使得f(x)=g(x)+h(x)</p>
+<p>只需要构造：g(x)=$\frac{1}{2}$[f(x)+f(-x)] h(x)=$\frac{1}{2}$[f(x)-f(-x)]</p>
+<p>容易证明g(x)是偶函数，且f(x)是奇函数，且f(x)=g(x)+h(x)</p>
+<p>于是<strong>任何定义域关于原点对称的函数都可以写成奇函数+偶函数的形式</strong></p>
+<h3 id="初等基本函数的定义"><a href="#初等基本函数的定义" class="headerlink" title="初等基本函数的定义"></a>初等基本函数的定义</h3><p>在初等数学中已经讲过<strong>幂函数、指数函数、对数函数、三角函数、反三角函数</strong>，这五类函数称为<strong>基本初等函数</strong>。</p>
+<p>由<strong>常数和基本初等函数</strong>经过<strong>有限次四则运算和有限次的函数复合步骤</strong>所构成并<strong>可用一个式子表示</strong>的函数，称为<strong>初等函数</strong>。</p>
+<p>初等函数的定义域可以是一个区间，也可以是几个区间的并集。</p>
+<h4 id="反函数："><a href="#反函数：" class="headerlink" title="反函数："></a><strong>反函数</strong>：</h4><p>单射的逆映射，记为$f^{-1}(y)=x$</p>
+<p><strong>注意！！！反函数的定义域值域都会变换！</strong></p>
+<p>反函数于原函数关于$y=x$对称，</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126111907392.png" alt="image-20220126111907392" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126111920560.png" alt="image-20220126111920560" style="zoom:80%;"></p>
+<p>反正弦函数：$y=arc\sin x$,定义域为[-1,1],值域为$[-\frac{\Pi}{2},\frac{\Pi}{2}];$</p>
+<p>反余弦函数：$y=arc\cos x$,定义域为[-1,1],值域为$[0,\Pi];$</p>
+<p>在定义域$-1,1$中，$arcsinx+arccosx=\frac{\pi}{2}$</p>
+<p>反余切函数：$y=arc\cot x$,定义域为$[-\infty,+\infty]$,值域为$[0,\Pi];$</p>
+<p>$定义域[-\infty,+\infty]，arctanx+arccotx=\frac{\pi}{2}$</p>
+<h4 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a><strong>双曲函数</strong></h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125170657585.png" alt="image-20220125170657585" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125170734260.png" alt="image-20220125170734260" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125170845290.png" alt="image-20220125170845290" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125170857144.png" alt="image-20220125170857144" style="zoom:80%;"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48524215/article/details/120690188"><strong>反双曲函数：</strong></a></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125170931938.png" alt="image-20220125170931938" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126101605533.png" alt="image-20220126101605533" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126101728705.png" alt="image-20220126101728705" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126101626946.png" alt="image-20220126101626946" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126101738934.png" alt="image-20220126101738934" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126101642204.png" alt="image-20220126101642204" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220126101752605.png" alt="image-20220126101752605" style="zoom: 80%;"></p>
+<h4 id="周期性重要结论"><a href="#周期性重要结论" class="headerlink" title="周期性重要结论"></a>周期性重要结论</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125104146033.png" alt="image-20220125104146033" style="zoom:80%;"></p>
+<h4 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220125111914299.png" alt="image-20220125111914299" style="zoom:80%;"></p>
+<h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><h3 id="数列极限："><a href="#数列极限：" class="headerlink" title="数列极限："></a>数列极限：</h3><p>设$x_n$是一个数列，a是一个确定的常数，如果$\forall \epsilon&gt;0$,$\exists$正整数N，当n&gt;N时，总有$|x_n-a|&lt;\epsilon$,则称数列${x_n}$收敛于a,a称为数列${x_n}$的极限。</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128155542949.png" alt="image-20220128155542949" style="zoom: 67%;"></p>
+<h4 id="数列极限的性质："><a href="#数列极限的性质：" class="headerlink" title="数列极限的性质："></a>数列极限的性质：</h4><blockquote>
+<p>唯一性定理，若数列收敛，则其极限值必唯一</p>
+<p>有界性定理：若数列收敛，则其必是有界数列</p>
+<p>根据不等式 确定数列的单调情况</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128162026884.png" alt="image-20220128162026884" style="zoom:80%;"></p>
+<p>保序性定理：设$\lim\limits_{n\rightarrow+\infty} x_n=a$,$\lim\limits_{n\rightarrow+\infty} y_n=b$,且a&gt;b,则$\exists$N&gt;0, 当n&gt;N时，有$x_n$&gt;$y_n$</p>
+<p><strong>夹逼定理：</strong>对数列：$x_n,y_n,z_n$,若 $\exists$N&gt;0, 当n&gt;N时，有且$\lim\limits_{n\rightarrow+\infty} x_n=\lim\limits_{n\rightarrow+\infty} z_n=a$,则$\lim\limits_{n\rightarrow+\infty} y_n=a$</p>
+<p>对于复杂数列求和公式，优先考虑夹逼定理：其中注意变量位置来设置放缩区间</p>
+<p>（注意：不要忽略本题中的分子N，再经过n次相加后会成为$N^2$</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128160901317.png" alt="image-20220128160901317" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128160918662.png" alt="image-20220128160918662" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129164812476.png" alt="image-20220129164812476" style="zoom:67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129164840638.png" alt="image-20220129164840638" style="zoom:67%;"></p>
+<p>n趋近于正无穷时，数列x收敛于a, x的任意子列也都收敛，且<strong>以a为极限</strong> </p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128150338648.png" alt="image-20220128150338648" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128151940058.png" alt="image-20220128151940058" style="zoom: 67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128152722407.png" alt="image-20220128152722407" style="zoom:80%;"></p>
+</blockquote>
+<h4 id="证明数列极限存在："><a href="#证明数列极限存在：" class="headerlink" title="证明数列极限存在："></a>证明数列极限存在：</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220128154917428.png" alt="image-20220128154917428" style="zoom:80%;"></p>
+<h5 id="柯西收敛准则："><a href="#柯西收敛准则：" class="headerlink" title="柯西收敛准则："></a>柯西收敛准则：</h5><p>数列${x_n}$收敛的充分必要条件，$\forall \epsilon&gt;0$，$\exists$N&gt;0, 使当m,n&gt;N时，有$|x_n-x_m|&lt;\epsilon$,</p>
+<h3 id="函数极限："><a href="#函数极限：" class="headerlink" title="函数极限："></a>函数极限：</h3><p>有极限一定有界，有界不一定有极限</p>
+<ol>
+<li><p>$x\rightarrow\infty$, $\forall \epsilon&gt;0$，$\exists$X&gt;0, 当$|x|&gt;X$时，有$|f(x)-a|&lt;\epsilon$成立，则称常数a为函数当$x\rightarrow\infty$时的极限,$\lim\limits_{n\rightarrow\infty} f(x)=a$ </p>
+</li>
+<li><p>$x\rightarrow x_0$，若函数在<strong>$x_0$的某一去心邻域内</strong>有定义，<strong>存在常数A</strong>，<strong>对任意给定的正数$\varepsilon$</strong>，总<strong>存在正整数$\delta$</strong>，使$0&lt;|x-x_0|&lt;\delta$时，不等式<strong>$|f(x)-A|&lt;\varepsilon$</strong>都成立</p>
+<p>那么就称常数A是数列$f(x)$的极限，或者称数列$f(x)$<strong>收敛</strong>于A，记为$\lim\limits_{x\rightarrow x_0}f(x)=A$，或$f(x)\rightarrow A (x \rightarrow x_0)$</p>
+</li>
+</ol>
+<h4 id="函数极限的性质："><a href="#函数极限的性质：" class="headerlink" title="函数极限的性质："></a>函数极限的性质：</h4><blockquote>
+<p>若$\lim\limits_{n\rightarrow\infty} f(x)=a$，$\lim\limits_{n\rightarrow+\infty} f(x)=\lim\limits_{n\rightarrow-\infty} f(x)=a$。</p>
+<p>左右极限定理同上$\lim\limits_{x\rightarrow x_0} f(x)=a$，$\lim\limits_{x\rightarrow x_0+} f(x)=\lim\limits_{x\rightarrow x**_0-} f(x)=a$。</p>
+<p>若函数极限存在，则其极限值必唯一</p>
+<p>局部有界性：若函数极限在x趋近于x0时存在，则函数在x0的某去心邻域内有界</p>
+<p>若$\lim\limits_{n\rightarrow\infty} f(x)=a$存在，且f(x)大于等于0，则a大于等于0</p>
+<p>极限存在知识函数局部有界的充分条件，非必要条件</p>
+<p>函数的导数在优先区间有界，则原函数也有界</p>
+</blockquote>
+<p>极限不存在的典型例子：</p>
+<ol>
+<li><p>趋于$\infty$</p>
+</li>
+<li><p>左右极限不相等：$\lim\limits_{x\rightarrow\infty} a^x(a&gt;1), \lim\limits_{x\rightarrow+\infty} a^x=+\infty, x\rightarrow-\infty$时极限趋于0</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220202133402373.png" alt="image-20220202133402373" style="zoom:80%;"></p>
+<p>$\frac{1}{x-1}$的极限</p>
+</li>
+<li><p>震荡：$\sin x,\cos x $</p>
+</li>
+</ol>
+<h4 id="无穷小量与无穷大量！！："><a href="#无穷小量与无穷大量！！：" class="headerlink" title="无穷小量与无穷大量！！："></a>无穷小量与无穷大量！！：</h4><p>无穷小量是指<strong>变量在某极限过程中的变化趋势</strong>，而不是值一个变量的值的大小，也不是指一个很小的数。</p>
+<p>无穷小量与极限的关系定理：</p>
+<p>若$\lim\limits_{x\rightarrow x_0} f(x)=a$，则$f(x)=a+\alpha(x)$,且$\lim\limits_{x\rightarrow x_0} \alpha(x)=0$,</p>
+<p>无穷小量的运算性质：无穷小量自加，自乘，和有界量的乘积也是无穷小量。</p>
+<p><strong>设m,n为正整数，则</strong></p>
+<p><strong>$o(x^m)+-o(x^n)=o(x^l),l=min(m,n)$，加减法时低价吸收高价</strong></p>
+<p><strong>乘法时价数相加</strong></p>
+<p><strong>非零常数相乘不影响价数</strong></p>
+<p>无穷大量和无穷小量的关系：互为倒数。</p>
+<p>无穷大量的运算性质：</p>
+<blockquote>
+<p>在某极限过程中，两个无穷大量的和不一定是无穷大量；无穷大量的有界量的和是无穷大量。</p>
+<p>在某极限过程中的无界不一定是无穷大；但无穷大一定是无界。</p>
+<p>在某极限过程中的有限个无穷大量之积仍是一个无穷大量；无穷大量与有界量的积不一定是。</p>
+</blockquote>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130115828992.png" alt="image-20220130115828992" style="zoom:80%;"></p>
+<p>如果$\lim\limits_{n\rightarrow\infty} \frac{x_{n+1}}{x_n}&lt;1,\lim\limits_{n\rightarrow\infty}x_n=0 $</p>
+<p>无穷小量比较</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220102100945093.png" alt="image-20220102100945093" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220205165034087.png" alt="image-20220205165034087" style="zoom:80%;"></p>
+<p>！！！<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/68180868">等价无穷小替换：</a></p>
+<p><strong>注意</strong>：在使用时首先确定极限是否存在，如果其中某一部分极限不存在，则不能通过极限运算性质拆开计算</p>
+<p>注意极限的取向具有同时性，不能人为的制造先后顺序</p>
+<p>注意等价无穷小在乘除时可以使用；在加减时需判断</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220205201146465.png" alt="image-20220205201146465" style="zoom:80%;"></p>
+<script type="math/tex; mode=display">
+当x趋近于0时:\\e^x-1 \sim x；\\ln(x+1) \sim x；\\(1+x)^{\alpha}-1 \sim \alpha x\\sinx \sim x；\\arcsinx \sim x；\\tanx \sim x；\\arctanx \sim x；\\1-cosx \sim \frac{x^2}{2}；\\tanx-sinx \sim \frac{x^3}{2}；\\(1+bx)^a-1 \sim abx；\\</script><h4 id="极限存在定理及两个重要极限："><a href="#极限存在定理及两个重要极限：" class="headerlink" title="极限存在定理及两个重要极限："></a>极限存在定理及两个重要极限：</h4><h5 id="夹逼定理："><a href="#夹逼定理：" class="headerlink" title="夹逼定理："></a><strong>夹逼定理</strong>：</h5><p>$x逼近x_0$处：$g(x)\leq f(x) \leq h(x)$, 若此时$g(x)的极限=h(x)的极限=a$, 则此时$\lim\limits_{x\rightarrow x_0} f(x)=a$.</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130144157906.png" alt="image-20220130144157906" style="zoom:80%;"></p>
+<p>$x逼近\infty$: 同上</p>
+<p><strong>函数极限与数列极限的关系</strong>：$\lim\limits_{x\rightarrow x_0} f(x)=a$. 充要条件：对任意数列$x_n\in D(f)(x_n \neq x_0)$, 当$x_n\rightarrow x_0(n\rightarrow +\infty)$时，都有$\lim\limits_{n\rightarrow \infty} f(x_n)=a$, 这里a可为有限数或正无穷</p>
+<p><strong>柯西收敛准则</strong>：$\lim\limits_{x\rightarrow x_0} f(x)=a$. 充要条件：$\forall \epsilon&gt;0$，$\exists \delta$&gt;0, 当$x_1,x_2 \in D(f)且0&lt;|x_1-x_0|&lt;\delta,0&lt;|x_2-x_0|&lt;\delta$时，有$|f(x_1)-f(x_2)|&lt;\epsilon$成立</p>
+<h5 id="两个重要极限："><a href="#两个重要极限：" class="headerlink" title="两个重要极限："></a><strong>两个重要极限：</strong></h5><p>$\lim\limits_{x\rightarrow 0} \frac{sinx}{x}=1$.</p>
+<p>$\lim\limits_{x\rightarrow \infty} (1+\frac{1}{x})^x=e,    $$\lim\limits_{x\rightarrow 0} (1+x )^\frac{1}{x}=e$.</p>
+<h3 id="极限的运算！！！"><a href="#极限的运算！！！" class="headerlink" title="极限的运算！！！"></a>极限的运算！！！</h3><h4 id="1-基础运算"><a href="#1-基础运算" class="headerlink" title="1.基础运算"></a>1.基础运算</h4><p>（加减 乘除 提常数）前提是极限都存在</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129162222870.png" alt="image-20220129162222870" style="zoom: 67%;"></p>
+<h4 id="2-复合函数"><a href="#2-复合函数" class="headerlink" title="2.复合函数"></a>2.复合函数</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220102104048933.png" alt="image-20220102104048933" style="zoom:80%;"></p>
+<h4 id="3-有理式"><a href="#3-有理式" class="headerlink" title="3.有理式"></a>3.有理式</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129162254883.png" alt="image-20220129162254883" style="zoom: 80%;"></p>
+<p>方法：</p>
+<p>$\frac{0}{0}$型，因式分解，分子或分母有理化，三角恒等式使分母极限为0的因子消除。</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220204151215812.png" alt="image-20220204151215812" style="zoom:80%;"></p>
+<p>$\frac{\infty}{\infty}$，<strong>分子分母同除它们代数和中的最高阶无穷大因子。</strong></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220204151344007.png" alt="image-20220204151344007" style="zoom:80%;"></p>
+<p>$0\cdot \infty$，注意式中如果出现了x&lt;0,那么可以用t代换，或用-x同时除分子，分母</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220204151829812.png" alt="image-20220204151829812" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220204151907943.png" alt="image-20220204151907943" style="zoom:80%;"></p>
+<p>$\infty-\infty$,通分或分子有理化，化为上述两式</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220204152201951.png" alt="image-20220204152201951" style="zoom:80%;"></p>
+<p>对于指数型</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220204152249016.png" alt="image-20220204152249016" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220205194831687.png" alt="image-20220205194831687" style="zoom:80%;"></p>
+<h4 id="洛必达："><a href="#洛必达：" class="headerlink" title="洛必达："></a><strong>洛必达：</strong></h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130144620316.png" alt="image-20220130144620316" style="zoom:80%;"></p>
+<p><strong>右式存在，则左式存在；左式存在，右式不一定存在。</strong></p>
+<h4 id="泰勒公式："><a href="#泰勒公式：" class="headerlink" title="泰勒公式："></a><strong>泰勒公式：</strong></h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130145031761.png" alt="image-20220130145031761" style="zoom:80%;"></p>
+<p><strong>分式型</strong>展开为上下同阶</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130145327290.png" alt="image-20220130145327290" style="zoom:80%;"></p>
+<p><strong>相减型</strong>使用幂次最低原则：分别展开到它们的系数不相等的x的最低次幂为止</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130145654456.png" alt="image-20220130145654456" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130145709442.png" alt="image-20220130145709442" style="zoom:80%;"></p>
+<h2 id="函数的连续性和间断点"><a href="#函数的连续性和间断点" class="headerlink" title="函数的连续性和间断点"></a>函数的连续性和间断点</h2><h3 id="连续性定义"><a href="#连续性定义" class="headerlink" title="连续性定义"></a>连续性定义</h3><p>函数的连续性有两个定义：第一个大意是在邻域内y随x的变化量接近0，第二个定义则直截了当地指出：函数在<strong>该点的极限等于该点函数值</strong>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </p>
+<p>函数在某点连续的<strong>充要条件</strong>是函数在该点满足左连续和右连续</p>
+<p>f(x)在<strong>(a,b)</strong>内连续等价于f(x)在(a,b)内的每个点都连续</p>
+<p>f(x)在<strong>[a,b]</strong>内连续等价于f(x)在(a,b)内的每个点都连续且在x=a处<strong>右连续</strong>且在x=b处<strong>左连续</strong></p>
+<p>连续函数的图形是一条连续而不间断的曲线。</p>
+<h3 id="间断点定义"><a href="#间断点定义" class="headerlink" title="间断点定义"></a>间断点定义</h3><p>在某点不连续的<strong>条件</strong>（出现间断点的条件)：</p>
+<p>（1）在该点没有定义</p>
+<p>（2）在该点有定义，但极限不存在</p>
+<p>（3）在该点有定义且极限存在，但极限不等于函数值</p>
+<p>第一类间断点（左右极限都存在）</p>
+<p>​    a）<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%AF%E5%8E%BB%E9%97%B4%E6%96%AD%E7%82%B9/6367696">可去间断点</a>（左右极限相等）：可能是（1）和（3）的情况。可去间断点只需要调整或者定义该点的函数值就可以重新变为连续函数</p>
+<p>​    b）<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B7%B3%E8%B7%83%E9%97%B4%E6%96%AD%E7%82%B9">跳跃间断点</a>（左右极限不相等）：可能是（1）和（2）的情况。跳跃间断点极限一定不存在</p>
+<p>第二类间断点（左极限或右极限不存在，<strong>有一个不存在就是</strong>）</p>
+<p>​    c）<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%97%A0%E7%A9%B7%E9%97%B4%E6%96%AD%E7%82%B9/3531630">无穷间断点</a>：可能是（1）和（2）的情况</p>
+<p>​    d）<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%AF%E8%8D%A1%E9%97%B4%E6%96%AD%E7%82%B9/13001570">震荡间断点</a>：可能是（1）和（2）的情况：最特殊最重要</p>
+<h4 id="解题步骤："><a href="#解题步骤：" class="headerlink" title="解题步骤："></a>解题步骤：</h4><p>类型：已知分段函数求参数；已知函数求间断点（个数，类型）</p>
+<ol>
+<li><p>若为分段函数，求分段点左右极限，通过连续性质求参数</p>
+</li>
+<li><p>先求函数间断点，极限为0的点，一般能直接得出（注意分母为0 等特殊值）</p>
+<p>再求间断点左右极限，判断类型或个数</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220205170212853.png" alt="image-20220205170212853" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220205170451362.png" alt="image-20220205170451362" style="zoom:80%;"></p>
+</li>
+</ol>
+<h3 id="连续函数性质"><a href="#连续函数性质" class="headerlink" title="连续函数性质"></a>连续函数性质</h3><p>保号性，四则运算，反函数连续，复合函数连续</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220102095903450.png" alt="image-20220102095903450" style="zoom: 80%;"></p>
+<p>其中复合函数连续可推出$\lim\limits_{x\rightarrow x_0} f(h(x))=f(\lim\limits_{x\rightarrow x_0} h(x))$,</p>
+<h4 id="闭区间上连续函数的性质"><a href="#闭区间上连续函数的性质" class="headerlink" title="闭区间上连续函数的性质"></a>闭区间上连续函数的性质</h4><p>最值定理：如果在定义域内存在一点$x_0$，恒有$f(x_0)\geq f(x)$,则称$x_0$为最大值，最小值同理。</p>
+<p>零点存在定理：函数在定义域区间$[a,b]$内，且$f(a)\cdot f(b)&lt;0$,则在对应的开区间至少存在一点使得函数值为0。</p>
+<p>介值定理：零点存在定理的坐标平移。</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220102100019111.png" alt="image-20220102100019111" style="zoom:80%;"></p>
+<p>一致连续性定理:</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220102100721023.png" alt="image-20220102100721023" style="zoom:80%;"></p>
+<h1 id="错题"><a href="#错题" class="headerlink" title="错题"></a>错题</h1><h2 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h2><p>求双曲正弦函数的反函数</p>
+<p> <img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224120636727.png" alt="image-20220224120636727" style="zoom:67%;"></p>
+<h2 id="数列极限：-1"><a href="#数列极限：-1" class="headerlink" title="数列极限："></a>数列极限：</h2><h3 id="夹逼定理：-1"><a href="#夹逼定理：-1" class="headerlink" title="夹逼定理："></a>夹逼定理：</h3><p>常用缩放法：$n\cdot u_{min} \leq u_1+u_2+……+u_n\leq n \cdot u_{max}$</p>
+<p>$\lim\limits_{n\rightarrow +\infty}(1+2^n+3^n)^{\frac{1}{n}} $</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220223232959535.png" alt="image-20220223232959535" style="zoom:80%;"></p>
+<h3 id="已知数列有极限且不为0-，反求未知数"><a href="#已知数列有极限且不为0-，反求未知数" class="headerlink" title="已知数列有极限且不为0 ，反求未知数"></a>已知数列有极限且不为0 ，反求未知数</h3><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220130120308176.png" alt="image-20220130120308176" style="zoom:80%;"></p>
+<h3 id="利用单调有界准则"><a href="#利用单调有界准则" class="headerlink" title="利用单调有界准则;"></a>利用单调有界准则;</h3><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220223233100525.png" alt="image-20220223233100525" style="zoom: 67%;"></p>
+<h3 id="利用定积分定义"><a href="#利用定积分定义" class="headerlink" title="利用定积分定义:"></a>利用定积分定义:</h3><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220223233220309.png" alt="image-20220223233220309" style="zoom: 50%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224113605864.png" alt="image-20220224113605864" style="zoom: 50%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/download_resize_jpgfolder_name=CamScanner_Page&encrypt_id=MHhlNzgzMTQ5YQ==&sid=D4E9F1CN&file_name=H6XD67HEFbbXLLR44JR1WWWW.jpg&pixel=1024&_t=1645671590" alt="img" style="zoom:67%;"></p>
+<p>$\large \lim\limits_{n \rightarrow \infty} \sum \limits_{i=1}\limits^n\frac{i}{n^4}\sqrt{n^4-i^4}=?$</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224113821721.png" alt="image-20220224113821721" style="zoom: 67%;"></p>
+<h3 id="证明数列极限："><a href="#证明数列极限：" class="headerlink" title="证明数列极限："></a>证明数列极限：</h3><h4 id="定义法"><a href="#定义法" class="headerlink" title="定义法"></a>定义法</h4><p>用定义证明$\lim \limits_{n \rightarrow \infty}q^n=0(q为常数且|q|&lt;1)$</p>
+<p>解：对于任意正数$\varepsilon$，要使$|q^n-0|&lt;\varepsilon$成立，只要$n\ln |q|&lt;\ln \varepsilon$，</p>
+<p>即：$\large  n&gt;\frac{\ln \varepsilon}{\ln |q|}$.</p>
+<p>取$\large  N=[\frac{\ln \varepsilon}{\ln |q|}]+1$.则当$n&gt;N$时，就有$\large n&gt;\frac{\ln \varepsilon}{\ln |q|}$,进一步有$|q^n|&lt;\varepsilon$.</p>
+<p>故$\lim \limits_{n \rightarrow \infty}q^n=0(q为常数且|q|&lt;1)$</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224120809447.png" alt="image-20220224120809447" style="zoom:50%;"></p>
+<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220223233255913.png" alt="image-20220223233255913" style="zoom: 50%;"></p>
+<h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224112347867.png" alt="image-20220224112347867" style="zoom:50%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220223233545499.png" alt="image-20220223233545499" style="zoom:80%;"></p>
+<h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129171650091.png" alt="image-20220129171650091" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129171720174.png" alt="image-20220129171720174" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129171748740.png" alt="image-20220129171748740" style="zoom:80%;"></p>
+<h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129171836573.png" alt="image-20220129171836573" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129171935026.png" alt="image-20220129171935026" style="zoom:80%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220129171957106.png" alt="image-20220129171957106" style="zoom:80%;"></p>
+<h2 id="函数极限"><a href="#函数极限" class="headerlink" title="函数极限"></a>函数极限</h2><h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><p>1）<strong>化简</strong>：方法有提出极限不为0的因式、等价无穷小代换、恒等变形（拆项、合并、分子分母同除以变量的最高次幂、换元）</p>
+<p>2）<strong>判断类型</strong>：七种$\large \frac00,\frac{\infty}{\infty},0·\infty,\infty-\infty,\infty^0,0^{\infty},1^{\infty}$</p>
+<p>3）<strong>进一步计算</strong>：极限运算法则，夹逼准则，洛必达法则，泰勒公式，海涅定理</p>
+<p>注意事项：</p>
+<p>a）：见根号考虑换元</p>
+<p>b）：见根号差，用有理化</p>
+<p>c）：$\infty-\infty$型有分母，则通分，变加减法变形为乘除法；没有分母则提取公因式，或者倒代换，再通分变加减法变形为乘除法</p>
+<p>d）：$\infty^0,0^{\infty}$型一般是幂指函数的极限，用恒等变形$\large \lim u^v=e^{\lim v \lim u}$变为$\frac00,\frac{\infty}{\infty},0·\infty$型</p>
+<p>e）：$1^{\infty}$型利用：$\lim u^v=e^{\lim(u-1)v}$</p>
+<p>f）：分母中包含幂函数$x^n$,考虑倒代换</p>
+<p>g）：分子中包含”$1-$幂指函数“的形式，考虑利用$e^x-1 \sim x$</p>
+<h3 id="infty-infty-型："><a href="#infty-infty-型：" class="headerlink" title="$\infty-\infty$型："></a>$\infty-\infty$型：</h3><p>求$\large \lim \limits_{x \rightarrow 0}(\frac{e^x+xe^x}{e^x-1}-\frac1x)$</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224121038498.png" alt="image-20220224121038498" style="zoom:50%;"></p>
+<p>倒代换</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224113037163.png" alt="image-20220224113037163" style="zoom:67%;"></p>
+<h3 id="infty-0-0-infty-型："><a href="#infty-0-0-infty-型：" class="headerlink" title="$\infty^0,0^{\infty}$型："></a>$\infty^0,0^{\infty}$型：</h3><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224113418619.png" alt="image-20220224113418619" style="zoom:67%;"></p>
+<h3 id="1-infty-型"><a href="#1-infty-型" class="headerlink" title="$1^{\infty}$型"></a>$1^{\infty}$型</h3><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224115540967.png" alt="image-20220224115540967" style="zoom:50%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224115648690.png" alt="image-20220224115648690" style="zoom:67%;"></p>
+<h3 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h3><ol>
+<li>$\lim\limits_{0\rightarrow +0}xlnsin2x $</li>
+</ol>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224120319500.png" alt="image-20220224120319500" style="zoom:67%;"></p>
+<ol>
+<li>求$\large\lim \limits_{x \rightarrow 0}(\frac{a_1^x+a_2^x+···+a_n^x}{n})^{\frac1x},(a_i&gt;0)$</li>
+</ol>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224121348285.png" alt="image-20220224121348285" style="zoom:67%;"></p>
+<ol>
+<li>函数与积分：先泰勒展开再洛必达</li>
+</ol>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224121225076.png" alt="image-20220224121225076" style="zoom:67%;"></p>
+<ol>
+<li><p>$  \large\lim \limits_{x \rightarrow 0}\frac{1-\cos x·\cos 2x·\cos 3x}{x^2}$</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224183340366.png" alt="image-20220224183340366" style="zoom:67%;"></p>
+<p>当x趋向于0+时，$x-sinx\cdot cosx\cdot cos2x等价于ax^b$</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224183525236.png" alt="image-20220224183525236" style="zoom:67%;"></p>
+</li>
+</ol>
+<h4 id="搭建中间桥"><a href="#搭建中间桥" class="headerlink" title="搭建中间桥"></a>搭建中间桥</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305092501307.png" alt="image-20220305092501307" style="zoom:80%;"></p>
+<h3 id="中值定理"><a href="#中值定理" class="headerlink" title="中值定理"></a>中值定理</h3><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224114059639.png" alt="image-20220224114059639" style="zoom:67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224115410191.png" alt="image-20220224115410191" style="zoom:67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220224114135284.png" alt="image-20220224114135284" style="zoom:67%;"></p>
+<h3 id="极限与导数"><a href="#极限与导数" class="headerlink" title="极限与导数"></a>极限与导数</h3><ul>
+<li>当题设给出导数条件时，优先考虑能不能将极限化为和导数 有关的形式<br><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/download_resize_jpgfolder_name=CamScanner_Page&encrypt_id=MHhlNzgzMTQ5YQ==&sid=E7E654CN&file_name=2VWr3XR71g4E1dJ8d2MgCEXC.jpg&pixel=1024&_t=1646442826" alt="img" style="zoom:67%;"></li>
+</ul>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305091629211.png" alt="image-20220305091629211" style="zoom:67%;"></p>
+<p>与无穷小量有关</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305091731416.png" alt="image-20220305091731416" style="zoom:67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305091751829.png" alt="image-20220305091751829" style="zoom:67%;"></p>
+<h3 id="极限与微分方程"><a href="#极限与微分方程" class="headerlink" title="极限与微分方程"></a>极限与微分方程</h3><p>解得微分方程的解对应解，带回极限最简式</p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305092201262.png" alt="image-20220305092201262" style="zoom:67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305092213754.png" alt="image-20220305092213754" style="zoom:67%;"></p>
+<h3 id="极限与积分"><a href="#极限与积分" class="headerlink" title="极限与积分"></a>极限与积分</h3><p>注意积分变量的代换</p>
+<h4 id="1-1"><a href="#1-1" class="headerlink" title="1."></a>1.</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305104514707.png" alt="image-20220305104514707" style="zoom: 67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305104539736.png" alt="image-20220305104539736" style="zoom:67%;"></p>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2."></a>2.</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305110254379.png" alt="image-20220305110254379" style="zoom:67%;"></p>
+<p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305110316978.png" alt="image-20220305110316978" style="zoom:67%;">、</p>
+<h4 id="3-与无穷小相关"><a href="#3-与无穷小相关" class="headerlink" title="3.与无穷小相关"></a>3.与无穷小相关</h4><p><img src="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/image-20220305092016669.png" alt="image-20220305092016669" style="zoom:67%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/03/04/C++/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            C++
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/03/03/%E5%BE%AE%E5%88%86/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">一元微分复习</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>

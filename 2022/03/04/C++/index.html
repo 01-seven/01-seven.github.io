@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>C++ |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-C++"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  C++
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/04/C++/" class="article-date">
+  <time datetime="2022-03-04T00:23:49.000Z" itemprop="datePublished">2022-03-04</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">7 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="算数类型："><a href="#算数类型：" class="headerlink" title="算数类型："></a><strong>算数类型：</strong></h3><p>一个char大小和一个机器字节一样</p>
+<p><img src="/2022/03/04/C++/image-20220213164234463.png" alt="image-20220213164234463" style="zoom:80%;"></p>
+<p>带符号类型和无符号类型（表示大于等于0的值）</p>
+<p>字符型：char,signed char(0-255),unsigned char(-128-127),具体运行时char只使用两种类型，由编译器决定</p>
+<p><img src="/2022/03/04/C++/image-20220213164640562.png" alt="image-20220213164640562" style="zoom:80%;"></p>
+<h4 id="类型转换："><a href="#类型转换：" class="headerlink" title="类型转换："></a><strong>类型转换：</strong></h4><p><img src="/2022/03/04/C++/image-20220213164821146.png" alt="image-20220213164821146" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220213164836304.png" alt="image-20220213164836304" style="zoom:80%;"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">10</span>, b=<span class="number">-20</span>;</span><br><span class="line">    <span class="keyword">unsigned</span> x=<span class="number">10</span>, y=<span class="number">20</span>;</span><br><span class="line">  </span><br><span class="line">    std::cout &lt;&lt; a+b &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; a - b &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; x-y &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;y - x &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; a - y &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; a + x &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">- 10 30</span></span><br><span class="line"><span class="comment">4294967286 10</span></span><br><span class="line"><span class="comment">4294967286 20</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="字面值"><a href="#字面值" class="headerlink" title="字面值"></a><strong>字面值</strong></h3><h4 id="转义序列："><a href="#转义序列：" class="headerlink" title="转义序列："></a>转义序列：</h4><p>用于表示不可打印字符或者在C++语言中有特殊含义的字符</p>
+<p><img src="/2022/03/04/C++/image-20220213170410912.png" alt="image-20220213170410912" style="zoom:80%;"></p>
+<p>字符串字面值的实际长度要比内容多一，因为编译器在每个字符串的结尾处添加一个空字符(‘\0’)</p>
+<p>通过前后缀可以改变类型字面值的默认类型</p>
+<p><img src="/2022/03/04/C++/image-20220213170058624.png" alt="image-20220213170058624" style="zoom:80%;"></p>
+<h3 id="变量："><a href="#变量：" class="headerlink" title="变量："></a><strong>变量：</strong></h3><p><img src="/2022/03/04/C++/image-20220213185201752.png" alt="image-20220213185201752" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220213185222494.png" alt="image-20220213185222494" style="zoom:80%;"></p>
+<p>声明和定义的关系：变量的定义必须出现在且只能出现在一个文件中， 其他用到该变量的文件必须对其进行声明，不可重复定义。</p>
+<p><img src="/2022/03/04/C++/image-20220213185313750.png" alt="image-20220213185313750" style="zoom:80%;"></p>
+<h3 id="复合类型：引用和指针"><a href="#复合类型：引用和指针" class="headerlink" title="复合类型：引用和指针"></a><strong>复合类型：</strong>引用和指针</h3><p>左值引用：引用类型引用另外一种类型，一旦初始化完成，引用将和它的初始值对象一直绑定在一起。</p>
+<p><strong>引用并非对象，他只是为一个已经存在的对象所起的另一个名字。</strong>对于引用做的操作，实际上是对引用的对象做操作</p>
+<p><img src="/2022/03/04/C++/image-20220213185650499.png" alt="image-20220213185650499" style="zoom:80%;"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">10</span>, b=<span class="number">-20</span>;</span><br><span class="line">    <span class="keyword">int</span> &amp;c = a;</span><br><span class="line">    std::cout &lt;&lt; a &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    c = <span class="number">20</span>;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;c &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 10 10</span></span><br><span class="line"><span class="comment"> 20 20</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="指针："><a href="#指针：" class="headerlink" title="指针："></a><strong>指针：</strong></h4><p>存放某个<strong>对象</strong>的地址，不能指向引用</p>
+<p>指针本身就是一个对象，允许对指针赋值和拷贝，在指针的生命周期中可以先后指向几个不同的对象；指针无需在定义时赋初值。</p>
+<p><strong>取地址符：&amp;</strong></p>
+<p>指针类型和对象类型要相匹配。</p>
+<p><img src="/2022/03/04/C++/image-20220213192046824.png" alt="image-20220213192046824" style="zoom:80%;"></p>
+<p><strong>如果指针指向了一个对象</strong>（有效指针），则允许使用<strong>解引用符*</strong>来访问该对象</p>
+<p><img src="/2022/03/04/C++/image-20220213192325064.png" alt="image-20220213192325064" style="zoom:80%;"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">-20</span>;</span><br><span class="line">    <span class="keyword">int</span>&amp; c = a;</span><br><span class="line">    <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;a;</span><br><span class="line">    std::cout &lt;&lt; p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *p &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;a &lt;&lt; endl;</span><br><span class="line">    *p = b;</span><br><span class="line">    cout &lt;&lt; p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *p &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; b &lt;&lt; endl;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    cout &lt;&lt; p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; &quot;</span>&lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">int</span>&amp; r = *p;</span><br><span class="line">    cout &lt;&lt; r &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; &amp;r &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">004FFE1C 10 10</span></span><br><span class="line"><span class="comment">004FFE1C -20 -20</span></span><br><span class="line"><span class="comment">004FFE1C 20 -20 20</span></span><br><span class="line"><span class="comment">20 004FFE1C</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="多级指针："><a href="#多级指针：" class="headerlink" title="多级指针："></a><strong>多级指针：</strong></h4><p>int <em>*q 可以把它分为两部分看，即 int</em> 和 (<em>q)，后面 (</em>q) 中的“<em>”表示 q 是一个指针变量，前面的 int</em> 表示指针变量 q 只能存放 int* 型变量的地址。对于二级指针甚至多级指针，我们都可以把它拆成两部分。</p>
+<p>首先不管是多少级的指针变量，它都是一个指针变量，指针变量就是一个“<em>”，其余的“</em>”表示的是这个指针变量只能存放什么类型变量的地址。比如“int<strong><em>*a；”表示指针变量 a 只能存放 int</em></strong> 型变量的地址。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">-20</span>;</span><br><span class="line">    <span class="keyword">int</span>&amp; c = a;</span><br><span class="line">    <span class="keyword">int</span>* p=&amp;a ;</span><br><span class="line">    <span class="keyword">int</span>** p1 = &amp;p;</span><br><span class="line">    <span class="keyword">int</span>*** p2 = &amp;p1;</span><br><span class="line">    std::cout &lt;&lt; &amp;a &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; p1 &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *p1 &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; **p1  &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; p2 &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *p2 &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;**p2&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;***p2&lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">00CFFE2C</span></span><br><span class="line"><span class="comment">00CFFE2C 10</span></span><br><span class="line"><span class="comment">00CFFE08 00CFFE2C 10</span></span><br><span class="line"><span class="comment">00CFFDFC 00CFFE08 00CFFE2C 10</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="空指针："><a href="#空指针：" class="headerlink" title="空指针："></a><strong>空指针：</strong></h4><p><img src="/2022/03/04/C++/image-20220213200630282.png" alt="image-20220213200630282" style="zoom:80%;"></p>
+<p>赋值和指针：</p>
+<p>一旦定义了引用，就无法令其再绑定到另外的对象，之后每次使用这样引用都是访问它最初绑定的对象</p>
+<p>赋值永远改变的是等号左侧的对象</p>
+<h4 id="void-指针："><a href="#void-指针：" class="headerlink" title="void*指针："></a><strong>void*指针：</strong></h4><p>可用于存放任意对象的地址</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">-20</span>;</span><br><span class="line">    <span class="keyword">int</span>&amp; c = a;</span><br><span class="line">    <span class="keyword">int</span>* p=&amp;a;</span><br><span class="line">    *p = *p* *p;</span><br><span class="line">    std::cout &lt;&lt; p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *p &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;a &lt;&lt; endl;</span><br><span class="line"><span class="comment">/*005AF6FC 100 100*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="const限定符："><a href="#const限定符：" class="headerlink" title="const限定符："></a><strong>const限定符：</strong></h4><p>该变量值不能被改变，若想在多个文件间公用，则在前增加extern关键字。</p>
+<p>可以引用，但必须也是const引用类型，不可通过引用改变 原值。</p>
+<p>也可定义指向常量的指针，用于保存地址，但不能用于改变其所指对象的值，</p>
+<p>常量表达式：值不会改变且在编译过程中就能得到计算结果的表达式，</p>
+<p><img src="/2022/03/04/C++/image-20220213230656519.png" alt="image-20220213230656519" style="zoom:80%;"></p>
+<h3 id="类型别名："><a href="#类型别名：" class="headerlink" title="类型别名："></a><strong>类型别名：</strong></h3><p><img src="/2022/03/04/C++/image-20220213233533042.png" alt="image-20220213233533042" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220213233632894.png" alt="image-20220213233632894" style="zoom:80%;"></p>
+<p><strong>auto类型</strong>：让编译器通过计算初始值推断变量的类型。一般会忽略顶层const,同时底层const会保留下来。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">10</span>, b=<span class="number">-20</span>;</span><br><span class="line">    <span class="keyword">typedef</span> <span class="keyword">int</span> int_f;  <span class="comment">//int_f == int </span></span><br><span class="line">    int_f c = <span class="number">11</span>;</span><br><span class="line">    <span class="keyword">auto</span> item = a + b;  <span class="comment">//item == int</span></span><br><span class="line">    std::cout &lt;&lt; item &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    c = <span class="number">20</span>;</span><br><span class="line">    cout &lt;&lt; item+<span class="number">1</span> &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;c &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> i=<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">auto</span> ii = i;</span><br><span class="line">    cout &lt;&lt; ii + <span class="number">1</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> iii = i;  <span class="comment">//serve const </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">-10 11</span></span><br><span class="line"><span class="comment">-9 20</span></span><br><span class="line"><span class="comment">6 5</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><strong>decltype:</strong>选择并返回操作数的数据类型</p>
+<p><img src="/2022/03/04/C++/image-20220214133228029.png" alt="image-20220214133228029" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214133615438.png" alt="image-20220214133615438" style="zoom:80%;"></p>
+<h3 id="自定义数据结构："><a href="#自定义数据结构：" class="headerlink" title="自定义数据结构："></a>自定义数据结构：</h3><p>类以关键字<strong>struct</strong>开始，紧跟着类名和类体，类定义最后记得加分号</p>
+<p><strong>预处理器：</strong></p>
+<p>我们在编写程序时，同时包含一个头文件多次是一件常见的事情，当然同时多次包含一个头文件可能会引起不必要的错误。</p>
+<p>使得头文件安全的通用做法，是使用预处理器定义头文件保护符。头文件保护符用于避免在已经见到头文件的情况下重新处理该头文件的内容。</p>
+<p><img src="/2022/03/04/C++/image-20220214140044095.png" alt="image-20220214140044095"></p>
+<h3 id="字符串，向量，数组："><a href="#字符串，向量，数组：" class="headerlink" title="字符串，向量，数组："></a>字符串，向量，数组：</h3><p>命名空间<strong>using声明：using namespace::name</strong> </p>
+<p>通过声明命名空间，直接使用命名空间中的名字</p>
+<p><img src="/2022/03/04/C++/image-20220214141208086.png" alt="image-20220214141208086" style="zoom:80%;"></p>
+<p><strong>string对象：</strong></p>
+<p><img src="/2022/03/04/C++/image-20220214141940890.png" alt="image-20220214141940890" style="zoom:80%;"></p>
+<p>拷贝初始化：使用=初始化一个变量，编译器将等号右侧的初始值拷贝到新创建的对象中</p>
+<p>直接初始化：不使用等号，如果初始化要用到的值有多个，只能使用直接初始化</p>
+<p><img src="/2022/03/04/C++/image-20220214142237800.png" alt="image-20220214142237800" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214142345965.png" alt="image-20220214142345965" style="zoom:80%;"></p>
+<p>string比较：</p>
+<p><img src="/2022/03/04/C++/image-20220214144000536.png" alt="image-20220214144000536" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214144239644.png" alt="image-20220214144239644" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214144915287.png" alt="image-20220214144915287" style="zoom:80%;"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">string <span class="title">s</span><span class="params">(<span class="string">&quot;abcdefg&quot;</span>)</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">s1</span><span class="params">(<span class="string">&quot;abcd&quot;</span>)</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">s2</span><span class="params">(<span class="string">&quot;bcd&quot;</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> a : s)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; a &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*a</span></span><br><span class="line"><span class="comment">b</span></span><br><span class="line"><span class="comment">c</span></span><br><span class="line"><span class="comment">d</span></span><br><span class="line"><span class="comment">e</span></span><br><span class="line"><span class="comment">f</span></span><br><span class="line"><span class="comment">g</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>使用下标处理一部分字符：<br><img src="/2022/03/04/C++/image-20220214150113213.png" alt="image-20220214150113213" style="zoom:80%;"></p>
+<p>控制流：</p>
+<p><img src="/2022/03/04/C++/image-20220213163920970.png" alt="image-20220213163920970" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220213164102820.png" alt="image-20220213164102820" style="zoom:80%;"></p>
+<h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a>术语表</h2><p><img src="/2022/03/04/C++/image-20220214140203948.png" alt="image-20220214140203948" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214140219997.png" alt="image-20220214140219997" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214140234943.png" alt="image-20220214140234943" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214140257950.png" alt="image-20220214140257950" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214140312081.png" alt="image-20220214140312081" style="zoom:80%;"></p>
+<p><img src="/2022/03/04/C++/image-20220214140323146.png" alt="image-20220214140323146" style="zoom:80%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/04/C++/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/03/03/%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">函数极限与连续</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>
