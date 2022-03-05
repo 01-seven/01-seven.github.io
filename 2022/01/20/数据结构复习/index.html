@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>数据结构复习 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-数据结构复习"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  数据结构复习
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" class="article-date">
+  <time datetime="2022-01-20T01:00:49.000Z" itemprop="datePublished">2022-01-20</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94/">考研</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">9 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一种数据结构就是一类数据的表示及其相关操作。</p>
+<p>一个算法是指这个算法消耗的资源量：时间，空间等</p>
+<p>选择方式：</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220121150305605.png" alt="image-20220121150305605" style="zoom:80%;"></p>
+<p><strong>数据 (Data) ：</strong>是客观事物的符号表示，是所有能输入到计算机中并被计算机程序处理的符号 的总称。如数学计算中用到的整数和实数，文本编辑中用到的字符串，多媒体程序处理的图形、 图像、声音及动画等通过特殊编码定义后的数据。</p>
+<p><strong>类型（Type）：</strong>一组值的集合</p>
+<p><strong>数据对象 (Data Object) ：</strong>是性质相同的数据元素的集合，是数据的一个子集。例如：整数数 据对象是集合N= {O, 士1’ 士2,…}, 字母字符数据对象是集合C= {‘A’,’B’, …，’Z’,’a’,’b’, …， ‘z’}, 学生基本信息表也可以是一个数据对象。</p>
+<p><strong>数据类型（Data Type）</strong>：<strong>一个类型</strong>和定义在这个类型上的<strong>一组操作</strong>，如bool , int, 或包含多项信息的聚合类型 </p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220121163630001.png" alt="image-20220121163630001" style="zoom:80%;"></p>
+<p><strong>ADT：</strong>数据结构作为一个软件构件的实现，ADT的接口利用一个类型和对这个类型的一组操作来定义，每一个操作由它的输入输出定义。对于调用者来说，可以通过封装使内部细节不可见</p>
+<p>从某方面说：<strong>ADT=数据元素集合（数据对象）+集合中的数据元素的关系（数据逻辑结构）+针对数据元素集合的基本操作（初始化，增删查，获取属性，设置属性）</strong></p>
+<p><strong>数据结构</strong>（Data Structure）是ADT的实现，一种存储数据的方式</p>
+<p>数据结构是数据元素集合的实现，是抽象数据类型的表示实现</p>
+<p>定义一、数据元素集合（也可称数据对象）中各元素的关系。</p>
+<p>定义二、相互之间存在特定关系的数据元素集合。</p>
+<p><strong>逻辑结构：</strong>描述数据元素之间的逻辑关系有四种类型：集合结构，线性结构，树形结构，图形结构。</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220121163443105.png" alt="image-20220121163443105" style="zoom:80%;"></p>
+<p><strong>物理（存储）结构：</strong>数据逻辑结构在计算机中的存储分为四种：顺序存储结构、链式存储结构、索引结构、散列结构</p>
+<p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39385118/article/details/80835048">二者详细说明</a></p>
+<p><strong>数据结构的操作</strong>（算法）：基本操作，如初始化，插入，删除，查找</p>
+<p><strong>ADT和数据结构一同构成了类</strong>，其中对于ADT的每一个操作都由一个成员函数或方法来实现，定义数据项所需要的存储空间的变量称为“数据成员”，object是类的一个实例。</p>
+<p><strong>数据元素(Data Element)：</strong>是数据的<strong>基本单位</strong>，在计算机中通常作为一个整体进行考虑和处理。 在有些情况下，数据元素也称为元素、记录等。数据元素用于<strong>完整地描述一个对象</strong>，如前一节示 例中的一名学生记录，树中棋盘的一个格局（状态），以及图中的一个顶点等。</p>
+<p><strong>数据项 (Data Item) ：</strong>是组成数据元素的、有独立含义的、不可分割的<strong>最小单位</strong>。例如，学生 基本信息表中的学号、姓名、性别等都是数据项，一个数据项也可称为是一种类型的成员。</p>
+<p><strong>数据项</strong>有逻辑形式和物理形式两方面：</p>
+<p>ADT定义了数据类型的<strong>逻辑形式</strong>，数据结构是<strong>实现数据类型的物理形式。</strong></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220121153040765.png" alt="image-20220121153040765" style="zoom:80%;"></p>
+<h3 id="设计模式："><a href="#设计模式：" class="headerlink" title="设计模式："></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/scmagic/article/details/106916197?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164275614316780269857004%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=164275614316780269857004&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-106916197.pc_search_insert_es_download&amp;utm_term=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&amp;spm=1018.2226.3001.4187">设计模式：</a></h3><p>对描述程序设计的抽象，即对象和类的相互关系</p>
+<p>利用经验对于一些经典问题的通用模板，但是具有效率问题，适当改改。</p>
+<p>策略模式(Strategy)：封装可以互换的行为，并使用委托来决定要使用哪一个。将一大段过程中的某个可替换的子程序封装，可以通过改变不同的替换装，实现不同功能。</p>
+<p>组合模式(Composite)：客户用一致的方法处理对象集合和单个对象。将遍历的控制权交给树的节点还是树本身</p>
+<p>访问者模式（Visitor）：将需要在一组对象上都要进行的动作进行封装，只需实现一个通用方法，比如遍历</p>
+<h3 id="问题算法和程序："><a href="#问题算法和程序：" class="headerlink" title="问题算法和程序："></a>问题算法和程序：</h3><p>问题（problem）：对应一组输入，有一组相应的输出，包含对任何可行方案所需的<strong>资源限制</strong>，不能包含怎么解决问题的限制</p>
+<p>算法（algorithm)：解决问题的一种方法或一个过程，一个问题可以由多种算法解决</p>
+<p>对特定问题求解步骤的一种措施，它是指令的有限序列，其中每一条指令表示一个或多个操作。</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220121172525402.png" alt="image-20220121172525402" style="zoom:80%;"></p>
+<p>程序（program）：算法在计算机程序设计语言中的实现              </p>
+<h2 id="数学预备知识"><a href="#数学预备知识" class="headerlink" title="数学预备知识"></a>数学预备知识</h2><p><strong>集合(set)</strong>：互不相同的成员或元素构成的一个整体</p>
+<p>{3,4,5,4}和{3,4,5}是相同的</p>
+<p><strong>元包(bag</strong>):没有顺序的一组元素，但是有重复的元素。</p>
+<p>[3,4,5,4]和[3,4,5]是不同的</p>
+<p><strong>序列s</strong>equence(元组，向量）：一个具<strong>有顺序</strong>的元素组，并且可以含有重复值得元素</p>
+<p><2,3,4,4>和<3,2,4,4>是不同的</3,2,4,4></2,3,4,4></p>
+<p><strong>在集合上的关系R</strong>：由S生出的有序对组成的集合</p>
+<p>S={1,2,3} R={<1,2>,<2,1>,<2,3>,<3,2>,<3,1>,<1,3>}</1,3></3,1></3,2></2,3></2,1></1,2></p>
+<p>如果某一序列在关系R中，可使用中缀法表示$xRy$</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122151322491.png" alt="image-20220122151322491" style="zoom:80%;"></p>
+<p><strong>等价关系：</strong>如果集合S上的关系R是<strong>自反的，对称的，传递的</strong>，则R是一个等价关系。</p>
+<p>用于把一个集合划分为一些等价类，。</p>
+<p>如果两个元素相互是等价的，记为$a$</p>
+<p>取模函数定义等价关系：. For the set of integers, use the modulus function to define a binary relation such that two numbers <em>x</em> and <em>y</em> are in the relation if and only if <em>x</em> mod <em>m</em> = <em>y</em> mod <em>m</em></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122153227337.png" alt="image-20220122153227337" style="zoom:80%;"></p>
+<p><strong>偏序：</strong>如果一个二元关系是<strong>反对称的和传递的</strong>，则这个关系称为一个偏序。</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122153413977.png" alt="image-20220122153413977" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122153833581.png" alt="image-20220122153833581" style="zoom:80%;"></p>
+<p>阶乘函数$n!=1\cdot2…\cdot n,0!=1$</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122154656579.png" alt="image-20220122154656579" style="zoom:80%;"></p>
+<p>取模运算符：取模函数返回整除后的余数。n%m</p>
+<p>对数：对N个不同的编码至少需要$log_2N$位，对长度为N的数组进行二分检索需要$log_2N$次</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122155642670.png" alt="image-20220122155642670" style="zoom:80%;"></p>
+<p>级数求和：分析循环的时间开销</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122155823288.png" alt="image-20220122155823288" style="zoom:80%;"></p>
+<p>闭合形式解：用一个具有相同结果的</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220122161149744.png" alt="image-20220122161149744" style="zoom:80%;"></p>
+<p>调和级数：1到n的倒数之和$H_n$,介于$log_en-log_e{n+1}$</p>
+<p>当n增长时，级数趋向于$log_en+\gamma +\frac{1}{2n}$</p>
+<p><strong>递归：</strong>算法调用自己</p>
+<p>一个递归必须有两个部分:初始情况和递归部分</p>
+<p>初始情况只处理可以直接解决而不需要再次递归的简单输入。</p>
+<p>递归部分包含对算法的一次或多次递归调用</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123151807123.png" alt="image-20220123151807123" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123151521071.png" alt="image-20220123151521071" style="zoom:80%;"></p>
+<p><strong>数学证明方法</strong>：直接证明，反证，数学归纳</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123152001455.png" alt="image-20220123152001455" style="zoom:80%;"></p>
+<p><strong>估计:</strong></p>
+<p>确定影响问题的主要参数</p>
+<p>推导出与问题的参数有关的公式</p>
+<p>选择参数值，由该公式得出一个估计解</p>
+<h2 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h2><h3 id="术语："><a href="#术语：" class="headerlink" title="术语："></a>术语：</h3><p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123153131571.png" alt="image-20220123153131571" style="zoom:80%;"></p>
+<p><strong>问题规模：</strong>输入量的数目</p>
+<p><strong>基本操作：</strong>完成该操作所需时间与<strong>操作数的具体取值无关。</strong></p>
+<p>如整数相加，或两数比较。整数累加不是，因为取决于累加个数</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123154721805.png" alt="image-20220123154721805" style="zoom:80%;"></p>
+<p><strong>语句频度</strong>：该句重复执行的次数，一个算法的时间耗费就是该算法中所有语句频度之和</p>
+<p><strong>算法分析：</strong>对设计出的每一个具体的算法，利用数学工具，分析算法性能或效率</p>
+<p><strong>渐进分析：</strong>估算出当问题规模变大时，一种算法及实现它的程序的效率和开销。</p>
+<p><strong>算法代价</strong>：是算法的效率的度量，算法运行所需要的计算机资源的量。包括：时间代价T(n)；空间代价，与运行硬件，软件环境无关。</p>
+<p><strong>算法的增长率：</strong>当输入的值增长时，算法代价的<strong>增长速率</strong></p>
+<p>（线性，二次，指数……)</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123155138325.png" alt="image-20220123155138325" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123155148387.png" alt="image-20220123155148387" style="zoom:80%;"></p>
+<p><strong>算法优化：</strong>先优化算法，降低增长率；后调整代码</p>
+<p> <img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123155258431.png" alt="image-20220123155258431" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123155306948.png" alt="image-20220123155306948" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123155316835.png" alt="image-20220123155316835" style="zoom:80%;"></p>
+<h3 id="最佳最差和平均情况"><a href="#最佳最差和平均情况" class="headerlink" title="最佳最差和平均情况"></a>最佳最差和平均情况</h3><p>不是相同规模的所有输入的运行时间都相同</p>
+<p>顺序搜索从一个n元一维数组中找出一个给定的值k</p>
+<p><strong>最佳情况</strong>：k值就是数组里第一个值，1次比较</p>
+<p><strong>最差情况</strong>：k是最后一个值，n次比较</p>
+<p><strong>平均情况</strong>：等概率存储，n/2次比较</p>
+<p>数据分布的特点对于很多搜索算法都有很大影响，在实时系统中，比较关注最差情况，在其他情况下，通常考虑平均情况</p>
+<h3 id="增长率表示法"><a href="#增长率表示法" class="headerlink" title="增长率表示法"></a>增长率表示法</h3><p><strong>上限$O$：</strong>对于非负函数T(n),若存在两个正常数c和$n_0$,使得当$n&gt;n_0$时有$T(n)\leq cf(n)$，则称T(n)在集合$O(f(n))$中</p>
+<p>对于问题的所有输入，只要输入规模足够大，该算法<strong>总能</strong>在cf(n)步以内完成, 希望找到最小的上限使得描述更精确</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123163211645.png" alt="image-20220123163211645" style="zoom:80%;"></p>
+<p><strong>下限($\Omega$):</strong>对于非负函数T(n),若存在两个正常数c和$n_0$,使得当$n&gt;n_0$时有$T(n)\geq cg(n)$，则称T(n)在集合$\Omega(g(n))$中</p>
+<p>对于问题的所有输入，只要输入规模足够大，该算法<strong>至少</strong>在cg(n)步以内完成, 希望找到最小的上限使得描述更精确</p>
+<p><strong>$\Theta$表示法</strong>：当算法的上，下限相等时。</p>
+<p><strong>注意：</strong></p>
+<p>上限指的是<strong>增长率</strong></p>
+<p>最差情况是指在<strong>给定规模的所有可能输入</strong>中最差的输入，消耗的<strong>时间最大</strong></p>
+<p>最佳情况是指在给定规模所有输入中哪个输入运行最快</p>
+<p><strong>化简法则：传递性，忽略常数项，忽略低阶项，乘法规则</strong></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123164429124.png" alt="image-20220123164429124" style="zoom:80%;"></p>
+<h3 id="分析方法："><a href="#分析方法：" class="headerlink" title="分析方法："></a>分析方法：</h3><p>如果无法去除T(n)的准确算数表达式，可以用估算和猜测</p>
+<p>利用定义，采用归纳法，</p>
+<p>利用极限比值，估算哪个函数的增长率更快</p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123171929341.png" alt="image-20220123171929341" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123172002992.png" alt="image-20220123172002992" style="zoom:80%;"></p>
+<p><img src="/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/image-20220123172432911.png" alt="image-20220123172432911" style="zoom:80%;"></p>
+<p>对于判断语句if , switch 最差时间代价为分支语句中时间代价最大的那个</p>
+<h3 id="其他分析："><a href="#其他分析：" class="headerlink" title="其他分析："></a>其他分析：</h3><p>实证分析：运行两个程序，比较哪一个性能更好。</p>
+<p>仿真：用计算机对问题更好的建模并且运行而得到的结果。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/01/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/01/20/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%B8%8B%E5%A4%8D%E4%B9%A0/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            微积分下复习
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/01/20/%E7%BA%BF%E4%BB%A3%E5%A4%8D%E4%B9%A0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">线代复习</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>
