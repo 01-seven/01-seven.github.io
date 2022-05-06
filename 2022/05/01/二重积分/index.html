@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>多元积分 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-二重积分"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  多元积分
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/" class="article-date">
+  <time datetime="2022-05-01T00:23:49.000Z" itemprop="datePublished">2022-05-01</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/">考研数学</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">393</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="二重积分"><a href="#二重积分" class="headerlink" title="二重积分"></a>二重积分</h1><h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401092402047.png" alt="image-20220401092402047" style="zoom:67%;"></p>
+<h2 id="对称与轮换对称（常用）"><a href="#对称与轮换对称（常用）" class="headerlink" title="对称与轮换对称（常用）"></a>对称与轮换对称（常用）</h2><p>1.普通对称，关于x/y/原点对称</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401092501679.png" alt="image-20220401092501679" style="zoom: 67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401092515644.png" alt="image-20220401092515644" style="zoom:50%;"></p>
+<p>2.轮换对称：</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401092630223.png" alt="image-20220401092630223" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401092649159.png" alt="image-20220401092649159" style="zoom:67%;"></p>
+<h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><p>直角坐标</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401093256496.png" alt="image-20220401093256496" style="zoom: 50%;"></p>
+<p>极坐标</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401093325893.png" alt="image-20220401093325893" style="zoom:50%;"></p>
+<p>转换</p>
+<p>被积函数的形式，是平方或分式</p>
+<p>积分区域是圆或部分圆</p>
+<p>优先考虑极坐标</p>
+<p>$x=rcos \theta;y=rsin\theta$</p>
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><h2 id="1-判断大小"><a href="#1-判断大小" class="headerlink" title="1.判断大小"></a>1.判断大小</h2><p>此种题型主要比较$f(x)$在所给区域内的大小，需熟练掌握相关不等式知识</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401095410219.png" alt="image-20220401095410219" style="zoom: 50%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401195506204.png" alt="image-20220401195506204" style="zoom:67%;"></p>
+<h2 id="2-分区间计算"><a href="#2-分区间计算" class="headerlink" title="2.分区间计算"></a>2.分区间计算</h2><h3 id="1-max、绝对值"><a href="#1-max、绝对值" class="headerlink" title="1.max、绝对值"></a>1.max、绝对值</h3><p>题中出现max{}或绝对值符号时，一般都要分区间</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401095959333.png" alt="image-20220401095959333" style="zoom:50%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403151331094.png" alt="image-20220403151331094" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403151342861.png" alt="image-20220403151342861" style="zoom:67%;"></p>
+<h3 id="2-分段函数"><a href="#2-分段函数" class="headerlink" title="2.分段函数"></a>2.分段函数</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401101951001.png" alt="image-20220401101951001" style="zoom: 50%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401102012149.png" alt="image-20220401102012149" style="zoom:50%;"></p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401202423265.png" alt="image-20220401202423265" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401202458324.png" alt="image-20220401202458324" style="zoom:50%;"></p>
+<h2 id="3-对称"><a href="#3-对称" class="headerlink" title="3.对称"></a>3.对称</h2><h3 id="1复杂函数，轮换对称"><a href="#1复杂函数，轮换对称" class="headerlink" title="1复杂函数，轮换对称"></a>1复杂函数，轮换对称</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401100805058.png" alt="image-20220401100805058" style="zoom:50%;"></p>
+<h3 id="2-对称区间"><a href="#2-对称区间" class="headerlink" title="2.对称区间"></a>2.对称区间</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401201434606.png" alt="image-20220401201434606" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401201529577.png" alt="image-20220401201529577" style="zoom:67%;"></p>
+<h2 id="4-坐标系转换"><a href="#4-坐标系转换" class="headerlink" title="4.坐标系转换"></a>4.坐标系转换</h2><h3 id="1-theta-in-0-frac-pi-2-r-in-2cos-theta-2"><a href="#1-theta-in-0-frac-pi-2-r-in-2cos-theta-2" class="headerlink" title="1.$\theta \in[0,\frac{\pi}{2}];r \in[2cos\theta,2]$"></a>1.$\theta \in[0,\frac{\pi}{2}];r \in[2cos\theta,2]$</h3><p>画图 一定要注意积分变量所对应的积分区间</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401195610039.png" alt="image-20220401195610039" style="zoom:67%;"></p>
+<p>$2:x^2+y^2=4; 2rcos\theta&lt;r^2:2x&lt;x^2+y^2$</p>
+<h3 id="2-x-y-1-x-1-y-1"><a href="#2-x-y-1-x-1-y-1" class="headerlink" title="2.$x+y=1,x=1,y=1$"></a>2.$x+y=1,x=1,y=1$</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403145928939.png" alt="image-20220403145928939" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403145938803.png" alt="image-20220403145938803" style="zoom:67%;"></p>
+<h3 id="3-x-2-y-2-leq-x-y-1"><a href="#3-x-2-y-2-leq-x-y-1" class="headerlink" title="3.$x^2+y^2\leq x+y+1$"></a>3.$x^2+y^2\leq x+y+1$</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403150041638.png" alt="image-20220403150041638" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403150113304.png" alt="image-20220403150113304" style="zoom:67%;"></p>
+<h3 id="4-y-a-sqrt-a-2-x-2-y-x"><a href="#4-y-a-sqrt-a-2-x-2-y-x" class="headerlink" title="4.$y=-a+\sqrt{a^2-x^2};y=-x$"></a>4.$y=-a+\sqrt{a^2-x^2};y=-x$</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403151051347.png" alt="image-20220403151051347" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220403151547886.png" alt="image-20220403151547886" style="zoom:67%;"></p>
+<h2 id="5-与极限相关"><a href="#5-与极限相关" class="headerlink" title="5.与极限相关"></a>5.与极限相关</h2><p>1、写出积分区间，注意$\int _0^{2\pi} d\theta=2\pi$,其余做法使用泰勒公式和洛必达即可</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401200746160.png" alt="image-20220401200746160" style="zoom:67%;"></p>
+<p>2.题目中没有给导数相关信息，且积分区域难算，则考虑使用积分中值定理</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401202829558.png" alt="image-20220401202829558" style="zoom: 67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/download_resize_jpgfolder_name=CamScanner_Page&encrypt_id=MHhlNzgzMTQ5YQ==&sid=1F9B30CN&file_name=Va2t11S88eLULfXegBUDFXtQ.jpg&pixel=1024&_t=1648816153" alt="img" style="zoom: 67%;"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="1-双重积分解决一元积分问题"><a href="#1-双重积分解决一元积分问题" class="headerlink" title="1.双重积分解决一元积分问题"></a>1.双重积分解决一元积分问题</h3><p>设$f(x)为连续函数$，$F(t)=\int_1^t dy \int_y^t f(x)dx,求F’(t)$</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401201313636.png" alt="image-20220401201313636" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401202533479.png" alt="image-20220401202533479" style="zoom:67%;"></p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401202645894.png" alt="image-20220401202645894" style="zoom:50%;"></p>
+<h3 id="2-变次序，画图！"><a href="#2-变次序，画图！" class="headerlink" title="2.变次序，画图！"></a>2.变次序，画图！</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401201936958.png" alt="image-20220401201936958" style="zoom: 67%;"></p>
+<h3 id="3-设积分为常量"><a href="#3-设积分为常量" class="headerlink" title="3.设积分为常量"></a>3.设积分为常量</h3><p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/image-20220401202053764.png" alt="image-20220401202053764" style="zoom:67%;"></p>
+<p>1.设双重积分式子为常数k </p>
+<p>2将函数求积分</p>
+<p>3求出k</p>
+<p><img src="/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/download_resize_jpgfolder_name=CamScanner_Page&encrypt_id=MHhlNzgzMTQ5YQ==&sid=1F9B30CN&file_name=Na9PREtFdKg8R4MBrTMEQLMY.jpg&pixel=1024&_t=1648815793" alt="img" style="zoom: 50%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/05/01/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/05/03/%E5%BE%AE%E5%88%86/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            一元微分复习
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/05/01/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">多元微分</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>微分方程 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-微分方程"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  微分方程
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="article-date">
+  <time datetime="2022-05-05T00:23:49.000Z" itemprop="datePublished">2022-05-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/">考研数学</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h1><h2 id="微分方程-1"><a href="#微分方程-1" class="headerlink" title="微分方程"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99271908">微分方程</a></h2><p>根据问题所提供的情况，可以列出含有要找的<strong>函数及其导数的关系式</strong>，这样的关系式就是微分方程。<strong>找出</strong>未知函数的过程就是解微分方程。</p>
+<p>微分方程中所出现的<strong>未知函数的最高阶导数的阶数</strong>，就做<strong>微分方程的阶</strong>。</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220109233125399.png" alt="image-20220109233125399" style="zoom:80%;"></p>
+<p>把函数代入微分方程能使方程变成恒等式，这种函数叫做<strong>微分方程的解</strong>。</p>
+<p>如果微分方程的解中含有<strong>任意常数</strong>，且任意常数的个数与微分方程的阶数相同，这样的解叫做<strong>微分方程的通解</strong>。</p>
+<p>用以求出任意常数的条件叫<strong>初值条件</strong>，确定每一个任意常数之后，就得到了<strong>微分方程的特解</strong>。求特解的这样一个问题叫<strong>初值问题</strong>。</p>
+<p>微分方程的解的图形是一条曲线，叫做<strong>微分方程的积分曲线</strong>。初值问题的几何意义；求微分方程的通过点（$x_0,y_0$）的那条积分曲线</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220109233007262.png" alt="image-20220109233007262" style="zoom:80%;"></p>
+<h3 id="可分离变量的微分方程"><a href="#可分离变量的微分方程" class="headerlink" title="可分离变量的微分方程"></a>可分离变量的微分方程</h3><p>一阶微分方程：$y’=f(x,y)//P(x,y)dx+Q(x,y)dy=0$</p>
+<p><strong>可分离变量的微分方程</strong>：$g(y)dy=f(x)dx$</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220109234102366.png" alt="image-20220109234102366" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220109234135904.png" alt="image-20220109234135904" style="zoom:80%;"></p>
+<h3 id="齐次方程"><a href="#齐次方程" class="headerlink" title="齐次方程"></a>齐次方程</h3><p>关于齐次的定义：<strong>“关于函数y及其导数y’，y”，……次数相等，方程中无自由项（即那些不含y，y’，y’’的项，如x、1、x平方）”</strong></p>
+<p>如果一阶微分方程可以写成$\frac{dy}{dx}=\varphi(\frac{y}{x})$的形式，那么就称这方程为齐次方程。</p>
+<p>对于<strong>标准形式</strong>的齐次方程，通常令$u=\frac{y}{x}，y=ux$，然后化为可分离变量方程求解。</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220109234613277.png" alt="image-20220109234613277" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220109234645071.png" alt="image-20220109234645071" style="zoom:80%;"></p>
+<h3 id="非标准齐次方程"><a href="#非标准齐次方程" class="headerlink" title="非标准齐次方程"></a>非标准齐次方程</h3><p>对于<strong>非标准形式</strong>、但可以化为齐次方程的一次微分方程$\frac{dy}{dx}=f(\frac{ax+by+c}{a_1x+b_1x+c_1})$，要<strong>先将其化为齐次方程，再化简为分离变量方程。</strong></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112110731098.png" alt="image-20220112110731098" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112110743828.png" alt="image-20220112110743828" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112110829254.png" alt="image-20220112110829254" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112110846526.png" alt="image-20220112110846526" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112110856946.png" alt="image-20220112110856946" style="zoom:80%;"></p>
+<h3 id="一阶线性微分方程"><a href="#一阶线性微分方程" class="headerlink" title="一阶线性微分方程"></a>一阶线性微分方程</h3><h4 id="线性方程"><a href="#线性方程" class="headerlink" title="线性方程"></a>线性方程</h4><p>$\frac{dy}{dx}+P(x)y=Q(x)$叫做一阶线性微分方程。</p>
+<p>如果$Q(x)\equiv0$，那么被称为是齐次的，否则是非齐次的。</p>
+<p>对于齐次一阶线性微分方程$\frac{dy}{dx}+P(x)y=0$，可以分离变量，进而得到$\frac{dy}{y}=-P(x)dx$，进一步求出通解：$y=Ce^{-\int P(x)dx},(C=\pm e^{C_1})$.</p>
+<p>对于非齐次线性方程的通解，可用常数变易法来得到，用x的函数$u(x)$来替换齐次线性方程通解中的C.   </p>
+<p>得到$y=ue^{-\int P(x)dx}$,$\frac{dy}{dx}=u’e^{-\int P(x)dx}-uP(x)e^{-\int P(x)dx}.$</p>
+<p>带回$\frac{dy}{dx}+P(x)y=Q(x)$,得到$u=\int Q(x)e^{\int P(x)dx}dx+c$.</p>
+<p>可知非齐次线性方程的通解是$y=e^{-\int P(xdx)}(\int Q(x)e^{\int P(x)dx}dx+C)$</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111239712.png" alt="image-20220112111239712" style="zoom:80%;"></p>
+<h4 id="伯努利方程"><a href="#伯努利方程" class="headerlink" title="伯努利方程"></a>伯努利方程</h4><p>$\frac{dy}{dx}+P(x)y=Q(x)y^n$叫做伯努利方程，当n=0或n=1时，是线性微分方程，当$n\neq 0,1$时，它不是线性的，通过变量的代换，就可以把它化为线性的</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111358547.png" alt="image-20220112111358547" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111413368.png" alt="image-20220112111413368" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111423578.png" alt="image-20220112111423578" style="zoom:80%;"></p>
+<h3 id="可降阶的高解微分方程"><a href="#可降阶的高解微分方程" class="headerlink" title="可降阶的高解微分方程"></a>可降阶的高解微分方程</h3><p>本质在于用各种方式降阶</p>
+<h4 id="y-n-f-x-型的微分方程"><a href="#y-n-f-x-型的微分方程" class="headerlink" title="$y^{(n)}=f(x)$型的微分方程"></a>$y^{(n)}=f(x)$型的微分方程</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111631835.png" alt="image-20220112111631835" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111647040.png" alt="image-20220112111647040" style="zoom:80%;"></p>
+<h4 id="y’’-f-x-y’-型的微分方程"><a href="#y’’-f-x-y’-型的微分方程" class="headerlink" title="$y’’=f(x,y’)$型的微分方程"></a>$y’’=f(x,y’)$型的微分方程</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111759695.png" alt="image-20220112111759695" style="zoom:80%;"></p>
+<h4 id="y’’-f-y-y’-型的微分方程"><a href="#y’’-f-y-y’-型的微分方程" class="headerlink" title="$y’’=f(y,y’)$型的微分方程"></a>$y’’=f(y,y’)$型的微分方程</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111932160.png" alt="image-20220112111932160" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112111942576.png" alt="image-20220112111942576" style="zoom:80%;"></p>
+<h3 id="高阶线性微分方程"><a href="#高阶线性微分方程" class="headerlink" title="高阶线性微分方程"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuxintdrh/article/details/104736240">高阶线性微分方程</a></h3><p>二阶线性微分方程：$\frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=f(x).$</p>
+<p>当方程右端$f(x)=0$时，方程叫做齐次的，当其不等于0时，方程叫做非齐次的。</p>
+<h4 id="线性微分方程的解的结构"><a href="#线性微分方程的解的结构" class="headerlink" title="线性微分方程的解的结构"></a>线性微分方程的解的结构</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112112352496.png" alt="image-20220112112352496" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112112438712.png" alt="image-20220112112438712" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112112501627.png" alt="image-20220112112501627" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112112558229.png" alt="image-20220112112558229" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112112619899.png" alt="image-20220112112619899" style="zoom:80%;"></p>
+<h5 id="常数变易法"><a href="#常数变易法" class="headerlink" title="常数变易法"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/387631989">常数变易法</a></h5><h3 id="常系数齐次线性微分方程"><a href="#常系数齐次线性微分方程" class="headerlink" title="常系数齐次线性微分方程"></a>常系数齐次线性微分方程</h3><h4 id="二阶"><a href="#二阶" class="headerlink" title="二阶"></a>二阶</h4><p>对于二阶齐次线性微分方程：$y’’+P(x)y’+Q(x)y$=0</p>
+<p>如果$y’,y$的系数P(x),Q(x)均为常数，那么称其为二阶常系数齐次线性微分方程，如果p,q不全为常数，则称其为二阶变系数齐次线性微分方程。</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112113551949.png" alt="image-20220112113551949" style="zoom: 67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112113611811.png" alt="image-20220112113611811" style="zoom: 67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112113631461.png" alt="image-20220112113631461" style="zoom: 67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112113655724.png" alt="image-20220112113655724" style="zoom: 67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112113712710.png" alt="image-20220112113712710" style="zoom: 67%;"></p>
+<h4 id="n阶"><a href="#n阶" class="headerlink" title="n阶"></a>n阶</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112114327456.png" alt="image-20220112114327456" style="zoom: 67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112114344956.png" alt="image-20220112114344956" style="zoom:80%;"></p>
+<p>n次代数方程有n个根，而特征方程的每一个根都对应着通解中的一项，且每项中各含一个任意常数，这样就得到n阶常系数齐次线性微分方程的通解</p>
+<p>$y=C_1y_1+C_2y_2+……+C_ny_n$</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112114635498.png" alt="image-20220112114635498" style="zoom:80%;"></p>
+<h3 id="常系数非齐次线性微分方程"><a href="#常系数非齐次线性微分方程" class="headerlink" title="常系数非齐次线性微分方程"></a>常系数非齐次线性微分方程</h3><h4 id="二阶：-y’’-py’-qy-f-x"><a href="#二阶：-y’’-py’-qy-f-x" class="headerlink" title="二阶：$y’’+py’+qy=f(x)$"></a>二阶：$y’’+py’+qy=f(x)$</h4><p>在此只讨论求二阶常系数非齐次线性微分方程的一个<strong>特解</strong>$y*$的方法            </p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115058772.png" alt="image-20220112115058772" style="zoom:80%;"></p>
+<p>$f(x)=e^{\lambda x}P_m(x)型$</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220329094306717.png" alt="image-20220329094306717" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220329094333052.png" alt="image-20220329094333052" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115315025.png" alt="image-20220112115315025" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115328370.png" alt="image-20220112115328370" style="zoom:80%;"></p>
+<h5 id="f-x-e-lambda-x-P-l-x-cos-omega-x-Q-n-x-sin-omega-x-型"><a href="#f-x-e-lambda-x-P-l-x-cos-omega-x-Q-n-x-sin-omega-x-型" class="headerlink" title="$f(x)=e^{\lambda x}[P_l(x)cos \omega x+Q_n(x)sin \omega x]型$"></a>$f(x)=e^{\lambda x}[P_l(x)cos \omega x+Q_n(x)sin \omega x]型$</h5><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115417050.png" alt="image-20220112115417050" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115434339.png" alt="image-20220112115434339" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115448613.png" alt="image-20220112115448613" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115506325.png" alt="image-20220112115506325" style="zoom:80%;"></p>
+<h4 id="欧拉方程"><a href="#欧拉方程" class="headerlink" title="欧拉方程"></a>欧拉方程</h4><p>一类特殊的<strong>变系数线性微分方程</strong>，可以通过变量代换化为<strong>常</strong>系数线性微分方程。</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115643961.png" alt="image-20220112115643961" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115658185.png" alt="image-20220112115658185" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220112115713278.png" alt="image-20220112115713278" style="zoom:80%;"></p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">一阶微分方程：变量可分离型</th>
+<th>$\frac{dy}{dx}=f(x)g(y)$</th>
+<th>移项积分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">可化为变量可分离</td>
+<td>$\frac{dy}{dx}=f(ax+by+c)$</td>
+<td>令u=ax+by+c;求$\frac{du}{dx}$，积分</td>
+</tr>
+<tr>
+<td style="text-align:left">齐次型微分方程</td>
+<td>$\frac{dy}{dx}=g(\frac{y}{x})$</td>
+<td>令u=y/x;求$\frac{du}{dx}$，积分</td>
+</tr>
+<tr>
+<td style="text-align:left">一阶线性微分方程</td>
+<td>$y’+p(x)y=q(x)$</td>
+<td>$y=e^{-\int p(x)dx}[\int e^{\int p(x)dx} \cdot q(x)dx+C]$</td>
+</tr>
+<tr>
+<td style="text-align:left">可降阶的高阶微分方程</td>
+<td>$y’’=f(x,y’)$</td>
+<td>$p=y’;p’=y’’=\frac{dp}{dx}$</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td>$y’’=f(y,y’)$</td>
+<td>$p=y’;y’’=p\frac{dp}{dy}$</td>
+</tr>
+<tr>
+<td style="text-align:left">常系数齐次线性微分方程</td>
+<td>$y’’+P(x)y’+Q(x)y$=0</td>
+<td>计算特征方程的根</td>
+</tr>
+<tr>
+<td style="text-align:left">常系数非齐次</td>
+<td>$y’’+P(x)y’+Q(x)y$=f(x)</td>
+<td>判断f(x),求出一个特解，再求齐次形式的通解</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td>$f(x)=e^{\lambda x}P_m(x)型$</td>
+<td>$f(x)=e^{\lambda x}[P_l(x)cos \omega x+Q_n(x)sin \omega x]型$</td>
+</tr>
+<tr>
+<td style="text-align:left">y*</td>
+<td>$x^kR_m(x)e^{\lambda x}$</td>
+<td>$x^ke^{\lambda x}[P_l(x)cos \omega x+Q_n(x)sin \omega x]型$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403152332948.png" alt="image-20220403152332948" style="zoom: 80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/download_resize_jpgfolder_name=CamScanner_Page&amp;encrypt_id=MHhlNzgzMTQ5YQ==&amp;sid=E2D748CN&amp;file_name=RP1DRWE1eUP48KPV3YVH5tMF.jpg&amp;pixel=1024&amp;_t=1648969983" alt="img"></p>
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><h2 id="一阶线性微分方程："><a href="#一阶线性微分方程：" class="headerlink" title="一阶线性微分方程："></a>一阶线性微分方程：</h2><h3 id="变dy为其他形式："><a href="#变dy为其他形式：" class="headerlink" title="变dy为其他形式："></a>变dy为其他形式：</h3><h4 id="1-变-y’为-e-y-’"><a href="#1-变-y’为-e-y-’" class="headerlink" title="1.变$y’为(e^{y})’$"></a>1.变$y’为(e^{y})’$</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403155506165.png" alt="image-20220403155506165" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403155529513.png" alt="image-20220403155529513" style="zoom:67%;"></p>
+<h4 id="2-变-y’为x’"><a href="#2-变-y’为x’" class="headerlink" title="2.变$y’为x’$"></a>2.变$y’为x’$</h4><p>$ydx+(x-3y^2)dy=0$变形为$\frac{dx}{dy}+\frac{x}{y}=3y$套公式</p>
+<h4 id="3-变量代换"><a href="#3-变量代换" class="headerlink" title="3.变量代换"></a>3.变量代换</h4><p>$xy’=y[ln(xy)-1]=0$</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/download_resize_jpgfolder_name=CamScanner_Page&encrypt_id=MHhlNzgzMTQ5YQ==&sid=E2D748CN&file_name=KNP54Nb1bHEVb04PUE11ANe8.jpg&pixel=1024&_t=1648976194" alt="img" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403171628620.png" alt="image-20220403171628620" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403171912217.png" alt="image-20220403171912217" style="zoom:67%;"></p>
+<h4 id="4-ln-x"><a href="#4-ln-x" class="headerlink" title="4.ln|x|"></a>4.ln|x|</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403171538194.png" alt="image-20220403171538194" style="zoom:80%;"></p>
+<h3 id="带有积分式子"><a href="#带有积分式子" class="headerlink" title="带有积分式子"></a>带有积分式子</h3><p><strong>一般可以通过积分式子确定一个特解</strong></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403165852558.png" alt="image-20220403165852558" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403170245529.png" alt="image-20220403170245529" style="zoom:67%;"></p>
+<h3 id="知特解求系数："><a href="#知特解求系数：" class="headerlink" title="知特解求系数："></a>知特解求系数：</h3><p>直接将特解代入方程，</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403155222156.png" alt="image-20220403155222156" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403155318475.png" alt="image-20220403155318475" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403170303096.png" alt="image-20220403170303096" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403170314983.png" alt="image-20220403170314983" style="zoom:67%;"></p>
+<h2 id="高阶线性微分方程："><a href="#高阶线性微分方程：" class="headerlink" title="高阶线性微分方程："></a>高阶线性微分方程：</h2><h3 id="知特解求方程"><a href="#知特解求方程" class="headerlink" title="知特解求方程"></a>知特解求方程</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p>已知$y1=xe^x+e^{-x}$是某二阶非齐次线性微分方程的特解，</p>
+<p>$y2=(x+1)e^x$是对应二阶齐次线性微分方程的特解，求非齐次线性微分方程</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/download_resize_jpgfolder_name=CamScanner_Page&amp;encrypt_id=MHhlNzgzMTQ5YQ==&amp;sid=E2D748CN&amp;file_name=7PF9b7V5QtbNaBD8SY6UPh1f.jpg&amp;pixel=1024&amp;_t=1648973159" alt="img"></p>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><p>二阶常系数齐次方程特解：$y1=e^{2x},y2=2e^{-x}-3e^{2x}$</p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403171412134.png" alt="image-20220403171412134" style="zoom:67%;"></p>
+<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403171441160.png" alt="image-20220403171441160" style="zoom:80%;"></p>
+<h3 id="与极限"><a href="#与极限" class="headerlink" title="与极限"></a>与极限</h3><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403155447975.png" alt="image-20220403155447975" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403155757378.png" alt="image-20220403155757378" style="zoom:67%;"></p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p><img src="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/image-20220403171727248.png" alt="image-20220403171727248" style="zoom:80%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            一元积分学
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/05/04/%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>

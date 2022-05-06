@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title> 01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-数据库实验1"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/" class="article-date">
+  <time datetime="2022-04-14T07:09:27.045Z" itemprop="datePublished">2022-04-14</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">6.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">34 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/Users/lenovo/AppData/Roaming/Typora/typora-user-images/image-20220414150717069.png" alt="image-20220414150717069"></p>
+<h1 id="具体任务"><a href="#具体任务" class="headerlink" title="具体任务"></a>具体任务</h1><h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><p>1）写出教务管理数据库中如下8张表的DDL语句， 要求标识出每张表的主键，包含的外键，明确每个字段的域定义。然后在数据库中创建出这8张表来。</p>
+<p>表1-1 department表（学院表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dno</td>
+<td>char</td>
+<td>2</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>学院编号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar</td>
+<td>20</td>
+<td>NOT NULL</td>
+<td></td>
+<td>学院名称</td>
+</tr>
+<tr>
+<td>dean</td>
+<td>char</td>
+<td>7</td>
+<td>NULL</td>
+<td></td>
+<td>院长(外键：引用教师表的主键）</td>
+</tr>
+<tr>
+<td>addr</td>
+<td>varchar</td>
+<td>40</td>
+<td>NULL</td>
+<td></td>
+<td>院系办公地址</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>varchar</td>
+<td>12</td>
+<td>NULL</td>
+<td></td>
+<td>联系电话</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p> 表1-2 teacher表（教师信息表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tno</td>
+<td>char</td>
+<td>7</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>教师工号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar</td>
+<td>8</td>
+<td>NOT NULL</td>
+<td></td>
+<td>教师姓名</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>char</td>
+<td>2</td>
+<td>NULL</td>
+<td></td>
+<td>教师性别</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>Date</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>教师出生日期</td>
+</tr>
+<tr>
+<td>rank</td>
+<td>varchar</td>
+<td>8</td>
+<td>NULL</td>
+<td></td>
+<td>教师职称</td>
+</tr>
+<tr>
+<td>salary</td>
+<td>int</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>月工资</td>
+</tr>
+<tr>
+<td>home</td>
+<td>varchar</td>
+<td>40</td>
+<td>NULL</td>
+<td></td>
+<td>教师家庭住址</td>
+</tr>
+<tr>
+<td>zipcode</td>
+<td>char</td>
+<td>6</td>
+<td>NULL</td>
+<td></td>
+<td>邮政编码</td>
+</tr>
+<tr>
+<td>tel</td>
+<td>varchar</td>
+<td>12</td>
+<td>NULL</td>
+<td></td>
+<td>联系电话</td>
+</tr>
+<tr>
+<td>email</td>
+<td>varchar</td>
+<td>32</td>
+<td>NULL</td>
+<td></td>
+<td>电子邮件</td>
+</tr>
+<tr>
+<td>dno</td>
+<td>char</td>
+<td>2</td>
+<td>NULL</td>
+<td></td>
+<td>教师所在学院编号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>表1-3 course表（课程信息表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cno</td>
+<td>char</td>
+<td>10</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>课程编号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar</td>
+<td>20</td>
+<td>NOT NULL</td>
+<td></td>
+<td>课程名称</td>
+</tr>
+<tr>
+<td>spno</td>
+<td>char</td>
+<td>2</td>
+<td>NULL</td>
+<td></td>
+<td>专业代码(外键）</td>
+</tr>
+<tr>
+<td>ctno</td>
+<td>char</td>
+<td>1</td>
+<td>NULL</td>
+<td></td>
+<td>课程类型编号（外键）</td>
+</tr>
+<tr>
+<td>experiment</td>
+<td>Smallint</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>实验时数</td>
+</tr>
+<tr>
+<td>hours</td>
+<td>Smallint</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>授课学时数</td>
+</tr>
+<tr>
+<td>semester</td>
+<td>Smallint</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>开课学期</td>
+</tr>
+<tr>
+<td>credit</td>
+<td>Smallint</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>课程学分</td>
+</tr>
+<tr>
+<td>duty_tno</td>
+<td>char</td>
+<td>7</td>
+<td>NULL</td>
+<td></td>
+<td>课程责任老师的工号</td>
+</tr>
+<tr>
+<td>dno</td>
+<td>char</td>
+<td>2</td>
+<td>NULL</td>
+<td></td>
+<td>负责开课的学院编号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>表1-4 student表（学生信息表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sno</td>
+<td>char</td>
+<td>11</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>学生学号</td>
+</tr>
+<tr>
+<td>sname</td>
+<td>Varchar</td>
+<td>8</td>
+<td>NOT NULL</td>
+<td></td>
+<td>学生姓名</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>char</td>
+<td>2</td>
+<td>NULL</td>
+<td></td>
+<td>学生性别</td>
+</tr>
+<tr>
+<td>nation</td>
+<td>Varchar</td>
+<td>20</td>
+<td>NULL</td>
+<td></td>
+<td>民族</td>
+</tr>
+<tr>
+<td>birthday</td>
+<td>date</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>学生出生日期</td>
+</tr>
+<tr>
+<td>spno</td>
+<td>char</td>
+<td>4</td>
+<td>NULL</td>
+<td></td>
+<td>专业代码（外键）</td>
+</tr>
+<tr>
+<td>classno</td>
+<td>char</td>
+<td>7</td>
+<td>NULL</td>
+<td></td>
+<td>行政班级号</td>
+</tr>
+<tr>
+<td>entime</td>
+<td>Char</td>
+<td>4</td>
+<td>NULL</td>
+<td></td>
+<td>学生入校年级</td>
+</tr>
+<tr>
+<td>home</td>
+<td>Varchar</td>
+<td>40</td>
+<td>NULL</td>
+<td></td>
+<td>学生家庭住址</td>
+</tr>
+<tr>
+<td>tel</td>
+<td>Varchar</td>
+<td>40</td>
+<td>NULL</td>
+<td></td>
+<td>学生联系电话</td>
+</tr>
+<tr>
+<td>dno</td>
+<td>char</td>
+<td>2</td>
+<td>NULL</td>
+<td></td>
+<td>学生所在院系编号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>其中学号的构成为：yyyyddsscnn。其中yyyy为入学年级，dd为所在学院编号，ss为专业代码，c为班号，nn为序号。</p>
+<p>表1-5 teach表（教师开课表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tno</td>
+<td>char</td>
+<td>7</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>教师编号（外键）</td>
+</tr>
+<tr>
+<td>cno</td>
+<td>char</td>
+<td>10</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>课程编号（外键）</td>
+</tr>
+<tr>
+<td>year_semester</td>
+<td>char</td>
+<td>6</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>学年学期</td>
+</tr>
+<tr>
+<td>classno</td>
+<td>char</td>
+<td>1</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>上课的班级号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>表1-6 enroll表（学生选课表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sno</td>
+<td>char</td>
+<td>10</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>学生学号</td>
+</tr>
+<tr>
+<td>cno</td>
+<td>char</td>
+<td>10</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>课程编号</td>
+</tr>
+<tr>
+<td>year_semester</td>
+<td>char</td>
+<td>6</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>学年学期</td>
+</tr>
+<tr>
+<td>tno</td>
+<td>char</td>
+<td>8</td>
+<td>NULL</td>
+<td></td>
+<td>教师编号（外键）</td>
+</tr>
+<tr>
+<td>classno</td>
+<td>char</td>
+<td>1</td>
+<td>NULL</td>
+<td></td>
+<td>上课的班级号</td>
+</tr>
+<tr>
+<td>score</td>
+<td>float</td>
+<td></td>
+<td>NULL</td>
+<td></td>
+<td>学生成绩</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>表1-7 speciality表（专业信息表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spno</td>
+<td>char</td>
+<td>2</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>专业代码</td>
+</tr>
+<tr>
+<td>dno</td>
+<td>char</td>
+<td>2</td>
+<td>NOT NULL</td>
+<td></td>
+<td>所属院系编号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar</td>
+<td>20</td>
+<td>NOT NULL</td>
+<td></td>
+<td>专业名称</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>表1-8 cousetype表（课程类型表）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>类 型</th>
+<th>宽 度</th>
+<th>允许空值</th>
+<th>主 键</th>
+<th>说  明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctno</td>
+<td>char</td>
+<td>1</td>
+<td>NOT NULL</td>
+<td>是</td>
+<td>类型编号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Varchar</td>
+<td>16</td>
+<td>NOT NULL</td>
+<td></td>
+<td>类型名称</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="输入数据"><a href="#输入数据" class="headerlink" title="输入数据"></a>输入数据</h2><p> 数据如下</p>
+<h3 id="department-表（-学院表）"><a href="#department-表（-学院表）" class="headerlink" title="department 表（ 学院表）"></a>department 表（ 学院表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>dno**</strong></th>
+<th><strong><em>\</em>name**</strong></th>
+<th><strong><em>\</em>d*<em>**</em></strong>*ea*<strong>**</strong>*n*<em>*</em></th>
+<th><strong><em>\</em>addr**</strong></th>
+<th><strong><em>\</em>phone**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24</td>
+<td>信息科学与工程学院</td>
+<td>2011120</td>
+<td>软件楼</td>
+<td>8305424</td>
+</tr>
+<tr>
+<td>27</td>
+<td>数学院</td>
+<td>2007004</td>
+<td>数学楼</td>
+<td>8304551</td>
+</tr>
+<tr>
+<td>28</td>
+<td>工商管理学院</td>
+<td>2009007</td>
+<td>MBA楼</td>
+<td>8304530</td>
+</tr>
+<tr>
+<td>29</td>
+<td>会计学院</td>
+<td>1995008</td>
+<td>逸夫楼</td>
+<td>8304578</td>
+</tr>
+<tr>
+<td>31</td>
+<td>政治理论学院</td>
+<td>20011024</td>
+<td>红叶楼</td>
+<td>8304517</td>
+</tr>
+<tr>
+<td>32</td>
+<td>机械学院</td>
+<td>20001021</td>
+<td>宇航楼</td>
+<td>8304534</td>
+</tr>
+<tr>
+<td>33</td>
+<td>工业设计学院</td>
+<td>19971004</td>
+<td>设计大楼</td>
+<td>8305204</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `department`(`dno`, `name`, `dean`, `addr`, `phone`) <span class="keyword">VALUES</span> (<span class="string">&#x27;24&#x27;</span>, <span class="string">&#x27;信息科学与工程学院&#x27;</span>, <span class="string">&#x27;2011120&#x27;</span>, <span class="string">&#x27;软件楼&#x27;</span>, <span class="string">&#x27;8305424&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `department`(`dno`, `name`, `dean`, `addr`, `phone`) <span class="keyword">VALUES</span> (<span class="string">&#x27;27&#x27;</span>, <span class="string">&#x27;数学院&#x27;</span>, <span class="string">&#x27;2007004&#x27;</span>, <span class="string">&#x27;数学楼&#x27;</span>, <span class="string">&#x27;8304551&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `department`(`dno`, `name`, `dean`, `addr`, `phone`) <span class="keyword">VALUES</span> (<span class="string">&#x27;28&#x27;</span>, <span class="string">&#x27;工商管理学院&#x27;</span>, <span class="string">&#x27;2009007&#x27;</span>, <span class="string">&#x27;MBA楼&#x27;</span>, <span class="string">&#x27;8304530&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `department`(`dno`, `name`, `dean`, `addr`, `phone`) <span class="keyword">VALUES</span> (<span class="string">&#x27;29&#x27;</span>, <span class="string">&#x27;会计学院&#x27;</span>, <span class="string">&#x27;1995008&#x27;</span>, <span class="string">&#x27;逸夫楼&#x27;</span>, <span class="string">&#x27;8304578&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `department`(`dno`, `name`, `dean`, `addr`, `phone`) <span class="keyword">VALUES</span> (<span class="string">&#x27;31&#x27;</span>, <span class="string">&#x27;政治理论学院&#x27;</span>, <span class="string">&#x27;20011024&#x27;</span>, <span class="string">&#x27;红叶楼&#x27;</span>, <span class="string">&#x27;8304517&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `department`(`dno`, `name`, `dean`, `addr`, `phone`) <span class="keyword">VALUES</span> (<span class="string">&#x27;32&#x27;</span>, <span class="string">&#x27;机械学院&#x27;</span>, <span class="string">&#x27;20001021&#x27;</span>, <span class="string">&#x27;宇航楼&#x27;</span>, <span class="string">&#x27;8304534&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `department`(`dno`, `name`, `dean`, `addr`, `phone`) <span class="keyword">VALUES</span> (<span class="string">&#x27;33&#x27;</span>, <span class="string">&#x27;工业设计学院&#x27;</span>, <span class="string">&#x27;19971004&#x27;</span>, <span class="string">&#x27;设计大楼&#x27;</span>, <span class="string">&#x27;8305204&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="teacher-表（-教师表）"><a href="#teacher-表（-教师表）" class="headerlink" title="teacher 表（ 教师表）"></a>teacher 表（ 教师表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>t*<em>**</em></strong>*no*<em>*</em></th>
+<th><strong><em>\</em>name**</strong></th>
+<th><strong><em>\</em>sex**</strong></th>
+<th><strong><em>\</em>birthday**</strong></th>
+<th><strong><em>\</em>rank**</strong></th>
+<th><strong><em>\</em>salary**</strong></th>
+<th><strong><em>\</em>dno**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2004124</td>
+<td>刘东妮</td>
+<td>女</td>
+<td>1985-1-9</td>
+<td>助教</td>
+<td>7200</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2011120</td>
+<td>万世平</td>
+<td>男</td>
+<td>1962-12-11</td>
+<td>教授</td>
+<td>9900</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2001009</td>
+<td>周曼玲</td>
+<td>女</td>
+<td>1972-09-09</td>
+<td>副教授</td>
+<td>8600</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2000121</td>
+<td>李平</td>
+<td>男</td>
+<td>1973-04-12</td>
+<td>助教</td>
+<td>7500</td>
+<td>24</td>
+</tr>
+<tr>
+<td>1997030</td>
+<td>刘小明</td>
+<td>女</td>
+<td>1979-03-30</td>
+<td>教授</td>
+<td>9700</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20041024</td>
+<td>朱喜</td>
+<td>男</td>
+<td>1985-1-9</td>
+<td>副教授</td>
+<td>8500</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20111104</td>
+<td>王林林</td>
+<td>女</td>
+<td>1962-12-11</td>
+<td>助教</td>
+<td>7900</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2007004</td>
+<td>张中华</td>
+<td>男</td>
+<td>1972-09-09</td>
+<td>教授</td>
+<td>9850</td>
+<td>27</td>
+</tr>
+<tr>
+<td>2009007</td>
+<td>马力</td>
+<td>女</td>
+<td>1973-04-12</td>
+<td>教授</td>
+<td>8650</td>
+<td>28</td>
+</tr>
+<tr>
+<td>1995008</td>
+<td>陈浪</td>
+<td>男</td>
+<td>1979-03-30</td>
+<td>教授</td>
+<td>7880</td>
+<td>29</td>
+</tr>
+<tr>
+<td>20011024</td>
+<td>刘亚平</td>
+<td>女</td>
+<td>1972-09-09</td>
+<td>教授</td>
+<td>10800</td>
+<td>31</td>
+</tr>
+<tr>
+<td>20001021</td>
+<td>张国荣</td>
+<td>男</td>
+<td>1973-04-12</td>
+<td>教授</td>
+<td>8950</td>
+<td>32</td>
+</tr>
+<tr>
+<td>19971004</td>
+<td>赵子龙</td>
+<td>男</td>
+<td>1979-03-30</td>
+<td>教授</td>
+<td>9650</td>
+<td>33</td>
+</tr>
+<tr>
+<td>20081003</td>
+<td>马千里</td>
+<td>男</td>
+<td>1979-03-30</td>
+<td>副教授</td>
+<td>8850</td>
+<td>24</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;2004124&#x27;</span>,<span class="string">&#x27;刘东妮&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1985-1-9&#x27;</span>,<span class="string">&#x27;助教&#x27;</span>,<span class="number">7200</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;2011120&#x27;</span>,<span class="string">&#x27;万世平&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1962-12-11&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">9900</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>); </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;2001009&#x27;</span>,<span class="string">&#x27;周曼玲&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1972-09-09&#x27;</span>,<span class="string">&#x27;副教授&#x27;</span>,<span class="number">8600</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;2000121&#x27;</span>,<span class="string">&#x27;李平&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1973-04-12&#x27;</span>,<span class="string">&#x27;助教&#x27;</span>,<span class="number">7500</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;1994030&#x27;</span>,<span class="string">&#x27;刘小明&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1979-3-30&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">9700</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;20041024&#x27;</span>,<span class="string">&#x27;朱熹&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1985-1-9&#x27;</span>,<span class="string">&#x27;副教授&#x27;</span>,<span class="number">8500</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;20111104&#x27;</span>,<span class="string">&#x27;王林林&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1962-12-11&#x27;</span>,<span class="string">&#x27;助教&#x27;</span>,<span class="number">7900</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;2007004&#x27;</span>,<span class="string">&#x27;张中华&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1972-09-09&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">9850</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;27&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;2009007&#x27;</span>,<span class="string">&#x27;马力&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1973-04-12&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">8650</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;28&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;1995008&#x27;</span>,<span class="string">&#x27;陈浪&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1979-03-30&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">7880</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;29&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;20011024&#x27;</span>,<span class="string">&#x27;刘亚平&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;1972-09-09&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">10800</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;31&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;20001021&#x27;</span>,<span class="string">&#x27;张国荣&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1973-04-12&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">8950</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;32&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;19971004&#x27;</span>,<span class="string">&#x27;赵子龙&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1979-03-30&#x27;</span>,<span class="string">&#x27;教授&#x27;</span>,<span class="number">9650</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;33&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teacher  <span class="keyword">VALUES</span>(<span class="string">&#x27;20081003&#x27;</span>,<span class="string">&#x27;马千里&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;1979-03-30&#x27;</span>,<span class="string">&#x27;副教授&#x27;</span>,<span class="number">8850</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<h3 id="student-表（学生表）"><a href="#student-表（学生表）" class="headerlink" title="student 表（学生表）"></a>student 表（学生表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>sno**</strong></th>
+<th><strong><em>\</em>sname**</strong></th>
+<th><strong><em>\</em>sex**</strong></th>
+<th><strong><em>\</em>nation**</strong></th>
+<th><strong><em>\</em>birthday**</strong></th>
+<th><strong><em>\</em>classno**</strong></th>
+<th><strong><em>\</em>dno**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20182401101</td>
+<td>李毅</td>
+<td>男</td>
+<td>汉</td>
+<td>1985-1-2</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401102</td>
+<td>厉超</td>
+<td>男</td>
+<td>苗</td>
+<td>1984-3-8</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401103</td>
+<td>梁冰龙</td>
+<td>男</td>
+<td>壮</td>
+<td>1984-7-9</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401104</td>
+<td>罗煦</td>
+<td>女</td>
+<td>维吾尔</td>
+<td>1985-10-12</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401105</td>
+<td>马晓睿</td>
+<td>男</td>
+<td>汉</td>
+<td>1983-11-1</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401106</td>
+<td>聂立业</td>
+<td>男</td>
+<td>壮</td>
+<td>1984-6-3</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401107</td>
+<td>王实</td>
+<td>男</td>
+<td>汉</td>
+<td>1984-2-11</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401108</td>
+<td>伍卉</td>
+<td>女</td>
+<td>汉</td>
+<td>1985-1-3</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401109</td>
+<td>伍琼</td>
+<td>男</td>
+<td>汉</td>
+<td>1985-12-11</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401110</td>
+<td>曾文超</td>
+<td>男</td>
+<td>汉</td>
+<td>1984-7-5</td>
+<td>软件1班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401201</td>
+<td>黄文杰</td>
+<td>男</td>
+<td>汉</td>
+<td>1984-7-5</td>
+<td>软件2班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182401202</td>
+<td>龙淼</td>
+<td>男</td>
+<td>汉</td>
+<td>1985-12-11</td>
+<td>软件2班</td>
+<td>24</td>
+</tr>
+<tr>
+<td>20182709101</td>
+<td>何晓明</td>
+<td>男</td>
+<td>汉</td>
+<td>1984-8-13</td>
+<td>营销1班</td>
+<td>27</td>
+</tr>
+<tr>
+<td>20182709102</td>
+<td>刘寅</td>
+<td>男</td>
+<td>汉</td>
+<td>1984-5-7</td>
+<td>营销1班</td>
+<td>27</td>
+</tr>
+<tr>
+<td>20182911101</td>
+<td>邢晓静</td>
+<td>女</td>
+<td>汉</td>
+<td>1984-8-13</td>
+<td>电算1班</td>
+<td>28</td>
+</tr>
+<tr>
+<td>20182911102</td>
+<td>李明伟</td>
+<td>女</td>
+<td>汉</td>
+<td>1985-3-9</td>
+<td>电算1班</td>
+<td>28</td>
+</tr>
+<tr>
+<td>20182911103</td>
+<td>童熙</td>
+<td>女</td>
+<td>汉</td>
+<td>1985-10-16</td>
+<td>电算1班</td>
+<td>28</td>
+</tr>
+<tr>
+<td>20182911104</td>
+<td>朱俊华</td>
+<td>男</td>
+<td>汉</td>
+<td>1985-12-3</td>
+<td>电算1班</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401101&#x27;</span>,<span class="string">&#x27;李毅&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1985-1-2&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401102&#x27;</span>,<span class="string">&#x27;厉超&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;苗&#x27;</span>,<span class="string">&#x27;1984-3-8&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401103&#x27;</span>,<span class="string">&#x27;梁冰龙&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;壮&#x27;</span>,<span class="string">&#x27;1984-7-9&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401104&#x27;</span>,<span class="string">&#x27;罗煦&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;维吾尔&#x27;</span>,<span class="string">&#x27;1985-10-12&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401105&#x27;</span>,<span class="string">&#x27;马晓睿&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1983-11-1&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401106&#x27;</span>,<span class="string">&#x27;聂立业&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;壮&#x27;</span>,<span class="string">&#x27;1984-6-3&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401107&#x27;</span>,<span class="string">&#x27;王实&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1984-2-11&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401108&#x27;</span>,<span class="string">&#x27;伍卉&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1985-1-3&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401109&#x27;</span>,<span class="string">&#x27;伍琼&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1985-12-11&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401110&#x27;</span>,<span class="string">&#x27;曾文超&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1984-7-5&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401201&#x27;</span>,<span class="string">&#x27;黄文杰&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1984-7-5&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件2班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401202&#x27;</span>,<span class="string">&#x27;龙淼&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1984-7-5&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;软件2班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182709101&#x27;</span>,<span class="string">&#x27;何晓明&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1984-8-13&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;营销1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;27&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182709102&#x27;</span>,<span class="string">&#x27;刘寅&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1984-5-7&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;营销1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;27&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182911101&#x27;</span>,<span class="string">&#x27;邢晓静&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1984-8-13&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;电算1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;28&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182911102&#x27;</span>,<span class="string">&#x27;李明伟&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1985-3-9&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;电算1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;28&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182911103&#x27;</span>,<span class="string">&#x27;童熙&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1985-10-16&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;电算1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;28&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student <span class="keyword">VALUES</span>(<span class="string">&#x27;20182911104&#x27;</span>,<span class="string">&#x27;朱俊华&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;汉&#x27;</span>,<span class="string">&#x27;1985-12-3&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;电算1班&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;NULL&#x27;</span>,<span class="string">&#x27;28&#x27;</span>);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="course-表（课程信息表）"><a href="#course-表（课程信息表）" class="headerlink" title="course 表（课程信息表）"></a>course 表（课程信息表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>cno**</strong></th>
+<th><strong><em>\</em>cname**</strong></th>
+<th><strong><em>\</em>spno**</strong></th>
+<th><strong><em>\</em>ctno**</strong></th>
+<th><strong><em>\</em>hours**</strong></th>
+<th><strong><em>\</em>experiment**</strong></th>
+<th><strong><em>\</em>credit**</strong></th>
+<th><strong><em>\</em>semester**</strong></th>
+<th><strong><em>\</em>duty_tno**</strong></th>
+<th><strong><em>\</em>dno**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H24030006</td>
+<td>数据结构</td>
+<td>null</td>
+<td>2</td>
+<td>64</td>
+<td>24</td>
+<td>4</td>
+<td>4</td>
+<td>2004124</td>
+<td>24</td>
+</tr>
+<tr>
+<td>H24030007</td>
+<td>计算机组成原理</td>
+<td>null</td>
+<td>2</td>
+<td>64</td>
+<td></td>
+<td>4</td>
+<td>5</td>
+<td>2011120</td>
+<td>24</td>
+</tr>
+<tr>
+<td>H24030008</td>
+<td>数据库系统</td>
+<td>null</td>
+<td>3</td>
+<td>48</td>
+<td>24</td>
+<td>3</td>
+<td>5</td>
+<td>2001009</td>
+<td>24</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p> <img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220414151819422.png" alt="image-20220414151819422"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;H24030006&#x27;</span>,<span class="string">&#x27;数据结构&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;2&#x27;</span>,<span class="number">24</span>,<span class="number">64</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="string">&#x27;2004124&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;H24030007&#x27;</span>,<span class="string">&#x27;计算机组成原理&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;2&#x27;</span>,<span class="keyword">null</span>,<span class="number">64</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="string">&#x27;2011120&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;H24030008&#x27;</span>,<span class="string">&#x27;数据库系统&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;3&#x27;</span>,<span class="number">24</span>,<span class="number">48</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="string">&#x27;2001009&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;H24030009&#x27;</span>,<span class="string">&#x27;操作系统&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;3&#x27;</span>,<span class="number">24</span>,<span class="number">48</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="string">&#x27;2000121&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;H24030010&#x27;</span>,<span class="string">&#x27;计算机网络&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;3&#x27;</span>,<span class="number">16</span>,<span class="number">48</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="string">&#x27;1997030&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;C31010001&#x27;</span>,<span class="string">&#x27;毛泽东思想&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;1&#x27;</span>,<span class="keyword">null</span>,<span class="number">32</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="keyword">null</span>,<span class="string">&#x27;31&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;C31010002&#x27;</span>,<span class="string">&#x27;邓小平理论&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;1&#x27;</span>,<span class="keyword">null</span>,<span class="number">62</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="keyword">null</span>,<span class="string">&#x27;31&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;C24020005&#x27;</span>,<span class="string">&#x27;面向对象程序设计&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;2&#x27;</span>,<span class="number">24</span>,<span class="number">32</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="string">&#x27;20111104&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;X27020012&#x27;</span>,<span class="string">&#x27;高等数学&#x27;</span>,<span class="keyword">null</span>,<span class="string">&#x27;1&#x27;</span>,<span class="keyword">null</span>,<span class="number">64</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="string">&#x27;2007004&#x27;</span>,<span class="string">&#x27;27&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;X24040019&#x27;</span>,<span class="string">&#x27;数据挖掘&#x27;</span>,<span class="string">&#x27;02&#x27;</span>,<span class="string">&#x27;4&#x27;</span>,<span class="keyword">null</span>,<span class="number">32</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="keyword">null</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> courses <span class="keyword">VALUES</span>(<span class="string">&#x27;X24040022&#x27;</span>,<span class="string">&#x27;网络安全概论&#x27;</span>,<span class="string">&#x27;02&#x27;</span>,<span class="string">&#x27;4&#x27;</span>,<span class="keyword">null</span>,<span class="number">32</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="keyword">null</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="teach-（教师上课表）"><a href="#teach-（教师上课表）" class="headerlink" title="teach （教师上课表）"></a>teach （教师上课表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>cno**</strong></th>
+<th>year_semester</th>
+<th><strong><em>\</em>t*<em>**</em></strong>*no*<em>*</em></th>
+<th><strong><em>\</em>classno**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H61030006</td>
+<td>2019-1</td>
+<td>2004124</td>
+<td>A</td>
+</tr>
+<tr>
+<td>H61030008</td>
+<td>2020-1</td>
+<td>2001009</td>
+<td>A</td>
+</tr>
+<tr>
+<td>C31010001</td>
+<td>2019-1</td>
+<td>20011024</td>
+<td>A</td>
+</tr>
+<tr>
+<td>C24020005</td>
+<td>2019-2</td>
+<td>2009007</td>
+<td>A</td>
+</tr>
+<tr>
+<td>C31010001</td>
+<td>2019-1</td>
+<td>20011024</td>
+<td>B</td>
+</tr>
+<tr>
+<td>X27030019</td>
+<td>2019-2</td>
+<td>2007004</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teach <span class="keyword">VALUES</span>(<span class="string">&#x27;2004124&#x27;</span>,<span class="string">&#x27;H61030006&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;A&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teach <span class="keyword">VALUES</span>(<span class="string">&#x27;2001009&#x27;</span>,<span class="string">&#x27;H61030008&#x27;</span>,<span class="string">&#x27;2020-1&#x27;</span>,<span class="string">&#x27;A&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teach <span class="keyword">VALUES</span>(<span class="string">&#x27;20011024&#x27;</span>,<span class="string">&#x27;C31010001&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;A&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teach <span class="keyword">VALUES</span>(<span class="string">&#x27;2009007&#x27;</span>,<span class="string">&#x27;C24020005&#x27;</span>,<span class="string">&#x27;2019-2&#x27;</span>,<span class="string">&#x27;A&#x27;</span> ); </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teach <span class="keyword">VALUES</span>(<span class="string">&#x27;20011024&#x27;</span>,<span class="string">&#x27;C31010001&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;B&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> teach <span class="keyword">VALUES</span>(<span class="string">&#x27;2007004&#x27;</span>,<span class="string">&#x27;X27030019&#x27;</span>,<span class="string">&#x27;2019-2&#x27;</span>,<span class="string">&#x27;B&#x27;</span> );</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="enroll表（学生选课表）"><a href="#enroll表（学生选课表）" class="headerlink" title="enroll表（学生选课表）"></a>enroll表（学生选课表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>sno**</strong></th>
+<th><strong><em>\</em>cno**</strong></th>
+<th>year_semeste</th>
+<th><strong><em>\</em>t*<em>**</em></strong>*no*<em>*</em></th>
+<th><strong><em>\</em>classno**</strong></th>
+<th><strong><em>\</em>score**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20182401101</td>
+<td>H24030006</td>
+<td>2019-1</td>
+<td>2004124</td>
+<td>A</td>
+<td>89</td>
+</tr>
+<tr>
+<td>20182401102</td>
+<td>H24030006</td>
+<td>2019-1</td>
+<td>2004124</td>
+<td>A</td>
+<td>98</td>
+</tr>
+<tr>
+<td>20182401103</td>
+<td>H24030006</td>
+<td>2019-1</td>
+<td>2004124</td>
+<td>A</td>
+<td>86</td>
+</tr>
+<tr>
+<td>20182401104</td>
+<td>H24030006</td>
+<td>2019-1</td>
+<td>2004124</td>
+<td>B</td>
+<td>76</td>
+</tr>
+<tr>
+<td>20182401101</td>
+<td>H24030008</td>
+<td>2020-1</td>
+<td>2001009</td>
+<td>A</td>
+<td>83</td>
+</tr>
+<tr>
+<td>20182401102</td>
+<td>H24030008</td>
+<td>2020-1</td>
+<td>2001009</td>
+<td>A</td>
+<td>66</td>
+</tr>
+<tr>
+<td>20182401103</td>
+<td>H24030008</td>
+<td>2020-1</td>
+<td>2001009</td>
+<td>A</td>
+<td>55</td>
+</tr>
+<tr>
+<td>20182401104</td>
+<td>H24030008</td>
+<td>2020-1</td>
+<td>2001009</td>
+<td>B</td>
+<td>87</td>
+</tr>
+<tr>
+<td>20182401202</td>
+<td>C31010001</td>
+<td>2019-1</td>
+<td>20011024</td>
+<td>A</td>
+<td>88</td>
+</tr>
+<tr>
+<td>20182709101</td>
+<td>C31010001</td>
+<td>2019-1</td>
+<td>20011024</td>
+<td>A</td>
+<td>90</td>
+</tr>
+<tr>
+<td>20182709102</td>
+<td>C24020005</td>
+<td>2019-2</td>
+<td>2009007</td>
+<td>A</td>
+<td>83</td>
+</tr>
+<tr>
+<td>20182911101</td>
+<td>C24020005</td>
+<td>2019-2</td>
+<td>2009007</td>
+<td>A</td>
+<td>66</td>
+</tr>
+<tr>
+<td>20182911101</td>
+<td>C24020005</td>
+<td>2019-2</td>
+<td>2009007</td>
+<td>A</td>
+<td>55</td>
+</tr>
+<tr>
+<td>20182911101</td>
+<td>C31010001</td>
+<td>2019-1</td>
+<td>20011024</td>
+<td>B</td>
+<td>87</td>
+</tr>
+<tr>
+<td>20182401101</td>
+<td>C31010001</td>
+<td>2019-1</td>
+<td>20011024</td>
+<td>A</td>
+<td>88</td>
+</tr>
+<tr>
+<td>20182401102</td>
+<td>X27030019</td>
+<td>2019-2</td>
+<td>2007004</td>
+<td>B</td>
+<td>90</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401101&#x27;</span>,<span class="string">&#x27;H24030006&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;2004124&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;89&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401102&#x27;</span>,<span class="string">&#x27;H24030006&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;2004124&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;98&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401103&#x27;</span>,<span class="string">&#x27;H24030006&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;2004124&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;86&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401104&#x27;</span>,<span class="string">&#x27;H24030006&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;2004124&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;76&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401101&#x27;</span>,<span class="string">&#x27;H24030008&#x27;</span>,<span class="string">&#x27;2020-1&#x27;</span>,<span class="string">&#x27;2001009&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;83&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401102&#x27;</span>,<span class="string">&#x27;H24030008&#x27;</span>,<span class="string">&#x27;2020-1&#x27;</span>,<span class="string">&#x27;2001009&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;66&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401103&#x27;</span>,<span class="string">&#x27;H24030008&#x27;</span>,<span class="string">&#x27;2020-1&#x27;</span>,<span class="string">&#x27;2001009&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;55&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401104&#x27;</span>,<span class="string">&#x27;H24030008&#x27;</span>,<span class="string">&#x27;2020-1&#x27;</span>,<span class="string">&#x27;2001009&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;87&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401202&#x27;</span>,<span class="string">&#x27;C31010001&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;20011024&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;88&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182709101&#x27;</span>,<span class="string">&#x27;C31010001&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;20011024&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;90&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182709102&#x27;</span>,<span class="string">&#x27;C24020005&#x27;</span>,<span class="string">&#x27;2019-2&#x27;</span>,<span class="string">&#x27;2009007&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;83&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182911101&#x27;</span>,<span class="string">&#x27;C24020005&#x27;</span>,<span class="string">&#x27;2019-2&#x27;</span>,<span class="string">&#x27;2009007&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;66&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182911101&#x27;</span>,<span class="string">&#x27;C31010001&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;20011024&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;87&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401101&#x27;</span>,<span class="string">&#x27;C31010001&#x27;</span>,<span class="string">&#x27;2019-1&#x27;</span>,<span class="string">&#x27;20011024&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;88&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> enroll <span class="keyword">VALUES</span>(<span class="string">&#x27;20182401102&#x27;</span>,<span class="string">&#x27;X27030019&#x27;</span>,<span class="string">&#x27;2019-2&#x27;</span>,<span class="string">&#x27;2007004&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;90&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="speciality表（专业信息表）"><a href="#speciality表（专业信息表）" class="headerlink" title="speciality表（专业信息表）"></a>speciality表（专业信息表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>spno**</strong></th>
+<th><strong><em>\</em>spname**</strong></th>
+<th><strong><em>\</em>dno**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>软件工程</td>
+<td>24</td>
+</tr>
+<tr>
+<td>02</td>
+<td>人工智能</td>
+<td>24</td>
+</tr>
+<tr>
+<td>03</td>
+<td>物联网</td>
+<td>24</td>
+</tr>
+<tr>
+<td>04</td>
+<td>网络安全</td>
+<td>24</td>
+</tr>
+<tr>
+<td>11</td>
+<td>电算会计</td>
+<td>29</td>
+</tr>
+<tr>
+<td>08</td>
+<td>工商管理</td>
+<td>28</td>
+</tr>
+<tr>
+<td>09</td>
+<td>市场营销</td>
+<td>28</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> speciality <span class="keyword">VALUES</span>(<span class="string">&#x27;01&#x27;</span>,<span class="string">&#x27;软件工程&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> speciality <span class="keyword">VALUES</span>(<span class="string">&#x27;02&#x27;</span>,<span class="string">&#x27;人工智能&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> speciality <span class="keyword">VALUES</span>(<span class="string">&#x27;03&#x27;</span>,<span class="string">&#x27;物联网&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> speciality <span class="keyword">VALUES</span>(<span class="string">&#x27;04&#x27;</span>,<span class="string">&#x27;网络安全&#x27;</span>,<span class="string">&#x27;24&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> speciality <span class="keyword">VALUES</span>(<span class="string">&#x27;11&#x27;</span>,<span class="string">&#x27;电算会计&#x27;</span>,<span class="string">&#x27;29&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> speciality <span class="keyword">VALUES</span>(<span class="string">&#x27;08&#x27;</span>,<span class="string">&#x27;工商管理&#x27;</span>,<span class="string">&#x27;28&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> speciality <span class="keyword">VALUES</span>(<span class="string">&#x27;09&#x27;</span>,<span class="string">&#x27;市场营销&#x27;</span>,<span class="string">&#x27;28&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="coursetype表（课程类型表）"><a href="#coursetype表（课程类型表）" class="headerlink" title="coursetype表（课程类型表）"></a>coursetype表（课程类型表）</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong><em>\</em>ctno**</strong></th>
+<th><strong><em>\</em>ctname**</strong></th>
+<th><strong><em>\</em>header**</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>公共课</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>专业基础课</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>专业课</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>选修课</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> cousetype <span class="keyword">VALUES</span>(<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;公共课&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> cousetype <span class="keyword">VALUES</span>(<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;专业基础课&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> cousetype <span class="keyword">VALUES</span>(<span class="string">&#x27;3&#x27;</span>,<span class="string">&#x27;专业课&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> cousetype <span class="keyword">VALUES</span>(<span class="string">&#x27;4&#x27;</span>,<span class="string">&#x27;选修课&#x27;</span> );</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><ol>
+<li>输出信息科学与工程学院（学院编号“24”）2018级学生“李毅”的课程选修成绩单，输出项包括课程名称，学分，成绩三项；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">c.`name`,</span><br><span class="line">c.credit,</span><br><span class="line">e.score </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	course c,</span><br><span class="line">	enroll e</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">c.dno <span class="operator">=</span> <span class="string">&#x27;24&#x27;</span> <span class="keyword">AND</span> c.ctno <span class="operator">=</span> (<span class="keyword">SELECT</span> coursetype.ctno <span class="keyword">FROM</span> coursetype <span class="keyword">WHERE</span> coursetype.ctname <span class="operator">=</span> <span class="string">&#x27;选修课&#x27;</span>) <span class="keyword">AND</span> e.sno <span class="operator">=</span> (<span class="keyword">SELECT</span> student.sno <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> student.sname <span class="operator">=</span> <span class="string">&#x27;李毅&#x27;</span> <span class="keyword">AND</span> student.sno <span class="keyword">LIKE</span> <span class="string">&#x27;2018%&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202609638.png" alt="image-20220505202609638" style="zoom:67%;"></p>
+<ol>
+<li>找出学生李毅（学号为 ‘20182401101’）的电话；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	tel </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	sname <span class="operator">=</span> <span class="string">&#x27;李毅&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202620919.png" alt="image-20220505202620919" style="zoom: 80%;"></p>
+<ol>
+<li>输出信息科学与工程学院（学院编号为’24’)的学生清单，输出项包括姓名，学号，班级三列，按照班级和学号排序；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	sname,</span><br><span class="line">	sno,</span><br><span class="line">	classno </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	dno<span class="operator">=</span><span class="string">&#x27;24&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202634611.png" alt="image-20220505202634611" style="zoom:67%;"></p>
+<ol>
+<li>输出所有学院的清单，包括学院编号，名称，地址，电话，院长姓名；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	department.dno,</span><br><span class="line">	department.`name`,</span><br><span class="line">	department.addr,</span><br><span class="line">	department.phone,</span><br><span class="line">	teacher.`name` </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	department</span><br><span class="line">	<span class="keyword">LEFT</span> <span class="keyword">JOIN</span> teacher <span class="keyword">ON</span> teacher.tno <span class="operator">=</span> department.dean;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202645181.png" alt="image-20220505202645181" style="zoom:67%;"></p>
+<ol>
+<li>在2020-1学期选修了周曼玲老师（工号为”2001009”)开设的“数据库系统”课程的学生名单，输出项为五项：教学班，姓名、学号、性别，行政班。要求先按照教学班，再按行政班排序；（注：一个老师在某个学期开的某门课，完全有可能有多个教学班）；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	enroll.classno,</span><br><span class="line">	student.sname,</span><br><span class="line">	student.sno,</span><br><span class="line">	student.sex,</span><br><span class="line">	student.classno </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	enroll,</span><br><span class="line">	student </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	student.sno <span class="operator">=</span> <span class="keyword">ANY</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		enroll.sno </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		enroll </span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">		year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2020-01%&#x27;</span> </span><br><span class="line">	<span class="keyword">AND</span> tno <span class="operator">=</span> <span class="string">&#x27;2001009&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps72.jpg" alt="img" style="zoom:80%;"></p>
+<ol>
+<li>对于在2020-1学期选修了“数据库系统”课程的各行政班，求其平均分，并按照平均分从高到低排序；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">	enroll.classno,</span><br><span class="line">	<span class="built_in">AVG</span>( enroll.score ) <span class="keyword">AS</span> AVG_SCORE </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	enroll </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	enroll.cno <span class="operator">=</span> ( <span class="keyword">SELECT</span> course.cno <span class="keyword">FROM</span> course <span class="keyword">WHERE</span> course.`name` <span class="operator">=</span> <span class="string">&#x27;数据库系统&#x27;</span> ) </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	enroll.classno </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	AVG_SCORE;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202707117.png" alt="image-20220505202707117" style="zoom:80%;"></p>
+<ol>
+<li>对于信息科学与工程学院（学院编号“24”）在2020-1学期开设的每门课程，输出其选修人数，输出项包括课程名称，选修人数；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	course.`name`,</span><br><span class="line">	<span class="built_in">COUNT</span>( <span class="keyword">DISTINCT</span> enroll.sno ) <span class="keyword">AS</span> COUNT </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	course,</span><br><span class="line">	enroll </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	course.dno <span class="operator">=</span> <span class="string">&#x27;24&#x27;</span> </span><br><span class="line">	<span class="keyword">AND</span> course.cno <span class="operator">=</span> <span class="keyword">ANY</span> ( <span class="keyword">SELECT</span> enroll.cno <span class="keyword">FROM</span> enroll <span class="keyword">WHERE</span> enroll.year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2020-01%&#x27;</span> ) </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	course.`name`;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202721303.png" alt="image-20220505202721303" style="zoom:67%;"></p>
+<ol>
+<li>在2020-1学期，对于开设的“数据库系统”这门课程，在信息科学与工程学院（学院编号“24”）的2018级学生中，有哪些学生没有选修该课程，输出姓名，学号，行政班三项信息；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	sname,</span><br><span class="line">	sno,</span><br><span class="line">	classno </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student s </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	s.dno <span class="operator">=</span> <span class="string">&#x27;24&#x27;</span> <span class="keyword">AND</span></span><br><span class="line">	<span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		<span class="operator">*</span> </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		enroll e </span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">		e.year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2020-01%&#x27;</span> </span><br><span class="line">		<span class="keyword">AND</span> s.sno <span class="operator">=</span> e.sno </span><br><span class="line">	<span class="keyword">AND</span> e.cno <span class="operator">=</span> ( <span class="keyword">SELECT</span> c.cno <span class="keyword">FROM</span> course c <span class="keyword">WHERE</span> c.`name` <span class="operator">=</span> <span class="string">&#x27;数据库系统&#x27;</span> ));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps73.jpg" alt="img" style="zoom:80%;"></p>
+<ol>
+<li>对于在2020-1学期开设的每门课程，输出其最高分、最低分，平均分；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="built_in">MAX</span>( score ) <span class="keyword">AS</span> MAX,</span><br><span class="line">	<span class="built_in">MIN</span>( score ) <span class="keyword">AS</span> MIN,</span><br><span class="line">	<span class="built_in">AVG</span>( score ) <span class="keyword">AS</span> AVG </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	enroll </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2020-01%&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202743804.png" alt="image-20220505202743804" style="zoom:80%;"></p>
+<ol>
+<li>对于在2020-1学期开设的“数据库系统”课程，求选修了该课，但是没有及格的学生名单，输出姓名，学号，行政班，课程成绩四项信息；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	sname,</span><br><span class="line">	sno,</span><br><span class="line">	classno </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	student s </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	<span class="keyword">EXISTS</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		<span class="operator">*</span> </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		enroll e </span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">		e.year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2020-01%&#x27;</span> </span><br><span class="line">		<span class="keyword">AND</span> e.score <span class="operator">&lt;</span> <span class="string">&#x27;60&#x27;</span> </span><br><span class="line">		<span class="keyword">AND</span> s.sno <span class="operator">=</span> e.sno </span><br><span class="line">	<span class="keyword">AND</span> e.cno <span class="operator">=</span> ( <span class="keyword">SELECT</span> c.cno <span class="keyword">FROM</span> course c <span class="keyword">WHERE</span> c.`name` <span class="operator">=</span> <span class="string">&#x27;数据库系统&#x27;</span> ));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/image-20220505202752739.png" alt="image-20220505202752739" style="zoom:67%;"></p>
+<ol>
+<li>对于信息科学与工程学院（学院编号“24”）的每个教师，统计出其在2019年度的教学工作量；（提示：课程表中，每门课有课时量hours字段）</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	teacher.`name`,</span><br><span class="line">	<span class="built_in">SUM</span>( course.hours ) <span class="keyword">AS</span> SUM </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	teacher,</span><br><span class="line">	course </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	course.cno <span class="operator">=</span> <span class="keyword">ANY</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		enroll.cno </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		enroll </span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">		enroll.year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2019%&#x27;</span> </span><br><span class="line">	<span class="keyword">AND</span> enroll.tno <span class="operator">=</span> <span class="keyword">ANY</span> ( <span class="keyword">SELECT</span> teacher.tno <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> teacher.dno <span class="operator">=</span> <span class="string">&#x27;24&#x27;</span> )) </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	teacher.`name`;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps74.jpg" alt="img" style="zoom:67%;"></p>
+<ol>
+<li>对于信息科学与工程学院（学院编号“24”）的每个教师，统计在2019年度教学工作量未达到要求（小于150学时）的教师，输出教师姓名，工号，教学工作量三项；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	teacher.`name`,</span><br><span class="line">	teacher.tno,</span><br><span class="line">	<span class="built_in">SUM</span>( course.hours ) <span class="keyword">AS</span> SUM </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	teacher,</span><br><span class="line">	course </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	course.cno <span class="operator">=</span> <span class="keyword">ANY</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		enroll.cno </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		enroll </span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">		enroll.year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2019%&#x27;</span> </span><br><span class="line">	<span class="keyword">AND</span> enroll.tno <span class="operator">=</span> <span class="keyword">ANY</span> ( <span class="keyword">SELECT</span> teacher.tno <span class="keyword">FROM</span> teacher <span class="keyword">WHERE</span> teacher.dno <span class="operator">=</span> <span class="string">&#x27;24&#x27;</span> )) </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	teacher.`name`</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">SUM</span>( course.hours ) <span class="operator">&lt;</span> <span class="string">&#x27;150&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps75.jpg" alt="img" style="zoom:67%;"></p>
+<ol>
+<li>统计各个学院在2019年度的教学工作量；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	department.`name`,</span><br><span class="line">	<span class="built_in">SUM</span>( course.hours ) </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	department,</span><br><span class="line">	course </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	department.dno <span class="operator">=</span> <span class="keyword">ALL</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		course.dno </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		course </span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">	course.cno <span class="operator">=</span> <span class="keyword">ALL</span> ( <span class="keyword">SELECT</span> enroll.cno <span class="keyword">FROM</span> enroll <span class="keyword">WHERE</span> enroll.year_semeste <span class="keyword">LIKE</span> <span class="string">&#x27;2019%&#x27;</span> )) </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	department.`name`;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps76.jpg" alt="img" style="zoom:67%;"></p>
+<ol>
+<li>对于2018级学生，即将毕业，求出输出所得总学分不足172的学生，输出项为所属学院名称，学号，姓名，已得学分数这四项</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	department.`name`,</span><br><span class="line">	student.sno,</span><br><span class="line">	student.sname,</span><br><span class="line">	<span class="built_in">SUM</span>( course.credit ) <span class="keyword">AS</span> SUM </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	department,</span><br><span class="line">	student,</span><br><span class="line">	course </span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">	department.dno <span class="operator">=</span> student.dno </span><br><span class="line">	<span class="keyword">AND</span> course.cno <span class="operator">=</span> <span class="keyword">ALL</span> (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		enroll.cno </span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		enroll </span><br><span class="line">	<span class="keyword">WHERE</span></span><br><span class="line">	enroll.sno <span class="operator">=</span> <span class="keyword">ALL</span> ( <span class="keyword">SELECT</span> student.sno <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> student.sno <span class="keyword">LIKE</span> <span class="string">&#x27;2016%&#x27;</span> )) </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></span><br><span class="line">	student.sno </span><br><span class="line"><span class="keyword">HAVING</span></span><br><span class="line">	<span class="built_in">SUM</span>( course.credit ) <span class="operator">&lt;</span> <span class="string">&#x27;172&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps77.jpg" alt="img" style="zoom:67%;"></p>
+<h2 id="附加部分"><a href="#附加部分" class="headerlink" title="附加部分"></a>附加部分</h2><p> 分析如下SQL语句的含义：</p>
+<h3 id="Select1"><a href="#Select1" class="headerlink" title="Select1"></a>Select1</h3><p>— 查询迪斯尼1999年发行的电影的名字与片长，名字字段命名为“name”，片长字段命名为“lengthInHours”，以小时为单位：<br>       select title as name , length*0.016667 as lengthInHours from movies<br>       where studioName=’Disney’ and year=1999;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps24.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 查询迪斯尼1999年发行的电影的名字与片长，名字字段命名为“name”，<br>       — 片长字段命名为“length”，以小时为单位，并用名为“InHours”的一列记录电影片长的单位(hrs.)：<br>       select title as name , length*0.016667 as length, ‘hrs.’ as InHours from movies<br>where studioName=’Disney’ and year=1999;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps25.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 查询fox在1970年后发行的片长在90分钟以内的电影，<br>select title  from movies where (year&gt;1970 or length&lt;90) and studioName=’Fox’; </p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps26.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 在电影表中查询以“Star”开头的电影的名字：<br>select title  from movies  where title like ‘Star %’;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps27.jpg" alt="img" style="zoom:80%;"></p>
+<h3 id="Select2"><a href="#Select2" class="headerlink" title="Select2"></a>Select2</h3><p>select date ‘1948-05-14’, time ‘12:08:08.08’  from dual;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps28.jpg" alt="img" style="zoom:67%;"></p>
+<p>select date ‘1948-05-14’, time ‘12:08:08.08’ from dual;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps29.jpg" alt="img" style="zoom: 67%;"></p>
+<p>select date ‘1948-05-14’, timestamp ‘1948-05-14 12:08:08.08’ from dual;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps30.jpg" alt="img" style="zoom:67%;"></p>
+<p>select 1+2 , 1+null,null+1 from dual;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps31.jpg" alt="img" style="zoom:67%;"></p>
+<p>select * from movies where 1=1;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps32.jpg" alt="img" style="zoom:67%;"></p>
+<p>select * from movies where null=null;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps33.jpg" alt="img" style="zoom:67%;"></p>
+<p>select * from movies where title is not null;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps34.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 查询电影表中的全部记录，并使用排他锁<br>       select * from movies for update;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps35.jpg" alt="img" style="zoom:67%;"></p>
+<p>select * from movies where length&lt;=120 or length&gt;120;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps36.jpg" alt="img" style="zoom:67%;"></p>
+<p>select * from movies where title is null;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps37.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 查询电影表中Fox发行的全部电影的详细信息，按片长与片名升序排序：<br>       select * from movies where Studioname = ‘Fox’ order by length, title;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps38.jpg" alt="img" style="zoom:67%;"></p>
+<p>— movieexec表中cert字段等于movie表中producerc字段的电影在movieexec表中的名字<br>        select name from movies, movieexec where title=’Star Wars’ and producerc= cert；</p>
+<p>— 查询两个表中地址信息相同的记录；在两个表格中对应的名字<br>       select moviestar.name, movieexec.name from moviestar , movieexec where moviestar.address = movieexec.address;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps39.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 查询住址相同的不同电影明星的名字，结果成对出现<br>       select star1.name, star2.name from moviestar star1, moviestar star2 where star1.address = star2.address and star1.name&lt;star2.name;</p>
+<p>select star1.name, star2.name from moviestar star1, moviestar star2;</p>
+<p>— 查询在movies表中电影名为star war的记录对应的producer和movieexe表中cert记录相同的名字<br>        select name from movieexec where cert =( select producerc from movies where title=’Star Wars’ );</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps40.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 查询姓名为“Harrison Ford”的明星参演的电影的出品方的名字：<br>select name from movieexec where cert in ( select producerc from movies where (title, year) in (select movietitle, movieyear from starsin where starname=’Harrison Ford’  ));</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps41.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 通过联接查询姓名为“Harrison Ford”的明星参演的电影的出品方的名字<br>select name from movieExec, movies, starsin where cert = producerC  and title = movietitle and year= movieyear and starname=’Harrison Ford’;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps42.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 查找有多个版本的电影中的老版本的名字与年代<br>select title, year from movies old where year &lt;any (select year from movies where title = old.title) ;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps43.jpg" alt="img" style="zoom:67%;"></p>
+<p>— 通过联接查询姓名为“Harrison Ford”的明星参演的电影的出品方的名字</p>
+<p>select name  from movieexec,  (select producerc  from movies, starsin where title = movietitle  and year = movieyear   and starname = ‘Harrison Ford’)  prod  where cert = prod.producerc;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps44.jpg" alt="img" style="zoom:67%;"></p>
+<p>查询movies表与starsin表的笛卡尔积</p>
+<p> <strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> movies </em></strong>*cross*<strong><em> </em></strong>*join*<em>*</em> starsin ;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps45.jpg" alt="img" style="zoom:67%;"> </p>
+<p>— 查询movies表与starin表自然联接的结果</p>
+<p><strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> movies </em></strong>*join*<strong><em> starsin  </em></strong>*on*<strong><em> title=movietitle </em></strong>*and*<strong><em> </em></strong>*year*<em>*</em> = movieyear;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps46.jpg" alt="img" style="zoom:67%;"> </p>
+<p>— 查询movies表与starin表自然联接的结果中的title、year、length、genre、studioName、producerc、starname字段</p>
+<p><strong><em>\</em>select**</strong> title, <strong><em>\</em>year**</strong>, <strong><em>\</em>length**</strong>, genre, studioName, producerc, starname <strong><em>\</em>from**</strong> movies <strong><em>\</em>join**</strong> starsin  <strong><em>\</em>on**</strong></p>
+<p>title=movietitle <strong><em>\</em>and**</strong> <strong><em>\</em>year**</strong>= movieyear;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps47.jpg" alt="img" style="zoom:67%;"> </p>
+<p><strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> movies </em></strong>*natural*<strong><em> </em></strong>*join*<em>*</em> starsin ;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps48.jpg" alt="img"> </p>
+<p><strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> moviestar  </em></strong>*natural*<strong><em> </em></strong>*join*<em>*</em> movieexec ;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps49.jpg" alt="img"> </p>
+<p>— 将movieexec表与moviestar表左联接的结果与右联接的结果合在一起输出，联接字段为name：</p>
+<p><strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> moviestar  </em></strong>*left*<strong><em> </em></strong>*outer*<strong><em> </em></strong>*join*<em>*</em> movieexec on moviestar.name= movieexec.name</p>
+<p>union <strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> moviestar  </em></strong>*right*<strong><em> </em></strong>*outer*<strong><em> </em></strong>*join*<em>*</em> movieexec on moviestar.name= movieexec.name;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps50.jpg" alt="img"> </p>
+<p><strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> moviestar  </em></strong>*left*<strong><em> </em></strong>*outer*<strong><em> </em></strong>*join*<em>*</em> movieexec ;</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps51.jpg" alt="img"> </p>
+<p><strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> moviestar  </em></strong>*right*<strong><em> </em></strong>*outer*<strong><em> </em></strong>*join*<em>*</em> movieexec ;</p>
+<p>— 将movies表与starin表左联接的结果与右联接的结果合在一起输出，联接字段为左表的title、year分别对应右表的movietitle、movieyear：</p>
+<p><strong><em>\</em>select**</strong> <em> **</em>*from*<strong><em> movies  </em></strong>*left*<strong><em> </em></strong>*outer*<strong><em> </em></strong>*join*<strong><em> starsin </em></strong>*on*<strong><em> title = movietitle </em></strong>*and*<strong><em> </em></strong>*year*<em>*</em>=movieyear</p>
+<p>Union</p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps52.jpg" alt="img"> </p>
+<p><strong><em>\</em>— 将movies表与starin表右联接，联接字段为左表的titile、movietitle分别对应右表的year、movieyear：**</strong></p>
+<p><strong><em>\</em>Select *from movies  right outer join starsin  on title = movietitle and year=movieyear;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps53.jpg" alt="img"> </p>
+<p><strong><em>\</em>— 将movies表与starin表左联接，联接字段为左表的titile、movietitle分别对应右表的year、movieyear：**</strong></p>
+<p><strong><em>\</em>select * from movies  left outer join starsin  on title = movietitle and year=movieyear;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps54.jpg" alt="img"> </p>
+<p><strong><em>\</em>— 查询movies表中的不同的标题：**</strong></p>
+<p><strong><em>\</em>select distinct title  from movies;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps55.jpg" alt="img"> </p>
+<p><strong><em>\</em>— 查询movie表中全部记录的title、year，查询starin表中所有记录的movietitle、movieyear，对两个结果集进行不去重的并集操作：**</strong></p>
+<p><strong><em>\</em>select title, year from movies**</strong></p>
+<p><strong><em>\</em>union all select movietitle as title , movieyear as year from starsin;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps56.jpg" alt="img"> </p>
+<p><strong><em>\</em>— 查询movieexec表中所有记录networth的平均值：**</strong></p>
+<p><strong><em>\</em>select avg(networth) from movieexec;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps57.jpg" alt="img"> </p>
+<p>— 查询starin表中的记录数目</p>
+<p><strong><em>\</em>select count(*) from starsin;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps58.jpg" alt="img"> </p>
+<p>— 查询starin表中starname的数目：</p>
+<p><strong><em>\</em>select count(starname) from starsin;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps59.jpg" alt="img"> </p>
+<p>— 查询starin表中不同的starname的数目：</p>
+<p><strong><em>\</em>select count(distinct starname) from starsin;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps60.jpg" alt="img"> </p>
+<p>— 查询所有制片厂的制片总长度：</p>
+<p><strong><em>\</em>select studioname,sum(length) from movies group by studioname;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps61.jpg" alt="img"> </p>
+<p>— 在movies表中查询不同的制片厂的名字：</p>
+<p><strong><em>\</em>select studioname from movies group by studioname;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps62.jpg" alt="img"> </p>
+<p>— 在movies表中查询不同的制片厂的名字</p>
+<p><strong><em>\</em>select distinct studioname from movies group by studioname;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps63.jpg" alt="img"> </p>
+<p><strong><em>\</em>drop table tmp_a;**</strong></p>
+<p><strong><em>\</em>CREATE TABLE TMP_A ( A varchar(8), b varchar(8));**</strong></p>
+<p><strong><em>\</em>insert into tmp_a values(null,null);**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps64.jpg" alt="img"> </p>
+<p><strong><em>\</em>select * from tmp_a;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps65.jpg" alt="img"> </p>
+<p>— 查询a 和b的数量 ，按照a 分组</p>
+<p><strong><em>\</em>select a, count(b) from tmp_a  group by a**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps66.jpg" alt="img"> </p>
+<p>— 查询在1985年之前发行过电影的制片厂的电影总时长：</p>
+<p><strong><em>\</em>select name, sum(length) from movieExec , movies where producerc = cert group by name having min(year)&lt;1985;**</strong>    </p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps67.jpg" alt="img"> </p>
+<p>— 查询制片厂1985年之前发行的所有电影的总时长：</p>
+<p><strong><em>\</em>select name, sum(length) from movieExec , movies where producerc= cert and year&lt;1985 group by name**</strong></p>
+<p><strong><em>\</em>— having min(year)&lt;1985;**</strong></p>
+<p>— 向starsin表中插入一条记录，movietitle为The maltese falcon，movieyear为1942，starname为Sydney Greenstreet：</p>
+<p><strong><em>\</em>insert into starsin(movietitle, movieyear, starname) values(‘The maltese falcon’,1942,’Sydney Greenstreet’);**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps68.jpg" alt="img"> </p>
+<p> — 向studio表中插入movies表中存在但studio表中不存在的记录：</p>
+<p><strong><em>\</em>insert into studio(name) select distinct studioname from movies where studioname not in (**</strong></p>
+<p><strong><em>\</em>select name from studio);**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps69.jpg" alt="img"> </p>
+<p> — 删除starsin表中指定的记录，指定要删除的记录的movietitle、movieyear、starname： </p>
+<p><strong><em>\</em>delete from starsin where movietitle=’The maltese falcon’ and movieyear=1942 and starname=’Sydney Greenstreet’;**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps70.jpg" alt="img"> </p>
+<p> — 更新movieexec中的cert字段值存在于studio表中的记录，将对应记录的name修改为“Pres.”。 </p>
+<p><strong><em>\</em>update movieexec  set name = ‘Pres.’  where cert in (select presc from studio);**</strong></p>
+<p><img src="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/wps71.jpg" alt="img"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            TCP，UDP通信（UNIX)
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/04/12/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>

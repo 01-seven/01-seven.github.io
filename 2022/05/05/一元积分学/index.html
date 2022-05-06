@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>一元积分学 |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-一元积分学"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  一元积分学
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-date">
+  <time datetime="2022-05-05T00:23:49.000Z" itemprop="datePublished">2022-05-05</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6/">考研数学</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">18 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="一元积分学"><a href="#一元积分学" class="headerlink" title="一元积分学"></a>一元积分学</h1><h2 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/6082893">不定积分</a></h2><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108000534905.png" alt="image-20220108000534905" style="zoom:80%;"></p>
+<h3 id="原函数存在定理："><a href="#原函数存在定理：" class="headerlink" title="原函数存在定理："></a>原函数存在定理：</h3><p>1.连续函数必存在原函数（积分上限函数可证）</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220308160041341.png" alt="image-20220308160041341" style="zoom: 80%;"></p>
+<p>2.若函数不连续，且有原函数，则可能存在震荡间断点</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220308160055692.png" alt="image-20220308160055692" style="zoom: 80%;"></p>
+<p><strong>积分表：</strong><br><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108000632642.png" alt="image-20220108000632642" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307192221885.png" alt="image-20220307192221885" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429122703228.png" alt="image-20220429122703228" style="zoom:80%;"></p>
+<p>不定积分的性质：</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108002648772.png" alt="image-20220108002648772" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108002702747.png" alt="image-20220108002702747" style="zoom:80%;"></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33047747">72道不定积分题目</a></p>
+<h3 id="换元积分法"><a href="#换元积分法" class="headerlink" title="换元积分法"></a>换元积分法</h3><p>将复合函数的微分法反过来，利用中间变量积分。</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307192335276.png" alt="image-20220307192335276" style="zoom:50%;"></p>
+<h4 id="第一类换元法："><a href="#第一类换元法：" class="headerlink" title="第一类换元法："></a><strong>第一类换元法</strong>：</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108095446016.png" alt="image-20220108095446016" style="zoom:80%;"></p>
+<p>第一类换元法的实质就是<strong>凑微分</strong>，变换被积函数值，提取出必要的部分与dx组合凑成</p>
+<p>第一类换元法又可以理解为“<strong>积两步</strong>”，即连续进行两次积分，第一步是构造u，即首先计算$du=\int \phi’(x)dx=d(\phi(x))$</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108100208655.png" alt="image-20220108100208655" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108100253290.png" alt="image-20220108100253290" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108100320728.png" alt="image-20220108100320728" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108100336500.png" alt="image-20220108100336500" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108100350854.png" alt="image-20220108100350854" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108100414573.png" alt="image-20220108100414573" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220306190245677.png" alt="image-20220306190245677" style="zoom:50%;"></p>
+<h4 id="第二类换元法："><a href="#第二类换元法：" class="headerlink" title="第二类换元法："></a><strong>第二类换元法</strong>：</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108102511552.png" alt="image-20220108102511552" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108102617776.png" alt="image-20220108102617776" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108102645574.png" alt="image-20220108102645574" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108102709622.png" alt="image-20220108102709622" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108102759066.png" alt="image-20220108102759066" style="zoom:80%;"></p>
+<p>倒代换：消去被积函数的分母中的变量因子X</p>
+<h3 id="分部积分法"><a href="#分部积分法" class="headerlink" title="分部积分法"></a>分部积分法</h3><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108103125965.png" alt="image-20220108103125965" style="zoom:80%;"></p>
+<p>上述公式为分部积分法，其中$\int{u’ \cdot v dx}$是比较容易求得的</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108103402982.png" alt="image-20220108103402982" style="zoom:80%;"></p>
+<blockquote>
+<p><strong>牢记</strong>：第一类换元法要凑u的微分，但是分部积分法一开始是要凑v的微分。</p>
+<p><strong>要区分u和v‘：应用分部积分时，首先将所及函数f(x)分为两部分u和v‘</strong>，其中</p>
+<p><strong>v’</strong>:是导数，要对它进行积分，所以必须容易<strong>积分</strong></p>
+<p><strong>u</strong>:我们要对它进行求导，不需要对它进行积分，所以它必须<strong>难积</strong>（如果它好积的话，为什么还要分部呢？直接求不就好了）   </p>
+<p><strong>vu‘</strong>:是v’的原函数和u的导函数的积。它必须容易<strong>积分</strong>！！</p>
+<p><strong>总而言之</strong>（傻瓜做法，错分u，v没关系）：</p>
+<p>（0）如果一开始有<strong>负号</strong>，<strong>先画一个大括号，把它隔离开来，最后记得处理</strong>（！防止积分求导时出来负号进行干扰）</p>
+<p>（1）<strong>分析！！</strong>先将f(x)分成<strong>两部分</strong>，<strong>一部分好积，给它积分</strong>；另一部分<strong>难积，先不管</strong>。</p>
+<p>（2）积出来的那部分和难积的那部分做<strong>乘积</strong>,画一个<strong>减号</strong>（不要管外面的符号，积出来是负的也做减号）。</p>
+<p>（3）把<strong>难积的求导</strong>，把<strong>积出来的那部分（带着符号）和导函数相乘</strong>，给它们<strong>对x积分</strong>。</p>
+<p>（4）把结果写到减号后面，把大括号外面的符号加进来，化简。</p>
+<p>思路：分部积分公式，特别是<strong>第二种形式</strong>，和<strong>第一类换元法（积两步凑积分</strong>）的公式是非常相似的。<strong>区别是，凑积分法凑出微分$du$之后，所积函数还剩余包含$u$的容易积分形式。但是分部积分法凑出$dv$之后，剩下的部分却不容易积，所以必须分成两部。</strong></p>
+<p><strong>遇到不会的</strong>：先试一下凑积分（第一类换元法），如果发现凑出来不好积，再试分部积分，最后是第二类换元法</p>
+</blockquote>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108103646551.png" alt="image-20220108103646551" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108103657920.png" alt="image-20220108103657920" style="zoom:80%;"></p>
+<p>如果被积函数是幂函数和正余弦函数或幂函数和指数函数的乘积，我们设<strong>幂函数为u,</strong>这样用一次分部积分法就可以使幂函数的次级降低一次。</p>
+<p>v必须是更容易求积分的，所以优选：</p>
+<p><strong>指数函数</strong>$a^{bx}$&gt;正余弦函数<strong>$a\sin bx或者a\cos bx$</strong>&gt;<strong>幂函数$ax^n$</strong></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108104345170.png" alt="image-20220108104345170" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108104358979.png" alt="image-20220108104358979" style="zoom:80%;"></p>
+<p>由于对数函数或反三角函数很难积分，所以对他们求导，设为u ， 对应选v优先级：</p>
+<p>指数函数$a^{bx}$&gt;正余弦函数$a\sin bx或者a\cos bx$&gt;幂函数$ax^n$&gt;对数函数和反三角函数</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108104614384.png" alt="image-20220108104614384" style="zoom:80%;"></p>
+<p>推广：</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307192443000.png" alt="image-20220307192443000" style="zoom: 50%;"></p>
+<h3 id="有理函数的积分"><a href="#有理函数的积分" class="headerlink" title="有理函数的积分"></a>有理函数的积分</h3><h4 id="有理函数的积分-1"><a href="#有理函数的积分-1" class="headerlink" title="有理函数的积分"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/336256557">有理函数的积分</a></h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108105824531.png" alt="image-20220108105824531" style="zoom:80%;"></p>
+<p>将真分式拆解为两个子真分式之和后，如何设定<strong>分子的待定系数形式</strong>？</p>
+<p>（1）确保两个<strong>子真分式</strong>分子分母<strong>交错相乘得到的两个多项式的次数相同</strong>。</p>
+<p>（2）在确保（1）的情况下，根据<strong>原真分式分子的次数</strong>确定，尽量为两个子真分式分子选择<strong>次数较小</strong>的待定系数形式</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108110250643.png" alt="image-20220108110250643" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108110301696.png" alt="image-20220108110301696" style="zoom:80%;"></p>
+<p>任何一个有理真分式$P(x)/Q(x)$都可以分为以下四种部分分式之和的形式：</p>
+<p>$\frac{A}{x-a},\frac{A}{(x-a)^n},\frac{Ax+B}{x^2+px+q},\frac{Ax+B}{(x^2+px+q)^n}$</p>
+<h4 id="可化为有理函数的积分举例"><a href="#可化为有理函数的积分举例" class="headerlink" title="可化为有理函数的积分举例"></a>可化为有理函数的积分举例</h4><ol>
+<li><p>三角函数$sin x,cos x$都可化为$tan \frac{x}{2}$</p>
+</li>
+<li><p>尽量使分母简单，可使用公式$1+cos x=2cos^2 \frac{x}{2}$,</p>
+</li>
+<li><p>尽量将幂次降低，为此常使用倍角公式或积化和差等</p>
+</li>
+<li><p>巧妙使用$sin^2x+cos^2=1$</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108111339572.png" alt="image-20220108111339572" style="zoom:80%;"></p>
+</li>
+<li><p>对于带根号的，将整个项设为U</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108111456420.png" alt="image-20220108111456420" style="zoom:80%;"></p>
+</li>
+</ol>
+<h2 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%9A%E7%A7%AF%E5%88%86/7128801">定积分</a></h2><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108112907570.png" alt="image-20220108112907570" style="zoom:80%;"></p>
+<p>与不定积分的区别在于有积分区间</p>
+<p>定积分仅与被积函数与积分区间有关</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108114459886.png" alt="image-20220108114459886" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108114510820.png" alt="image-20220108114510820" style="zoom:80%;"></p>
+<p>简而言之：泰勒公式用多项式逼近函数值，定积分用n个细长方形条来逼近函数与x轴所夹面积。</p>
+<p>黎曼积分（定积分的精确定义）</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307191707168.png" alt="image-20220307191707168" style="zoom:67%;"></p>
+<p><strong>可积的充分条件</strong>：</p>
+<p>定理1：设f(x)在区间[a,b]上<strong>连续</strong>，则f(x)在[a,b]上<strong>可积</strong>。</p>
+<p>定理2：设f(x)在区间[a,b]上<strong>有界</strong>，且只有<strong>有限个间断点</strong>，则f(x)在[a,b]上<strong>可积</strong>。</p>
+<p>若函数在区间[a,b]上<strong>单调有界</strong>，则可积.</p>
+<p>可积的<strong>必要条件</strong>：</p>
+<p>函数在区间上<strong>可积，则必有界</strong>。</p>
+<p><em>狄利克雷函数有界，但是有无限个间断点，也很明显不可积</em></p>
+<p><strong>性质：</strong></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108114940015.png" alt="image-20220108114940015" style="zoom:80%;"></p>
+<blockquote>
+<p>简而言之  没必要看证明</p>
+<p>性质1：多项式的定积分可以拆分</p>
+<p>性质2：相同被积函数在两个相连区间的定积分和可以合并</p>
+<p>性质3：如果被积函数恒为1，那么积分结果是区间长度</p>
+<p>性质4：非负函数的定积分非负</p>
+<p>性质4推论1：在相同区间，相对值恒小的函数定积分小，相对值恒大的函数定积分大。</p>
+<p>性质4推论2：</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108121852353.png" alt="image-20220108121852353" style="zoom:80%;"></p>
+<p>微积分的绝对值小于等于绝对值的微积分</p>
+<p>性质5：定积分大于等于被积函数最小值×区间长度，小于等于被积函数最大值×区间长度</p>
+<p>性质6：定积分中值定理</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108115055785.png" alt="image-20220108115055785" style="zoom:80%;"></p>
+<p>如果被积函数连续，理应在积分区间找到一个点，该点对应函数值，与区间长度形成的矩形面积等价于该定积分划出的面积。</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108121630526.png" alt="image-20220108121630526" style="zoom:80%;"></p>
+</blockquote>
+<p>相关证明：<br><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108122317690.png" alt="image-20220108122317690" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108122333574.png" alt="image-20220108122333574" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108122347478.png" alt="image-20220108122347478" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108122425751.png" alt="image-20220108122425751" style="zoom:80%;"></p>
+<p>性质6：</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108122442007.png" alt="image-20220108122442007" style="zoom:80%;"></p>
+<h3 id="微积分基本公式"><a href="#微积分基本公式" class="headerlink" title="微积分基本公式"></a>微积分基本公式</h3><h4 id="积分上限函数（变限积分）"><a href="#积分上限函数（变限积分）" class="headerlink" title="积分上限函数（变限积分）"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A7%AF%E5%88%86%E4%B8%8A%E9%99%90%E5%87%BD%E6%95%B0">积分上限函数</a>（变限积分）</h4><p>定理 1 如果函数f(x)在区间[a,b]上连续，那么积分上限的函数$\phi(x)=\int_a^xf(t)dt $在[a,b]上可导，并且它的导数$\phi’(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x),(a\leqslant x\leqslant b).$</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220108122813532.png" alt="image-20220108122813532" style="zoom:80%;"></p>
+<p>积分上限函数$\phi(x)=\int_a^xf(t)dt $的本质是函数f(x)和x轴，定轴x=a和变轴x=x四条线围成的面积。其导数$\phi’(x)$的意义即在x处<strong>面积的变化率</strong>。而在$\Delta x \rightarrow 0$的情况下，面积变化率只跟函数值f(x)有关，因此$\phi’(x)=f(x)$</p>
+<p>定理1结论：<strong>连续函数f(x)取变上限x的定积分然后求导，其结果还原为f(x)本身</strong>。因此，$\phi(x)$就是f(x)的一个原函数</p>
+<p>定理2：如果函数f(x)在区间[a,b]上连续，那么函数$\phi(x)=\int_a^xf(t)dt$就是f(x)在[a,b]上的一个原函数。</p>
+<p>重要意义：肯定了连续函数的原函数是存在的（就是<strong>连续可积分</strong>），初步解释了积分学中的定积分与原函数之间的联系，因此可以通过原函数来计算定积分，引出下面的牛顿-莱布尼兹公式。</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307191855950.png" alt="image-20220307191855950" style="zoom:67%;"></p>
+<h4 id="牛顿-莱布尼兹公式："><a href="#牛顿-莱布尼兹公式：" class="headerlink" title="牛顿-莱布尼兹公式："></a>牛顿-莱布尼兹公式：</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109135041739.png" alt="image-20220109135041739" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109135254501.png" alt="image-20220109135254501" style="zoom:80%;"></p>
+<h3 id="换元法和分部积分法："><a href="#换元法和分部积分法：" class="headerlink" title="换元法和分部积分法："></a>换元法和分部积分法：</h3><h4 id="换元法："><a href="#换元法：" class="headerlink" title="换元法："></a><strong>换元法</strong>：</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109135643540.png" alt="image-20220109135643540" style="zoom:80%;"></p>
+<p>注意：</p>
+<p>用$x=\varphi(x)$把原来的变量x代换成t时，注意<strong>积分区间</strong>也要对应替换</p>
+<p>求出替换后的式子的一个原函数$\Phi(t)$后，不必像不定积分那样再把$\Phi(t)$变换为原来的变量x的函数，只要把新变量t的上下限分别代入$\Phi(t)$中相减就行了。</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109151112261.png" alt="image-20220109151112261" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109151127795.png" alt="image-20220109151127795" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109151317592.png" alt="image-20220109151317592" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109151329168.png" alt="image-20220109151329168" style="zoom:80%;"></p>
+<h4 id="分部积分法："><a href="#分部积分法：" class="headerlink" title="分部积分法："></a><strong>分部积分法</strong>：</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109155557759.png" alt="image-20220109155557759" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109155931462.png" alt="image-20220109155931462" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307192600629.png" alt="image-20220307192600629" style="zoom:50%;"></p>
+<h2 id="反常积分"><a href="#反常积分" class="headerlink" title="反常积分"></a>反常积分</h2><p>起源：一些在无限区间上定义的函数或有限区间上的无界函数，对它们也需要考虑类似于定积分的问题。称为反常积分或广义积分。</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307192123219.png" alt="image-20220307192123219" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307192132134.png" alt="image-20220307192132134" style="zoom:67%;"></p>
+<h3 id="无穷限的反常积分："><a href="#无穷限的反常积分：" class="headerlink" title="无穷限的反常积分："></a>无穷限的反常积分：</h3><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109160435774.png" alt="image-20220109160435774" style="zoom:80%;"></p>
+<p>定义：</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109160535278.png" alt="image-20220109160535278" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109160621908.png" alt="image-20220109160621908" style="zoom:80%;"></p>
+<h3 id="无界函数的反常积分："><a href="#无界函数的反常积分：" class="headerlink" title="无界函数的反常积分："></a>无界函数的反常积分：</h3><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109160746206.png" alt="image-20220109160746206" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109160807520.png" alt="image-20220109160807520" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109160925756.png" alt="image-20220109160925756" style="zoom: 67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220109160950137.png" alt="image-20220109160950137" style="zoom: 67%;"></p>
+<h3 id="反常积分的审敛法："><a href="#反常积分的审敛法：" class="headerlink" title="反常积分的审敛法："></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/353396396">反常积分的审敛法：</a></h3><p>略：</p>
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><h2 id="不定积分-1"><a href="#不定积分-1" class="headerlink" title="不定积分"></a>不定积分</h2><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307192335276.png" alt="image-20220307192335276" style="zoom:50%;"></p>
+<h3 id="三角函数代换"><a href="#三角函数代换" class="headerlink" title="三角函数代换"></a>三角函数代换</h3><p>这类问题在积分前需要进行复杂的三角函数代换，如万能公式、积化和差和差化积、等</p>
+<blockquote>
+<p>套路总结</p>
+<p>a)如果<strong>不是分式</strong>，是多个$\sin\cos$的乘积，请<strong>积化和差</strong></p>
+<p>b)如果是<strong>分式</strong>，<strong>裂解</strong>很重要。一般三种情况，第一种<strong>分子分母</strong>都是$\sin、cos$的<strong>和或差</strong>，考虑将分子拆开；第二种分母是多个$\sin\cos$的<strong>乘积</strong>，分子是1，考虑将1化成$\sin^2x+\cos^2x$，这样可以方便降次；第三种，将微分凑成$d\sin x$或者$d\cos x$的形式，然后就能尝试用<strong>有理函数</strong>的方式进行裂解了。<strong><em>裂解不一定都能做出来，但是值得一试</em></strong></p>
+<p>c)其他的分式的方法一般都是考虑<strong>将分母化为乘积式</strong>，消灭$+$和$-$，这样容易进行三角函数变换。一般方法有：1）如果分子分母含$1-\sin x$之类考虑同乘$1+\sin x$；2）半角公式，包含$1+\sin x$考虑化为$\cos[2]\frac{x}2+\sin[2]\frac{x}2$，$1+\cos x$考虑化为$2\cos[2]\frac{x}2$等等；3）如果分包含$\sin x+(或-)\cos x$这类，考虑和角公式，凑$x+\frac{\pi}4$</p>
+<p>d)如果分式只包含1和$\cos^2x$，考虑同除以$\cos^2x$</p>
+<p>e)要掌握万能公式，熟练使用，但尽量又不要用（太麻烦）</p>
+<p>f)永远不要忽略：凑凑微分。比如$\sin x\cos x$既可以凑成$\sin^2x$又可以凑成$\cos^2x$ ，$\cos^2 x-\sin ^2x$也就是$\cos 2x$可以凑成$\sin x \cos x$，$d(lntanx)=\frac{1}{cosxsinx}$</p>
+<p>g)当被积函数为幂函数与三角函数的乘积，且不能用凑微分法积分时，一定要用分部积分法积分</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$F(x)$</th>
+<th style="text-align:center">$f(x)$</th>
+<th style="text-align:center">$f’(x)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$-\ln</td>
+<td style="text-align:center">\cos x</td>
+<td style="text-align:center">$</td>
+<td>$\tan x$</td>
+<td>$\sec^2 x$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\ln</td>
+<td style="text-align:center">\sin x</td>
+<td style="text-align:center">$</td>
+<td>$\cot x$</td>
+<td>$-\csc^2 x$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\ln</td>
+<td style="text-align:center">\sec x+\tan x</td>
+<td style="text-align:center">$</td>
+<td>$\sec x$</td>
+<td>$\sec x\tan x$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\ln</td>
+<td style="text-align:center">\csc x-\cot x</td>
+<td style="text-align:center">$</td>
+<td>$\csc x$</td>
+<td>$-\csc x\cot x$</td>
+</tr>
+<tr>
+<td style="text-align:center">基本形式$\ln</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">$</td>
+<td>一次式</td>
+<td>二次式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="1-int-xtan-2xdx"><a href="#1-int-xtan-2xdx" class="headerlink" title="1.$\int xtan^2xdx$"></a>1.$\int xtan^2xdx$</h4><ol>
+<li>常规解法：$tan^2x=\frac{1}{cos^2x-1}$</li>
+</ol>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307212241163.png" alt="image-20220307212241163" style="zoom:67%;"></p>
+<p>​    2. N次分部积分</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307213342192.png" alt="image-20220307213342192" style="zoom:50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307213304765.png" alt="image-20220307213304765" style="zoom: 50%;"></p>
+<h4 id="2-int-arcsinx-2dx"><a href="#2-int-arcsinx-2dx" class="headerlink" title="2.$\int (arcsinx)^2dx$"></a>2.$\int (arcsinx)^2dx$</h4><ol>
+<li>对于反函数，考虑分部+换元2</li>
+</ol>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307215029346.png" alt="image-20220307215029346" style="zoom:50%;"></p>
+<ol>
+<li>先换元2+多次分布</li>
+</ol>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307215209548.png" alt="image-20220307215209548" style="zoom: 67%;"></p>
+<h4 id="3-int-sec-3xdx-sec-5xdx"><a href="#3-int-sec-3xdx-sec-5xdx" class="headerlink" title="3.$\int sec^3xdx||sec^5xdx$"></a>3.$\int sec^3xdx||sec^5xdx$</h4><ol>
+<li>对于高阶三角函数，多次分步积分，再移项</li>
+</ol>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307215757268.png" alt="image-20220307215757268" style="zoom: 50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429154131918.png" alt="image-20220429154131918" style="zoom: 80%;"></p>
+<h4 id="4-int-frac-sinx-1-sinx-dx-frac-1-1-cosx"><a href="#4-int-frac-sinx-1-sinx-dx-frac-1-1-cosx" class="headerlink" title="4.$\int \frac{sinx}{1+sinx}dx||\frac{1}{1+cosx}$"></a>4.$\int \frac{sinx}{1+sinx}dx||\frac{1}{1+cosx}$</h4><p> <img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307221224025.png" alt="image-20220307221224025" style="zoom:50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307221152372.png" alt="image-20220307221152372" style="zoom: 50%;"></p>
+<h4 id="5-int-frac-dx-sin2xcosx-or-int-frac-dx-sinxcos-4x"><a href="#5-int-frac-dx-sin2xcosx-or-int-frac-dx-sinxcos-4x" class="headerlink" title="5.$\int \frac{dx}{sin2xcosx}or\int \frac{dx}{sinxcos^4x}$"></a>5.$\int \frac{dx}{sin2xcosx}or\int \frac{dx}{sinxcos^4x}$</h4><p>碰到诸如此类的，分子为1 的三角函数式，首先考虑将1写成正弦+余弦的形式</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307221419747.png" alt="image-20220307221419747" style="zoom:67%;"></p>
+<h4 id="6-int-frac-xcos-4-frac-x-2-sin-3x"><a href="#6-int-frac-xcos-4-frac-x-2-sin-3x" class="headerlink" title="6.$\int \frac{xcos^4\frac{x}{2}}{sin^3x}$"></a>6.$\int \frac{xcos^4\frac{x}{2}}{sin^3x}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313144957775.png" alt="image-20220313144957775" style="zoom:67%;"></p>
+<h4 id="7-int-frac-sinxcosx-sinx-cosx"><a href="#7-int-frac-sinxcosx-sinx-cosx" class="headerlink" title="7.$\int \frac{sinxcosx}{sinx+cosx}$"></a>7.$\int \frac{sinxcosx}{sinx+cosx}$</h4><ol>
+<li><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314184810304.png" alt="image-20220314184810304" style="zoom:67%;"></li>
+<li>善用诱导公式</li>
+<li><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314184822236.png" alt="image-20220314184822236" style="zoom:80%;"></li>
+</ol>
+<h4 id="8-int-sqrt-1-cos2x-dx-sqrt-1-sin2x-dx-需考虑绝对值"><a href="#8-int-sqrt-1-cos2x-dx-sqrt-1-sin2x-dx-需考虑绝对值" class="headerlink" title="8.$\int \sqrt{1+cos2x}dx||\sqrt{1-sin2x}dx,$需考虑绝对值"></a>8.$\int \sqrt{1+cos2x}dx||\sqrt{1-sin2x}dx,$需考虑绝对值</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429123218744.png" alt="image-20220429123218744" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429123234476.png" alt="image-20220429123234476" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429123250752.png" alt="image-20220429123250752" style="zoom:67%;"></p>
+<h4 id="9-int-frac-cosx-sinx-cosx-dx-基础的凑积分"><a href="#9-int-frac-cosx-sinx-cosx-dx-基础的凑积分" class="headerlink" title="9.$\int \frac{cosx}{sinx+cosx}dx$基础的凑积分"></a>9.$\int \frac{cosx}{sinx+cosx}dx$基础的凑积分</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429124117670.png" alt="image-20220429124117670" style="zoom:67%;"></p>
+<h4 id="10-同除cosx的形式-frac-cosx-xsinx-x-cosx-2"><a href="#10-同除cosx的形式-frac-cosx-xsinx-x-cosx-2" class="headerlink" title="10.同除cosx的形式$\frac{cosx+xsinx}{(x+cosx)^2}$"></a>10.同除cosx的形式$\frac{cosx+xsinx}{(x+cosx)^2}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429143217359.png" alt="image-20220429143217359" style="zoom:80%;"></p>
+<h4 id="11-积化和差，和差化积-int-sin5xsin7xdx"><a href="#11-积化和差，和差化积-int-sin5xsin7xdx" class="headerlink" title="11.积化和差，和差化积$\int sin5xsin7xdx$"></a>11.积化和差，和差化积$\int sin5xsin7xdx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429154044949.png" alt="image-20220429154044949" style="zoom:80%;"></p>
+<h4 id="12-int-sqrt-tanx-int-frac-dx-x-4-1-计算方法一致"><a href="#12-int-sqrt-tanx-int-frac-dx-x-4-1-计算方法一致" class="headerlink" title="12$\int \sqrt{tanx}||\int \frac{dx}{x^4+1}计算方法一致$"></a>12$\int \sqrt{tanx}||\int \frac{dx}{x^4+1}计算方法一致$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429154321203.png" alt="image-20220429154321203" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/%7BZ2O%5DFDP%5BYJO5FRB4_G%7DA5U.png" alt="img"></p>
+<h4 id="13-frac-arcsin-e-x-e-x-frac-arccot-e-x-e-x-frac-arctan-e-x-e-x-frac-arcsin-e-x-e-2x"><a href="#13-frac-arcsin-e-x-e-x-frac-arccot-e-x-e-x-frac-arctan-e-x-e-x-frac-arcsin-e-x-e-2x" class="headerlink" title="13.$\frac{arcsin(e^x)}{e^x}||\frac{arccot(e^x)}{e^x}||\frac{arctan(e^x)}{e^x}||\frac{arcsin(e^x)}{e^{2x}}$"></a>13.$\frac{arcsin(e^x)}{e^x}||\frac{arccot(e^x)}{e^x}||\frac{arctan(e^x)}{e^x}||\frac{arcsin(e^x)}{e^{2x}}$</h4><p>本质还是对指数函数的化简和分部计算</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429154627470.png" alt="image-20220429154627470" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429154717395.png" alt="image-20220429154717395" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429155143597.png" alt="image-20220429155143597" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429155211903.png" alt="image-20220429155211903" style="zoom:67%;"></p>
+<h4 id="14-待定系数法-frac-2sinx-3cosx-5sinx-7cosx"><a href="#14-待定系数法-frac-2sinx-3cosx-5sinx-7cosx" class="headerlink" title="14.待定系数法$\frac{2sinx+3cosx}{5sinx+7cosx}$"></a>14.待定系数法$\frac{2sinx+3cosx}{5sinx+7cosx}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220501153704640.png" alt="image-20220501153704640" style="zoom:80%;"></p>
+<h3 id="典型分部积分"><a href="#典型分部积分" class="headerlink" title="典型分部积分"></a>典型分部积分</h3><h4 id="1-int-x-n-lnxdx"><a href="#1-int-x-n-lnxdx" class="headerlink" title="1.$\int x^n lnxdx$"></a>1.$\int x^n lnxdx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429155111475.png" alt="image-20220429155111475" style="zoom:80%;"></p>
+<h4 id="2-int-frac-ln-3x-x-2-dx"><a href="#2-int-frac-ln-3x-x-2-dx" class="headerlink" title="2.$\int \frac{ln^3x}{x^2}dx$"></a>2.$\int \frac{ln^3x}{x^2}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429155403997.png" alt="image-20220429155403997" style="zoom:67%;"></p>
+<h3 id="根式代换"><a href="#根式代换" class="headerlink" title="根式代换"></a>根式代换</h3><h4 id="1-int-sqrt-1-sqrt-x-dx"><a href="#1-int-sqrt-1-sqrt-x-dx" class="headerlink" title="1.$\int \sqrt{1+\sqrt{x}}dx$"></a>1.$\int \sqrt{1+\sqrt{x}}dx$</h4><p>第二类换元法：设根号内的式子为t，解出x=f(t)</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307211201037.png" alt="image-20220307211201037" style="zoom: 67%;"></p>
+<h4 id="2-int-frac-1-sqrt-x-1-x-dx"><a href="#2-int-frac-1-sqrt-x-1-x-dx" class="headerlink" title="2.$\int \frac{1}{\sqrt{x(1-x)}}dx$"></a>2.$\int \frac{1}{\sqrt{x(1-x)}}dx$</h4><p>第一类换元法：首先对原始变形，设$u=x^{\frac{1}{2}}$</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307211605706.png" alt="image-20220307211605706" style="zoom:67%;"></p>
+<h4 id="3-int-frac-sqrt-x-1-1-sqrt-x-1-1-dx"><a href="#3-int-frac-sqrt-x-1-1-sqrt-x-1-1-dx" class="headerlink" title="3.$\int \frac{\sqrt{x+1}-1}{\sqrt{x+1}+1}dx$"></a>3.$\int \frac{\sqrt{x+1}-1}{\sqrt{x+1}+1}dx$</h4><p>第二类换元+分离常数</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307214050579.png" alt="image-20220307214050579" style="zoom: 50%;"></p>
+<h4 id="4-int-frac-dx-sqrt-x-3-sqrt-x"><a href="#4-int-frac-dx-sqrt-x-3-sqrt-x" class="headerlink" title="4.$\int \frac{dx}{\sqrt{x}+^3\sqrt{x}}$"></a>4.$\int \frac{dx}{\sqrt{x}+^3\sqrt{x}}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307222112201.png" alt="image-20220307222112201" style="zoom: 50%;"></p>
+<h3 id="倒代换"><a href="#倒代换" class="headerlink" title="倒代换"></a>倒代换</h3><h4 id="1-int-frac-1-x-6-1-x-2"><a href="#1-int-frac-1-x-6-1-x-2" class="headerlink" title="1.$\int \frac{1}{x^6(1+x^2)}$"></a>1.$\int \frac{1}{x^6(1+x^2)}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307222510620.png" alt="image-20220307222510620" style="zoom:50%;"></p>
+<h4 id="2-int-frac-dx-x-2-sqrt-x-2-1"><a href="#2-int-frac-dx-x-2-sqrt-x-2-1" class="headerlink" title="2.$\int \frac{dx}{x^2\sqrt{x^2-1}}$"></a>2.$\int \frac{dx}{x^2\sqrt{x^2-1}}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314094311962.png" alt="image-20220314094311962" style="zoom:67%;"></p>
+<p>或使用三角函数进行第二类换元</p>
+<h4 id="3-int-frac-dx-x-4-sqrt-1-x-4"><a href="#3-int-frac-dx-x-4-sqrt-1-x-4" class="headerlink" title="3.$\int \frac{dx}{x^4\sqrt{1+x^4}}$"></a>3.$\int \frac{dx}{x^4\sqrt{1+x^4}}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314094540054.png" alt="image-20220314094540054" style="zoom:67%;"></p>
+<h4 id="4-int-frac-lnx-1-x-2-frac-3-2"><a href="#4-int-frac-lnx-1-x-2-frac-3-2" class="headerlink" title="4.$\int \frac{lnx}{(1+x^2)^{\frac{3}{2}}}$"></a>4.$\int \frac{lnx}{(1+x^2)^{\frac{3}{2}}}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314183625008.png" alt="image-20220314183625008" style="zoom: 80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314183634198.png" alt="image-20220314183634198" style="zoom: 80%;"></p>
+<h3 id="复杂函数直接代换"><a href="#复杂函数直接代换" class="headerlink" title="复杂函数直接代换"></a>复杂函数直接代换</h3><h4 id="int-frac-1-sqrt-e-x-1"><a href="#int-frac-1-sqrt-e-x-1" class="headerlink" title="$\int \frac{1}{\sqrt{e^x+1}}$"></a>$\int \frac{1}{\sqrt{e^x+1}}$</h4><h4 id="int-frac-xe-x-sqrt-e-x-1"><a href="#int-frac-xe-x-sqrt-e-x-1" class="headerlink" title="$\int \frac{xe^x}{\sqrt{e^x-1}}$"></a>$\int \frac{xe^x}{\sqrt{e^x-1}}$</h4><h3 id="分式"><a href="#分式" class="headerlink" title="分式"></a>分式</h3><p>对于分子次数大于分母次数的分式，我们考虑拆假分式，看看能不能将次。</p>
+<p>对于分子次数小于分母的</p>
+<p>1.使用有理函数的积分方法</p>
+<p>2.将分子凑成分母微分的形式</p>
+<p>3.观察分式的形式，巧用拆解</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429160631676.png" alt="image-20220429160631676" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220320154027622.png" alt="image-20220320154027622" style="zoom:67%;"></p>
+<h4 id="1-int-frac-x-7-x-4-2-dx-int-frac-x-4-1-x-2-dx"><a href="#1-int-frac-x-7-x-4-2-dx-int-frac-x-4-1-x-2-dx" class="headerlink" title="1.$\int \frac{x^7}{x^4+2}dx||\int \frac{x^4}{1+x^2}dx$"></a>1.$\int \frac{x^7}{x^4+2}dx||\int \frac{x^4}{1+x^2}dx$</h4><ol>
+<li>拆开，分式除法</li>
+</ol>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307214552772.png" alt="image-20220307214552772" style="zoom: 50%;"></p>
+<ol>
+<li>第一类换元法</li>
+</ol>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307214606076.png" alt="image-20220307214606076" style="zoom:50%;"></p>
+<h4 id="2-int-frac-4x-3-3x-3-2x-1-2-dx"><a href="#2-int-frac-4x-3-3x-3-2x-1-2-dx" class="headerlink" title="2.$\int \frac{4x^3+3x+3}{(2x+1)^2}dx$"></a>2.$\int \frac{4x^3+3x+3}{(2x+1)^2}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220320161636544.png" alt="image-20220320161636544" style="zoom:67%;"></p>
+<h4 id="3-int-frac-12x-9-2x-2-3x-9-典型有理函数积分"><a href="#3-int-frac-12x-9-2x-2-3x-9-典型有理函数积分" class="headerlink" title="3.$\int \frac{12x+9}{2x^2-3x-9},典型有理函数积分$"></a>3.$\int \frac{12x+9}{2x^2-3x-9},典型有理函数积分$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220320161654420.png" alt="image-20220320161654420" style="zoom:67%;"></p>
+<h4 id="4-int-frac-dx-x-x-4-3"><a href="#4-int-frac-dx-x-x-4-3" class="headerlink" title="4.$\int \frac{dx}{x(x^4+3)}$"></a>4.$\int \frac{dx}{x(x^4+3)}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220320161710258.png" alt="image-20220320161710258" style="zoom:67%;"></p>
+<h4 id="5-frac-x-3-1-x-2-1-2"><a href="#5-frac-x-3-1-x-2-1-2" class="headerlink" title="5.$\frac{x^3+1}{(x^2+1)^2}$"></a><strong>5.$\frac{x^3+1}{(x^2+1)^2}$</strong></h4><p>可以用三角函数代换，在此展示分数化简方法</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429124759472.png" alt="image-20220429124759472" style="zoom:67%;"></p>
+<h4 id="6-因式分解-frac-1-1-x-3-dx"><a href="#6-因式分解-frac-1-1-x-3-dx" class="headerlink" title="6.因式分解$\frac{1}{1+x^3}dx$"></a>6.因式分解$\frac{1}{1+x^3}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429160901111.png" alt="image-20220429160901111" style="zoom:80%;"></p>
+<h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429161635822.png" alt="image-20220429161635822" style="zoom:80%;"></p>
+<h4 id="8-int-frac-x-4-1-x-6-1"><a href="#8-int-frac-x-4-1-x-6-1" class="headerlink" title="8.$\int \frac{x^4+1}{x^6+1}$"></a>8.$\int \frac{x^4+1}{x^6+1}$</h4><p>对于分母次数大于分子的，首先考虑能否上下同除公因式，进行凑积分，如分子有$x^2+1$,分母$x^4+1$，但此题无法，只能一步一步的拆解，首先可以在分子凑出$x^4-x^2+1+x^2$，考虑将分母拆解为带分子的乘积形式，看看能不能化简</p>
+<h3 id="技巧化简"><a href="#技巧化简" class="headerlink" title="技巧化简"></a>技巧化简</h3><h4 id="1-int-frac-1-lnx-x-lnx-2-dx"><a href="#1-int-frac-1-lnx-x-lnx-2-dx" class="headerlink" title="1.$\int \frac{1-lnx}{(x-lnx)^2}dx$"></a>1.$\int \frac{1-lnx}{(x-lnx)^2}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307221821235.png" alt="image-20220307221821235" style="zoom:67%;"></p>
+<h4 id="2-int-frac-3x-1-sqrt-x-2-2x-5"><a href="#2-int-frac-3x-1-sqrt-x-2-2x-5" class="headerlink" title="2.$\int \frac{3x+1}{\sqrt{x^2+2x-5}}$"></a>2.$\int \frac{3x+1}{\sqrt{x^2+2x-5}}$</h4><p>可以先拆开。这便是常规的方法了。但是注意到分母的平方差是在根式之内的，可以用三角代换</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220307222439446.png" alt="image-20220307222439446" style="zoom:50%;"></p>
+<h4 id="3-int-frac-dx-16-x-4"><a href="#3-int-frac-dx-16-x-4" class="headerlink" title="3.$\int \frac{dx}{16-x^4}$"></a>3.$\int \frac{dx}{16-x^4}$</h4><ol>
+<li><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314181918666.png" alt="image-20220314181918666" style="zoom:67%;"></li>
+<li>$\frac{1}{(4+x^2)(4-x^2)}=\frac{1}{8}\int \frac{1}{4+x^2} +\frac{1}{4-x^2}$</li>
+</ol>
+<h4 id="4-int-frac-x-sinx-1-cosx"><a href="#4-int-frac-x-sinx-1-cosx" class="headerlink" title="4.$\int \frac{x+sinx}{1+cosx}$"></a>4.$\int \frac{x+sinx}{1+cosx}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314183041786.png" alt="image-20220314183041786" style="zoom: 80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314183101151.png" alt="image-20220314183101151" style="zoom: 80%;"></p>
+<h4 id="5-int-frac-sqrt-x-1-arctan-sqrt-x-1-x"><a href="#5-int-frac-sqrt-x-1-arctan-sqrt-x-1-x" class="headerlink" title="5.$\int \frac{\sqrt{x-1}arctan\sqrt{x-1}}{x}$"></a>5.$\int \frac{\sqrt{x-1}arctan\sqrt{x-1}}{x}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220320161854429.png" alt="image-20220320161854429" style="zoom: 50%;"></p>
+<h3 id="巧妙的凑微分"><a href="#巧妙的凑微分" class="headerlink" title="巧妙的凑微分"></a>巧妙的凑微分</h3><h4 id="1-int-frac-xe-arctanx-1-x-2-3-2"><a href="#1-int-frac-xe-arctanx-1-x-2-3-2" class="headerlink" title="1.$\int \frac{xe^{arctanx}}{(1+x^2)^{3/2}}$"></a>1.$\int \frac{xe^{arctanx}}{(1+x^2)^{3/2}}$</h4><p>1.首先观察发现反正切函数的导数存在，考虑凑微分；再使用多次分布移项得</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313125924689.png" alt="image-20220313125924689" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313125936659.png" alt="image-20220313125936659" style="zoom:67%;"></p>
+<ol>
+<li>优先消除arctanx,故第二类换元，将x设为tant</li>
+</ol>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313130037559.png" alt="image-20220313130037559" style="zoom: 50%;"></p>
+<h4 id="2-int-frac-e-3x-e-x-e-4x-e-2x-1"><a href="#2-int-frac-e-3x-e-x-e-4x-e-2x-1" class="headerlink" title="2.$\int \frac{e^{3x}+e^x}{e^{4x}-e^{2x}+1}$"></a>2.$\int \frac{e^{3x}+e^x}{e^{4x}-e^{2x}+1}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314183405985.png" alt="image-20220314183405985" style="zoom: 80%;"></p>
+<h4 id="3-int-frac-dx-sin-3xcosx"><a href="#3-int-frac-dx-sin-3xcosx" class="headerlink" title="3.$\int \frac{dx}{sin^3xcosx}$"></a>3.$\int \frac{dx}{sin^3xcosx}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314183939661.png" alt="image-20220314183939661" style="zoom: 80%;"></p>
+<h4 id="4-int-frac-cos-2x-3-sin-x-cos-x-2-dx"><a href="#4-int-frac-cos-2x-3-sin-x-cos-x-2-dx" class="headerlink" title="4.$\int \frac{\cos 2x}{(3+\sin x\cos x)^2}dx$"></a>4.$\int \frac{\cos 2x}{(3+\sin x\cos x)^2}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220320153728306.png" alt="image-20220320153728306" style="zoom:67%;"></p>
+<h4 id="5-int-1-sin-2x-sin2xdx"><a href="#5-int-1-sin-2x-sin2xdx" class="headerlink" title="5.$\int (1+sin^2x)sin2xdx$"></a>5.$\int (1+sin^2x)sin2xdx$</h4><p>​                                                                 </p>
+<h4 id="6-int-frac-1-1-x-2-ln-frac-1-x-1-x"><a href="#6-int-frac-1-1-x-2-ln-frac-1-x-1-x" class="headerlink" title="6.$\int \frac{1}{1-x^2}ln\frac{1+x}{1-x}$"></a>6.$\int \frac{1}{1-x^2}ln\frac{1+x}{1-x}$</h4><h4 id="7-x-ln-1-x-2-arctan-xdx！！"><a href="#7-x-ln-1-x-2-arctan-xdx！！" class="headerlink" title="7.$x\ln(1+x^2)\arctan xdx！！$"></a>7.$x\ln(1+x^2)\arctan xdx！！$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429153935963.png" alt="image-20220429153935963" style="zoom:80%;"></p>
+<h4 id="8-int-x-2-sqrt-x-2-a-2-dx"><a href="#8-int-x-2-sqrt-x-2-a-2-dx" class="headerlink" title="8.$\int x^2\sqrt{x^2+a^2}dx$"></a>8.$\int x^2\sqrt{x^2+a^2}dx$</h4><p>本题可以三角函数代换，在此展示凑积分方式</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429155617456.png" alt="image-20220429155617456" style="zoom:80%;"></p>
+<h3 id="不连续判断"><a href="#不连续判断" class="headerlink" title="不连续判断"></a>不连续判断</h3><h4 id="frac-sqrt-1-cosx-sinx"><a href="#frac-sqrt-1-cosx-sinx" class="headerlink" title="$\frac{\sqrt{1+cosx}}{sinx}$"></a>$\frac{\sqrt{1+cosx}}{sinx}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314181359785.png" alt="image-20220314181359785" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220314181414641.png" alt="image-20220314181414641" style="zoom:67%;"></p>
+<h4 id="int-frac-x-2-1-x-4-1-dx"><a href="#int-frac-x-2-1-x-4-1-dx" class="headerlink" title="$\int \frac{x^2+1}{x^4+1}dx$"></a>$\int \frac{x^2+1}{x^4+1}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220311190557872.png" alt="image-20220311190557872" style="zoom: 67%;"></p>
+<p>大部分辅导书都会给出这样的答案，但实际上这并不是正确答案，详情请看链接</p>
+<p> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aa411F7Bh/?spm_id_from=333.788.recommend_more_video.4"></a></p>
+<h4 id="int-sqrt-1-cos2x-dx-sqrt-1-sin2x-dx-需考虑绝对值"><a href="#int-sqrt-1-cos2x-dx-sqrt-1-sin2x-dx-需考虑绝对值" class="headerlink" title="$\int \sqrt{1+cos2x}dx||\sqrt{1-sin2x}dx,$需考虑绝对值"></a>$\int \sqrt{1+cos2x}dx||\sqrt{1-sin2x}dx,$需考虑绝对值</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429123218744.png" alt="image-20220429123218744" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429123234476.png" alt="image-20220429123234476" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429123250752.png" alt="image-20220429123250752" style="zoom:67%;"></p>
+<h4 id="int-frac-1-x-ln-x-int-frac-dx-xlnxlnlnx-ln-lnlnx-c"><a href="#int-frac-1-x-ln-x-int-frac-dx-xlnxlnlnx-ln-lnlnx-c" class="headerlink" title="$\int \frac{1}{x}=ln|x| ;\int \frac{dx}{xlnxlnlnx}=ln|lnlnx|+c$"></a><strong>$\int \frac{1}{x}=ln|x| ;\int \frac{dx}{xlnxlnlnx}=ln|lnlnx|+c$</strong></h4><p>由原函数存在定理可知，原函数的定义域至少大于等于被积函数，对于第二题，经分析，被积函数的定义域x&gt;1,在此基础上分析原函数的取值：当x&gt;1时，$lnx&gt;0;lnlnx\in R,此时不满足ln（lnlnx）的定义域&gt;0，故加上绝对值|lnlnx|$</p>
+<h3 id="包含-e-x-的问题"><a href="#包含-e-x-的问题" class="headerlink" title="包含$e^x$的问题"></a>包含$e^x$的问题</h3><p>$\int e^{ax}sinbxdx=\frac{1}{a^2+b^2}(ae^{ax}sinbx-be^{ax}cosbx)+C$</p>
+<p>$\int e^{ax}cosbxdx=\frac{1}{a^2+b^2}(ae^{ax}cosbx+be^{ax}sinbx)+C$</p>
+<h4 id="1-int-frac-x-1-x-1-xe-x-dx"><a href="#1-int-frac-x-1-x-1-xe-x-dx" class="headerlink" title="1.$\int \frac{x+1}{x(1+xe^x)}dx$"></a>1.$\int \frac{x+1}{x(1+xe^x)}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220311201214377.png" alt="image-20220311201214377" style="zoom: 50%;"></p>
+<p>凑微分$xe^x=d[(x+1)e^x]$</p>
+<h4 id="2-int-frac-arctan-e-x-e-x-dx"><a href="#2-int-frac-arctan-e-x-e-x-dx" class="headerlink" title="2.$\int \frac{\arctan e^x}{e^x}dx$"></a>2.$\int \frac{\arctan e^x}{e^x}dx$</h4><h4 id="3-int-frac-xe-x-e-x-1-2-dx"><a href="#3-int-frac-xe-x-e-x-1-2-dx" class="headerlink" title="3.$\int \frac{xe^x}{(e^x+1)^2}dx$"></a>3.$\int \frac{xe^x}{(e^x+1)^2}dx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220311204252786.png" alt="image-20220311204252786" style="zoom: 80%;"></p>
+<h4 id="4-large-int-frac-e-3x-e-x-e-4x-e-2x-1"><a href="#4-large-int-frac-e-3x-e-x-e-4x-e-2x-1" class="headerlink" title="4/$\large\int\frac{e^{3x}+e^{x}}{e^{4x}-e^{2x}+1}$"></a>4/$\large\int\frac{e^{3x}+e^{x}}{e^{4x}-e^{2x}+1}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220311204358593.png" alt="image-20220311204358593" style="zoom: 80%;"></p>
+<h4 id="5-int-frac-1-sin-x-1-cos-x-e-xdx"><a href="#5-int-frac-1-sin-x-1-cos-x-e-xdx" class="headerlink" title="5.$\int\frac{1+\sin x}{1+\cos x}e^xdx$"></a>5.$\int\frac{1+\sin x}{1+\cos x}e^xdx$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220311234935621.png" alt="image-20220311234935621" style="zoom: 50%;"></p>
+<h4 id="6-frac-1-1-e-x-2-frac-1-1-e-2x-e-x-注意凑分子-e-x"><a href="#6-frac-1-1-e-x-2-frac-1-1-e-2x-e-x-注意凑分子-e-x" class="headerlink" title="6.$\frac{1}{(1+e^x)^2}||\frac{1}{(1+e^{2x})e^x}$注意凑分子$e^x$"></a>6.$\frac{1}{(1+e^x)^2}||\frac{1}{(1+e^{2x})e^x}$注意凑分子$e^x$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429124541832.png" alt="image-20220429124541832" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429142611765.png" alt="image-20220429142611765" style="zoom:80%;"></p>
+<h4 id="7-frac-dx-sqrt-e-2x-1-frac-dx-sqrt-e-2x-1-frac-dx-sqrt-1-e-2x-巧提因子："><a href="#7-frac-dx-sqrt-e-2x-1-frac-dx-sqrt-e-2x-1-frac-dx-sqrt-1-e-2x-巧提因子：" class="headerlink" title="7.$\frac{dx}{\sqrt{e^{2x}}+1}||\frac{dx}{\sqrt{e^{2x}}-1}||\frac{dx}{\sqrt{1-e^{2x}}}$巧提因子："></a>7.$\frac{dx}{\sqrt{e^{2x}}+1}||\frac{dx}{\sqrt{e^{2x}}-1}||\frac{dx}{\sqrt{1-e^{2x}}}$巧提因子：</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429125048356.png" alt="image-20220429125048356" style="zoom:80%;"></p>
+<h4 id="8-sqrt-frac-e-x-1-e-x-1-sqrt-frac-1-x-1-x-类似分式也是一样的算法：分子有理化"><a href="#8-sqrt-frac-e-x-1-e-x-1-sqrt-frac-1-x-1-x-类似分式也是一样的算法：分子有理化" class="headerlink" title="8.$\sqrt{\frac{e^x-1}{e^x+1}}||\sqrt{\frac{1-x}{1+x}}$类似分式也是一样的算法：分子有理化"></a>8.$\sqrt{\frac{e^x-1}{e^x+1}}||\sqrt{\frac{1-x}{1+x}}$类似分式也是一样的算法：分子有理化</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429125142016.png" alt="image-20220429125142016" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429161054480.png" alt="image-20220429161054480" style="zoom: 67%;"></p>
+<h4 id="9-frac-1-lnx-x-x-x-x"><a href="#9-frac-1-lnx-x-x-x-x" class="headerlink" title="9.$\frac{1+lnx}{x^{-x}+x^x}$"></a>9.$\frac{1+lnx}{x^{-x}+x^x}$</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220429142727069.png" alt="image-20220429142727069" style="zoom:67%;"></p>
+<h2 id="原函数存在定理"><a href="#原函数存在定理" class="headerlink" title="原函数存在定理"></a>原函数存在定理</h2><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313125334882.png" alt="image-20220313125334882" style="zoom: 50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313125510261.png" alt="image-20220313125510261" style="zoom: 33%;"></p>
+<h4 id><a href="#" class="headerlink" title=" "></a> </h4><h2 id="定积分-1"><a href="#定积分-1" class="headerlink" title="定积分"></a>定积分</h2><h3 id="利用定义求解数列极限问题"><a href="#利用定义求解数列极限问题" class="headerlink" title="利用定义求解数列极限问题"></a>利用定义求解数列极限问题</h3><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313130230329.png" alt="image-20220313130230329" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313142834084.png" alt="image-20220313142834084" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145149912.png" alt="image-20220313145149912" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145424204.png" alt="image-20220313145424204" style="zoom: 50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145437669.png" alt="image-20220313145437669" style="zoom: 50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145207222.png" alt="image-20220313145207222" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145452764.png" alt="image-20220313145452764" style="zoom: 50%;"></p>
+<h3 id="技巧判断"><a href="#技巧判断" class="headerlink" title="技巧判断"></a>技巧判断</h3><p>$\int ^{\sqrt{2 \pi}}_0 sinx^2dx&gt;0$</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220506103853813.png" alt="image-20220506103853813" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220506104048390.png" alt="image-20220506104048390" style="zoom:80%;"></p>
+<h3 id="定积分计算"><a href="#定积分计算" class="headerlink" title="定积分计算"></a>定积分计算</h3><h4 id="普通计算"><a href="#普通计算" class="headerlink" title="普通计算"></a>普通计算</h4><p>1.首先观察积分区间是否对称，若对称则判别积分函数奇偶性；</p>
+<p>2.奇函数在对称区间上的积分和为0，故只需要算偶函数</p>
+<p>3.将对称区间分2，算其中一个的，再*2即可</p>
+<p>注意在定积分计算中，如果换元，有三点需要注意</p>
+<p>1.积分区间变动</p>
+<p>2.变动之后的积分区间是否不超过原上，下限区间</p>
+<p>3.若为第二类换元法，需注意dx是否连续</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313142928440.png" alt="image-20220313142928440" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145654922.png" alt="image-20220313145654922" style="zoom: 50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145737828.png" alt="image-20220313145737828" style="zoom:50%;"></p>
+<p>对于三角函数的计算，要灵活使用诱导公式</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145405868.png" alt="image-20220313145405868" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313145541027.png" alt="image-20220313145541027" style="zoom:67%;"></p>
+<p>积分做常数：</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313144753726.png" alt="image-20220313144753726" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313144820381.png" alt="image-20220313144820381" style="zoom: 50%;"></p>
+<p>通过n的取值，判断x 的取值情况</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220506104802658.png" alt="image-20220506104802658" style="zoom:80%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220506104816489.png" alt="image-20220506104816489" style="zoom:67%;"></p>
+<h4 id="区间再现："><a href="#区间再现：" class="headerlink" title="区间再现："></a>区间再现：</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313143254782.png" alt="image-20220313143254782" style="zoom: 67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313143205111.png" alt="image-20220313143205111" style="zoom:50%;"></p>
+<h4 id="三角函数-华里士公式！："><a href="#三角函数-华里士公式！：" class="headerlink" title="三角函数/华里士公式！："></a>三角函数/华里士公式！：</h4><p><strong>very常用的定理</strong></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328102435498.png" alt="image-20220328102435498" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313143357989.png" alt="image-20220313143357989" style="zoom:67%;"></p>
+<p>eg:$\int _0^\pi \sqrt{sinx-sin^3x}dx$</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328105737848.png" alt="image-20220328105737848" style="zoom:67%;"></p>
+<h4 id="变限积分-分部积分（-e-x"><a href="#变限积分-分部积分（-e-x" class="headerlink" title="变限积分+分部积分（$e^x$)"></a>变限积分+分部积分（$e^x$)</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328100515151.png" alt="image-20220328100515151" style="zoom: 80%;"></p>
+<p>对于以上问题，$e^{-t^2}$难以解除，所以使用分部积分方法将其约掉</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/download_resize_jpgfolder_name=CamScanner_Page&encrypt_id=MHhlNzgzMTQ5YQ==&sid=24F71FCN&file_name=y882BXbMN5ea0aQ5QTbQM112.jpg&pixel=1024&_t=1648433255" alt="img" style="zoom:67%;"></p>
+<h4 id="技巧化简-1"><a href="#技巧化简-1" class="headerlink" title="技巧化简"></a>技巧化简</h4><p>1.$\int_0^2x\sqrt{2x-x^2}$；在根号下凑一个完全平方公式，在根号外凑出平方公式的微分形式。</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328105642692.png" alt="image-20220328105642692" style="zoom:67%;"></p>
+<p>2.</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328105656968.png" alt="image-20220328105656968" style="zoom: 50%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328105709961.png" alt="image-20220328105709961" style="zoom:67%;"></p>
+<h3 id="定积分应用"><a href="#定积分应用" class="headerlink" title="定积分应用"></a>定积分应用</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328112531076.png" alt="image-20220328112531076" style="zoom:25%;"></p>
+<h4 id="2-分布凑微分-消未知式"><a href="#2-分布凑微分-消未知式" class="headerlink" title="2.分布凑微分 消未知式"></a>2.分布凑微分 消未知式</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328161252744.png" alt="image-20220328161252744" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328161332878.png" alt="image-20220328161332878" style="zoom: 67%;"></p>
+<h4 id="3-积分作常数"><a href="#3-积分作常数" class="headerlink" title="3.积分作常数"></a>3.积分作常数</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328161442570.png" alt="image-20220328161442570" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328161546879.png" alt="image-20220328161546879" style="zoom:67%;"></p>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220506104552207.png" alt="image-20220506104552207" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220506104604446.png" alt="image-20220506104604446" style="zoom: 67%;"></p>
+<h2 id="定积分的几何应用"><a href="#定积分的几何应用" class="headerlink" title="定积分的几何应用"></a>定积分的几何应用</h2><h3 id="面积"><a href="#面积" class="headerlink" title="面积"></a>面积</h3><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220327211432555.png" alt="image-20220327211432555" style="zoom:67%;"></p>
+<p>注意对于极坐标问题，首先要根据极坐标的r算出角度范围</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220327212947734.png" alt="image-20220327212947734" style="zoom:67%;"></p>
+<h3 id="体积-x轴切片；y轴剥皮"><a href="#体积-x轴切片；y轴剥皮" class="headerlink" title="体积:x轴切片；y轴剥皮"></a>体积:x轴切片；y轴剥皮</h3><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220327213225155.png" alt="image-20220327213225155" style="zoom: 50%;"></p>
+<p>注意参数方程求解时，不要犯迷糊，代式子即可</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220327214333126.png" alt="image-20220327214333126" style="zoom: 50%;"></p>
+<p>距离坐标轴有距离的情况：</p>
+<h4 id="1-1"><a href="#1-1" class="headerlink" title="1."></a>1.</h4><p>求圆域$x^2+(y-b)^2\leq k^2(a&lt;k&lt;b)$绕x轴旋转一周所得旋转体的体积V</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328102216686.png" alt="image-20220328102216686" style="zoom:67%;"></p>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><p>求曲线$y=x^3$,直线x=1,与x轴围成的封闭图形绕直线x=2旋转一周所得旋转体的体积</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328102329747.png" alt="image-20220328102329747" style="zoom:67%;"></p>
+<h2 id="反常积分-1"><a href="#反常积分-1" class="headerlink" title="反常积分"></a>反常积分</h2><h3 id="1-识别"><a href="#1-识别" class="headerlink" title="1.识别"></a>1.识别</h3><p>1.识别反常积分时，不仅要注意上下限是否有无穷，也要看<strong>区间内是否有使函数值趋向于无穷的点</strong></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220313144421164.png" alt="image-20220313144421164" style="zoom: 67%;"></p>
+<h3 id="2-收敛判断"><a href="#2-收敛判断" class="headerlink" title="2.收敛判断"></a>2.收敛判断</h3><p>当x趋于某点时，当指数p&lt;1时，收敛</p>
+<p>当x趋于无穷时，指数p&gt;1时收敛</p>
+<p>$\frac{1}{x}$不收敛</p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328102704013.png" alt="image-20220328102704013" style="zoom:67%;"></p>
+<p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/download_resize_jpgfolder_name=CamScanner_Page&encrypt_id=MHhlNzgzMTQ5YQ==&sid=24F71FCN&file_name=3UdPb46FHheFAS5fKQfUXCAd.jpg&pixel=1024&_t=1648434386" alt="img" style="zoom: 50%;"></p>
+<h3 id="3-广义积分的计算"><a href="#3-广义积分的计算" class="headerlink" title="3.广义积分的计算"></a>3.广义积分的计算</h3><p><img src="/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/image-20220328101050356.png" alt="image-20220328101050356" style="zoom:67%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/05/05/%E4%B8%80%E5%85%83%E7%A7%AF%E5%88%86%E5%AD%A6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/05/05/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">微分方程</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>

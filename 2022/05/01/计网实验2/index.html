@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>TCP，UDP通信（UNIX) |  01-seven</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-计网实验2"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  TCP，UDP通信（UNIX)
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/" class="article-date">
+  <time datetime="2022-05-01T00:23:49.000Z" itemprop="datePublished">2022-05-01</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/">专业课</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="UDP，TCP在Unix上实现通信"><a href="#UDP，TCP在Unix上实现通信" class="headerlink" title="UDP，TCP在Unix上实现通信"></a>UDP，TCP在Unix上实现通信</h1><h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h2><p>深入了解 TCP 和 UDP 的区别与联系。 </p>
+<p>掌握网络 Socket 编程的基本概念和基本编程方法。 </p>
+<p>掌握 TCP 和 UDP 的 Client/Server 结构的程序的基本编程方法</p>
+<h2 id="实验内容："><a href="#实验内容：" class="headerlink" title="实验内容："></a>实验内容：</h2><p>1、TCP 通信程序设计 </p>
+<p>选择一个操作系统环境（Linux 或者 Windows），编制 TCP/IP 通信程序，完 成一 </p>
+<p>定的通信功能。例如：可以编一个程序和 Unix 的系统服务进行通信，如 daytime（port </p>
+<p>13）、echo（port7）服务等；或者两人 talk，使用 TCP/IP 协议进行相互直接的发送和 </p>
+<p>接收等。 </p>
+<p>2、UDP 通信程序设计 </p>
+<p>选择一个操作系统环境（Linux 或者 Windows），编制 UDP/IP 通信程序，完成一 </p>
+<p>定的通信功能。在发送 UDP 数据包时做一个循环，连续发送 100 个数据包；在接收端 </p>
+<p>统计丢失的数据包。</p>
+<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><h3 id="一．TCP通信程序设计："><a href="#一．TCP通信程序设计：" class="headerlink" title="一．TCP通信程序设计："></a>一．<strong>TCP通信程序设计：</strong></h3><h4 id="重点函数："><a href="#重点函数：" class="headerlink" title="重点函数："></a><strong>重点函数：</strong></h4><p><strong>1.</strong> <strong><em>\</em>Int socket（int family，int type，int protocol）；创建一个用于网络通信的套接字**</strong></p>
+<p>family：本示例写 AF_INET，代表 IPv4</p>
+<p>type：本示例写 SOCK_STREAM，代表 TCP 数据流</p>
+<p>protocol：这里写 0，设0 表示使用默认协议</p>
+<p> 成功则返回套接字；失败则&lt;0</p>
+<p><strong>2.</strong> <strong><em>\</em>Int connect**</strong> <strong><em>\</em>( int sockfd, const struct sockaddr *addr, socklen_t len );主动与服务器建立连接**</strong></p>
+<p> Sockfd:Socket()返回的套接字</p>
+<p> Add:连接的服务器地址结构</p>
+<p> Len:地址结构体长度</p>
+<p> 成功返回0；失败返回-1</p>
+<p>Sockaddr结构：</p>
+<p> <img src="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/wps13.jpg" alt="img" style="zoom:50%;"><img src="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/wps14.jpg" alt="img" style="zoom:67%;"></p>
+<p><strong>1.</strong> <strong><em>\</em>Int bind( int sockfd, const struct sockaddr *myaddr，socklen_t addrlen ); 将本地协议地址与ip和端口绑定**</strong></p>
+<p> sockfd：socket 套接字</p>
+<p>myaddr： 指向特定协议的地址结构指针</p>
+<p>addrlen：该地址结构的长度</p>
+<p>成功返回0；失败返回-1</p>
+<p><strong>2.</strong> <strong><em>\</em>int listen(int sockfd, int backlog)将套接字由主动修改为被动，使操作系统为该套接字设置一个连接队列，用来记录所有连接到该套接字的连接**</strong></p>
+<p> Sockfd:socket监听套接字</p>
+<p> Backlog:连接队列的长度</p>
+<p><strong>3.</strong> <strong><em>\</em>int accept**</strong>( <strong><em>\</em>int sockfd, struct sockaddr *cliaddr, socklen_t *addrlen );从已连接队列中取出一个已经建立的连接，如果没有任何连接可用，则进入阻塞**</strong></p>
+<p> sockfd： socket监听套接字</p>
+<p>cliaddr： 用于存放客户端套接字地址结构</p>
+<p>addrlen：套接字地址结构体长度的地址</p>
+<p>成功则返回一个已连接套接字，代表当前连接</p>
+<p><strong>4.</strong> <strong><em>\</em>send(int sockfd, const void* buf, size_t nbytes, int flags);发送数据，最后一个参数为 0 时，可以用write() 替代**</strong></p>
+<p>sockfd： 已建立连接的套接字</p>
+<p>buf： 发送数据的地址</p>
+<p>nbytes： 发送缓数据的大小(以字节为单位)</p>
+<p>flags： 套接字标志（常为 0）</p>
+<p><strong>5.</strong> <strong><em>\</em>int recv(int new_sockfd, void *buf, int len, unsigned flags)接收数据**</strong></p>
+<p>new_sockfd：accept以后的socket套接字描述符</p>
+<p> buf：存放地址</p>
+<p>len：接收数据的长度</p>
+<p> Flags：一般设为0</p>
+<p><strong>6.</strong> <strong><em>\</em>close**</strong>（）关闭一个代表已连接套接字将导致另一端接收到一个长度为0的数据包</p>
+<h4 id="程序流程"><a href="#程序流程" class="headerlink" title="程序流程"></a><strong>程序流程</strong></h4><p>\1. 服务器首先启动，通过调用 socket()建立 一个套接口，然后调用 bind()将该套接口和本地网络地址联系在一起。</p>
+<p>\2. 再调用 listen()使套接口做好侦听的准备，并规定它的请求队列的长度，之后就调用 accept()来接收连接。</p>
+<p>\3. 客户在建立套接口后就可调用 connect()和服务器建立连接。处于监听状态的 server 被激活，执行 accept() 函数，接受客户端的请求，然后执行 write() 函数向 client 传回数据。client 接收到传回的数据后，connect() 就运行结束了，然后使用 read() 将数据读取出来。 </p>
+<p>最后，待数据传送结束后，双方调用 close()关闭套接口。</p>
+<h4 id="客户端："><a href="#客户端：" class="headerlink" title="客户端："></a>客户端：</h4><p><img src="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/image-20220506110308615.png" alt="image-20220506110308615" style="zoom:80%;"></p>
+<h4 id="服务端："><a href="#服务端：" class="headerlink" title="服务端："></a>服务端：</h4><p><img src="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/image-20220506110335207.png" alt="image-20220506110335207" style="zoom:80%;"></p>
+<h3 id="二．UDP通信程序设计："><a href="#二．UDP通信程序设计：" class="headerlink" title="二．UDP通信程序设计："></a><strong>二．</strong>UDP通信程序设计：</h3><h4 id="重点函数：-1"><a href="#重点函数：-1" class="headerlink" title="重点函数："></a>重点函数：</h4><p><strong>1.</strong> <strong><em>\</em>int recvfrom(int sockfd, void * buf, size_t len, int flags, struct sockaddr * src_addr, int * addrlen);*<em>**</em></strong>*udp类型的数据接收*<em>*</em></p>
+<p>sockfd – 接收端套接字描述；</p>
+<p>buf – 用于接收数据的应用缓冲区地址；</p>
+<p>len – 指明缓冲区大小；</p>
+<p>flags – 通常为0（数据的接收有的时候是不满足条件的，比如client端并没有给server端发送数据的时候，此时server端应该处于阻塞状态等待）；</p>
+<p>src_addr – 数据来源端的地址（IP address，Port number） </p>
+<p>Fromlen – 作为输入时，fromlen常常设置为sizeof（struct sockaddr）（要知道发送过来的大小）.</p>
+<p>成功返回字符数，失败返回-1</p>
+<p><strong>2.</strong> <strong><em>\</em>int sendto(int sockfd, const void * msg, int len, unsigned int flags, const struct sockaddr * dst_addr, int addrlen)：UDP类型数据发送**</strong></p>
+<p> 返回值：成功则返回实际传送出去的字符数，失败返回-1</p>
+<p><strong>3.</strong> <strong><em>\</em>inet_addr**</strong>(const char * pIpAddr)：</p>
+<p>将一个点分十进制的ip地址转换为32位地址，用在bind、send(TCP)、sendto(UDP)等发送报文的接口前</p>
+<p><strong><em>\</em>inet_ntoa**</strong>(struct in_addr stAddr);</p>
+<p>将一个32位地址ip地址转换为点分十进制地址，用在recv(TCP)、recvfrom(UDP)等接收报文的接口前面</p>
+<h4 id="程序流程-1"><a href="#程序流程-1" class="headerlink" title="程序流程"></a><strong>程序流程</strong></h4><p> 服务器使用 socket()和 bind()函数调用建立和连接 socket。由于此时的 socket 是无连接的，服务器使用 recvfrom()函数从 socket 接收数据。客户端也只调用 bind()函数而不调用 connect()函数。</p>
+<h4 id="发送端："><a href="#发送端：" class="headerlink" title="发送端："></a>发送端：</h4><p><img src="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/image-20220506110508962.png" alt="image-20220506110508962" style="zoom:80%;"></p>
+<h4 id="接收端："><a href="#接收端：" class="headerlink" title="接收端："></a>接收端：</h4><p><img src="/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/image-20220506110518592.png" alt="image-20220506110518592" style="zoom:80%;"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/05/01/%E8%AE%A1%E7%BD%91%E5%AE%9E%E9%AA%8C2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/05/01/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            多元微分
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/04/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C1/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 01-seven
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/sx.jpeg" alt="01-seven"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+<script>
+  const password = "123456";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+</body>
+
+</html>
